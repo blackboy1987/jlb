@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>收益</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/hashbox.css">
+    <style>
+        .mui-content > .mui-table-view:first-child {margin-top: 0}
+        .box-sd {position: relative;border-radius: 0;z-index: 2;box-shadow: none; /* top: -30px; */}
+        #itemmobile1, #itemmobile2 {margin-top: -12px;}
+        .mui-bar {background: url("../images/hashbox/sldd-banner.png");height: 142px;position: absolute;z-index: 1}
+        .mui-table-view {margin: 0;background: #f2f3f4;}
+        .box-sd > .mui-table-view {background-color: #ffffff}
+        .gmje.mui-table-view:before {height: 0 !important;}
+        .shouyi .gmje.mui-table-view-chevron .mui-table-view-cell {padding-right: 15px;padding-left: 15px;color: #979797}
+        .pt0 > mui-table-view {margin-top: 10px}
+        #slider {margin: 0 10px 10px 0;border-bottom: 1px solid #e5e5e5 }
+        #sliderSegmentedControl {border-bottom: none}
+        #itemmobile1 {border-top: none}
+        .mui-content {background: #f7f7f7}
+        .mui-table-view > .li-2 {background-color: #fbfbfb;color: #979797;line-height: 24px;}
+        .fc2c9 {color: #0068f7 !important;}
+        .pay-tb .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {color: #0068f7 !important;}
+        .shouyi .shouyi-name {background: #ffffff;padding-top: 0;padding-bottom: 0;}
+        .shouyi .shouyi-name div p {color: #0068f7;}
+        .shouyi .shouyi-name div p:nth-of-type(1) {color: #282828}
+        .my .box-sd > ul {border-radius: 0;}
+        .gmje li {font-size: 14px}
+        .mui-col-xs-12 {color: #282828;font-size: 12px}
+        .mui-pull-left {padding-top: 8px}
+        .mui-control-item > span {font-size: 18px}
+        #bore{font-size: 15px;margin-top: 22px;margin-bottom: 12.5px}
+        #allBtc{font-size: 17px}
+        .mui-active .mui-table-view-cell{position:initial}
+        .box-border-bottom:after {position: absolute;bottom: 0;left: 0;height: 1px !important;width: 200%;content: '';-webkit-transform: scale(.5);transform: scale(.5);transform-origin: left top;background-color: #e5e5e5!important;}
+    </style>
+</head>
+<body id="pullrefresh">
+<header class="mui-bar mui-bar-nav other">
+    <a class="mui-action-back mui-pull-left"><img src="../images/hashbox/slf-47-white.svg"style="width: 15px;margin-top: 5px"></a>
+</header>
+<div class="mui-content my shouyi" id="profitcontent">
+    <div class=" box-sd m10" style="background-color: #fff!important;margin-bottom: 16px">
+        <div class="mui-row shouyi-name">
+            <div class="mui-col-xs-6">
+                <div class="box-border-right">
+                <p id="bore">BTC总收益</p>
+                <p id="allBtc" type='btcOr'>--</p>
+                </div>
+            </div>
+            <div class="mui-col-xs-6">
+                <div>
+                <p style="font-size: 15px;margin-top: 22px;margin-bottom: 12.5px;">HBT总收益</p>
+                <p id="allHpt">--</p>
+                </div>
+            </div>
+        </div>
+        <ul class="mui-table-view mui-table-view-chevron gmje box-border-top" id="detailed"
+            style="height: 47px;background-color: #fbfbfb;box-shadow: 0px 2px 5px 1px #eeeff1;">
+            <li class="mui-table-view-cell mui-collapse-content" style="margin: revert;top: 3px;"><p id="income" style="float: left">BTC总收益明细</p> <span
+                    class="mui-pull-right"><span class="mui-icon mui-icon-arrowright" style="font-size: 22px;margin-top: -6px;position: relative;right: -7px;"></span></span>
+            </li>
+        </ul>
+    </div>
+    <div id="slider" class="mui-slider pay-tb">
+        <div id="sliderSegmentedControl"
+             class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <a class="mui-control-item mui-control-item-m mui-active" _types="1">
+                <span>BTC算力</span>
+                <div class="btc-left"></div>
+            </a>
+            <a class="mui-control-item mui-control-item-m" _types="5">
+                <span>ETH算力</span>
+                <div class="btc-right"></div>
+            </a>
+        </div>
+    </div>
+    <div class="mui-content" id="index-html" style="background: #fff">
+        <div class="mui-control-content mui-active myHashbox product">
+        </div>
+
+        <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+            <div class="pt0">
+                <ul style="background: #f4f5f5;padding-bottom: 5px;" class="mui-table-view mui-table-view-chevron myHashList" id="itemmobile1"/>
+            </div>
+        </div>
+        <div id="item2mobile" class="mui-slider-item mui-control-content">
+            <div class="pt0">
+                <ul style="background: #f4f5f5;padding-bottom: 5px;" class="mui-table-view mui-table-view-chevron myHashList" id="itemmobile2"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/mui.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var isFirst = true;
+    var allBtc = "";
+    var allHpt = "";
+    var type = 1;
+    var allEarnings = 0;
+    var allEarningsPrice = 0;
+    var type = 1
+    var earnings = '';
+    var data1;
+    mui("body").on("tap", ".mui-control-item-m", function () {
+        type = $(this).attr('_types')
+        if (type == 1) {
+            $("#bore").text('BTC总收益');
+            $("#income").text('BTC总收益明细');
+        } else {
+            $("#bore").text('ETH总收益');
+            $("#income").text('ETH总收益明细');
+        }
+
+        load();
+    })
+    load();
+
+
+    function load() {
+        Common.muipost("/app/user/profit/list", {
+            coinType: type
+        }, function (data) {
+            var lorm = '';
+            var btcoreth = '';
+            if (type == 1) {
+                lorm = 'T'
+            } else {
+                lorm = 'M'
+            }
+            if (type == 1) {
+                btcoreth = 'BTC'
+                allEarnings = data.date.allBtc;
+                allEarningsPrice = data.date.allBtcPrice;
+            } else {
+                btcoreth = 'ETH';
+                allEarnings = data.date.allEth;
+                allEarningsPrice = data.date.allEthPrice;
+            }
+
+
+            $('.profitcontroller').remove();
+            if (data.date.list && data.date.list.length > 0) {
+                var ul = "";
+                mui.each(data.date.list, function (index, item) {
+                    var temp = JSON.parse(item.validity);
+                    data1 = item;
+                    if (item.lastTime != null && item.lastTime != undefined) {
+                        item.lastTime = item.lastTime.substring(0, 10)+'到期'
+                    }
+                    if (item.validity){
+                        if (temp[0]  >= 40) {
+                            item.lastTime='永久有效'
+                        }
+                    }
+                    switch (item.coinType) {
+                        // BTC
+                        case 1:
+                            earnings = item.allBtc
+                            break;
+                        // ETH
+                        case 5:
+                            earnings = item.allEth
+                            break;
+                        default:
+                            earnings = 0
+                    }
+                    // console.log(earnings)
+                    if (item.isExpire) {
+                        ul += '<div class="sy-bg box-sd m10 profitcontroller">'
+                    } else {
+                        ul += '<div class="box-sd m10 profitcontroller">'
+                    }
+
+                    if (index == 0) {
+                        ul += '<ul class="mui-table-view shouyi-mx mt20">';
+                    } else {
+                        ul += '<ul class="mui-table-view shouyi-mx" style="margin-top: 0">';
+                    }
+                    //赠送商品
+                    ul += '<li class="mui-table-view-cell mui-collapse-content box-border-bottom" style="padding-left: 0;padding-right: 0;margin-left: 15px;margin-right: 15px;">';
+                    ul += '<div class="mui-pull-left">';
+                    ul += '<p class="pro-title">' + item.productName + '</p>';
+                    ul += '</div>';
+                    ul += '<span class="mui-pull-right fc2c9 mt10">' + item.invest + lorm + ' 算力 </span>'
+                    ul += '</li>';
+                    ul += '</ul>';
+                    ul += '	<ul class="mui-table-view mui-table-view-chevron">';
+                    ul += '<li class="mui-table-view-cell mui-collapse-content box-border-bottom" style="height: 73.5px;position: relative;">';
+                    ul += '<div class="mui-row sy-row">'
+                    ul += '<div class="mui-col-xs-12">' + btcoreth + '累计收益<span class="mui-pull-right" style="color: #ff7800">' + Common.moneyFormatByDecimals(earnings, 8) + '</span></div>';
+                    ul += '<div class="mui-col-xs-12" style="margin-top: 10px">HBT累计收益 <span class="mui-pull-right" style="color: #ff7800">' + Common.moneyFormat(item.allHpt) + '</span></div>';
+                    ul += '</div>';
+                    ul += '</li>';
+                    ul += '<li class="mui-table-view-cell detailed mui-collapse-content li-2" _allBtc="' + Common.moneyFormatByDecimals(
+                        item.allBtc, 8) + '"  _allEth="' + Common.moneyFormatByDecimals(
+                        item.allEth, 8) + '" _allHpt="' + Common.moneyFormat(item.allHpt) + '" _title="' + item.productName +
+                        '" _productId="' + item.productId + '" _type="' + item.type + '">';
+                    ul += '<span>' + item.lastTime + '</span><span class="mui-pull-right" style="position: relative;right: -7px;">收益明细<span class="mui-icon mui-icon-arrowright" style="font-size: 22px;position: relative;bottom: -2px;"></span></span>';
+                    ul += '</li>';
+                    ul += '</ul>';
+                    ul += '</div>';
+
+
+                });
+                $("#itemmobile1").html(ul);
+                $("#itemmobile2").html(ul);
+
+
+            } else {
+                var ul = "";
+                ul +=
+                    '<div style="background:#f2f2f2; height:50px;line-height:50px; text-align:center; color:#999;margin-top:-20px;" class="profitcontroller">';
+                ul += '<span> - 没有更多数据了 -</span>';
+                ul += '</div>';
+                $("#profitcontent").append(ul);
+            }
+
+            $("#allBtc").text(Common.moneyFormatByDecimals(allEarnings, 8));
+            $("#allHpt").text(Common.moneyFormat(data.date.allHpt));
+            $("#allBtc").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈ " + Common.moneyFormat(allEarningsPrice) +
+                "元</p>");
+            $("#allHpt").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈ " + Common.moneyFormat(data.date.allHptPrice) +
+                "元</p>");
+            allBtc = Common.moneyFormatByDecimals(allEarnings, 8);
+            allHpt = Common.moneyFormat(data.date.allHpt);
+        }, function (data2) {
+
+        });
+    }
+
+    //下拉刷新
+    mui.init({
+        pullRefresh: {
+            container: '#pullrefresh',
+            down: {
+                style: 'circle',
+                callback: pulldownRefresh
+            },
+        }
+    });
+
+    /**
+     * 下拉刷新具体业务实现
+     */
+    function pulldownRefresh() {
+        setTimeout(function () {
+            //addData();
+            load();
+            mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+        }, 1500);
+    }
+
+    //总收益明细 -- 跳转
+    $("#detailed").click(function () {
+        responseData = {};
+        responseData.allBtc = allBtc;
+        responseData.allHpt = allHpt;
+        if (type == 1) {
+            mui.openWindow({
+                url: 'profitDetailsSy.html',
+                id: 'profitDetailsSy.html',
+                extras: {
+                    target: responseData
+                }
+            });
+        } else if (type == 5) {
+
+            // mui.toast("未到收益日");
+            mui.openWindow({
+                url: 'ETHDetailsSy.html',
+                id: 'ETHDetailsSy.html',
+                extras: {
+                    target: responseData
+                }
+            });
+
+        }
+
+    });
+
+    //收益明细 -- 跳转
+    mui("body").on("tap", "li.detailed", function () {
+        console.log('data' + Common.moneyFormatByDecimals(earnings, 8))
+        responseData = {};
+        responseData.allBtc = $(this).attr("_allBtc");
+        responseData.allHpt = $(this).attr("_allHpt");
+        responseData.title = $(this).attr("_title");
+        responseData.allEth = $(this).attr("_allEth");
+
+        responseData.productId = $(this).attr("_productId");
+        var _type = $(this).attr("_type")
+        if (_type == 8) {
+            responseData._type = 1
+        } else if (_type == 4) {
+            responseData._type = 2
+        } else {
+            responseData._type = 0
+        }
+        if (type == 1) {
+            mui.openWindow({
+                url: 'profitDetails.html',
+                id: 'profitDetails.html',
+                extras: {
+                    target: responseData
+                }
+
+            });
+        } else if (type == 5) {
+            // mui.toast("未到收益日");
+            mui.openWindow({
+                url: 'ETHDetails.html',
+                id: 'ETHDetails.html',
+                extras: {
+                    target: responseData,
+                }
+            });
+        }
+    });
+</script>
+</html>
