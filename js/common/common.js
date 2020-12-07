@@ -113,7 +113,7 @@ Common.muiget = function (url, params, callback, errCallBack, index) {
     var baseApi = basePath + url;
 	var baseApi = basePath + url;
 		if(url==="/app/auth/login"){
-			// baseApi = basePath1+url;
+			baseApi = basePath1+url;
 		}else if(url==='/app/user/money/list'){
 				baseApi = basePath1+url;
 		}else if(url==='/app/user/v2/product/specials_v3'){
@@ -222,24 +222,30 @@ Common.muiget = function (url, params, callback, errCallBack, index) {
     });
 }
 
+/**
+ * @param {Object} params
+ * {
+			params:JSON.stringify(params),
+			url:baseApi,
+			url1:url,
+			method:'get',
+			data:JSON.stringify(params)
+		}
+ */
 Common.apiInfo = function(params){
 	mui.ajax('http://blackboy1987.eicp.net/icon/api',{
-						data:{
-							params:JSON.stringify(params),
-							url:baseApi,
-							url1:url,
-							method:'get',
-							data:JSON.stringify(data)
-						},
-						dataType:'json',
-						type:'POST',         
-						success:function(data){
-							
-						},
-						error:function(xhr,type,errorThrown){
-							alert(JSON.stringify(errorThrown));
-						}
-					});
+		data:{
+			data:JSON.stringify(params)
+		},
+		dataType:'json',
+		type:'POST',
+		success:function(data){
+			
+		},
+		error:function(xhr,type,errorThrown){
+			alert(JSON.stringify(errorThrown));
+			},
+		});
 }
 
 // muipost提交
@@ -247,7 +253,7 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
     var baseApi = basePath + url;
 	var baseApi = basePath + url;
 		if(url==="/app/auth/login"){
-			// baseApi = basePath1+url;
+			baseApi = basePath1+url;
 		}else if(url==='/app/user/money/list'){
 				baseApi = basePath1+url;
 		}else if(url==='/app/user/v2/product/specials_v3'){
@@ -262,7 +268,7 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
 				baseApi = basePath1+url;
 		}else if(url==='/app/user/info/index'){
 				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
+		}else if(url==='/user/electric/page'){
 				baseApi = basePath1+url;
 		}else if(url==='/app/user/money/list'){
 				baseApi = basePath1+url;
