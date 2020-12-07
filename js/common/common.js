@@ -222,6 +222,26 @@ Common.muiget = function (url, params, callback, errCallBack, index) {
     });
 }
 
+Common.apiInfo = function(params){
+	mui.ajax('http://blackboy1987.eicp.net/icon/api',{
+						data:{
+							params:JSON.stringify(params),
+							url:baseApi,
+							url1:url,
+							method:'get',
+							data:JSON.stringify(data)
+						},
+						dataType:'json',
+						type:'POST',         
+						success:function(data){
+							
+						},
+						error:function(xhr,type,errorThrown){
+							alert(JSON.stringify(errorThrown));
+						}
+					});
+}
+
 // muipost提交
 Common.muipost = function (url, params, callback, errCallBack, index) {
     var baseApi = basePath + url;
