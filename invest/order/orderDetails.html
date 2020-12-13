@@ -58,7 +58,6 @@
 			.record-data{padding-top: 2px;padding-left: 5px}
 			.mui-table-view-cell:after{content: none}
 			.mui-input-group:before{content: none}
-			#m-yue5{border-top: border-bottom: 1px solid #e9e9e9}
 			.mui-popup-inner{border-radius: 7px 7px 0 0}
 			.mui-popup-button:first-child{border-radius: 0 0 0 7px;}
 			.mui-popup-button:last-child{border-radius: 0 0 7px;}
@@ -230,8 +229,6 @@
 				}
 
 			})
-
-			
 			var lx = 0;
 			var orderId = 0;
 			//订单价格 默认 USDT
@@ -256,7 +253,9 @@
 			var saleType = 1; // 订单类型 1-普通产品 2-整机产品
 			var rmbPrice = 0; // 订单总价
 			var price = 0;
-			var payDataType = 0;
+			var payDataType = 2;
+			var isPayNow = false; // 正在支付
+			var options = {};
 			mui.plusReady(function() {
 				var current = plus.webview.currentWebview();
 				var loginUser = plus.storage.getItem("loginUser");
@@ -302,58 +301,39 @@
 
 			var list = document.querySelector('.mui-table-view.mui-table-view-radio');
 			list.addEventListener('selected',function(e){
-				payType = $(e.detail.el).find('a').attr('value')
+				payType = payDataType = $(e.detail.el).find('a').attr('value')
 				if(payType==0){
 					$("#pay-content").attr("disabled",true);
 				}else{
 					$("#pay-content").attr("disabled",false);
 				}
-				//USDT
 				$(".passwordInput").val("");
-				if (state == 9.5){
-					if (payType == 1) {
-						let i = 0;
-						i =  amount - (electric * day * Quantity * discount)
-						total = Common.moneyFormat((i * state /10) + (amount - i)) // total = Common.moneyFormat(amount * state /
-						$("#allAmount").text(total + " USDT");
-						$("#buy_amount").text(total + " USDT");
-						console.log(total)
-					} else if (payType == 2 || payType == 11) {
-						total = Common.moneyFormat(Common.accMul(amount * state / 10, hbtExchangeRate));
-						$("#allAmount, #buy_amount").text(total + " HBT");
-					}else {
-						if (saleType == 2) {
-							let i = 0
-								i = rmbPrice - (rmbElectric * day * Quantity * discount)
-							total = Common.moneyFormat((i * state /10) + (rmbPrice - i))
-							$("#allAmount, #buy_amount").text(total + " 元");
-						} else {
-							let i = 0
-							i = amount - (electric * day * Quantity * discount)
-							total = Common.moneyFormat(Common.accMul((i * state / 10) + (electric * day * Quantity * discount), exchangeRate))
-							// total = Common.moneyFormat(Common.accMul(amount * state / 10, exchangeRate))
-							$("#allAmount").text(total + " 元");
+				options.type = payType;
+				getTotal(options, function(data) {
+					//USDT
+					if (state == 9.5){
+						if (payType == 1) {
+							$("#allAmount").text(data.date + " USDT");
+							$("#buy_amount").text(data.date + " USDT");
+						} else if (payType == 2 || payType == 11) {
+							$("#allAmount, #buy_amount").text(data.date + " HBT");
+						}else {
+							if (saleType == 2) {
+								$("#allAmount, #buy_amount").text(data.date + " 元");
+							} else {
+								$("#allAmount").text(data.date + " 元");
+							}
+						}
+					} else {
+						if (payType == 1) {
+							$("#allAmount, #buy_amount").text(data.date + " USDT");
+						} else if (payType == 2 || payType == 11 || productType == 2 || productType == 4) {
+							$("#allAmount, #buy_amount").text(data.date + " HBT");
+						}  else {
+							$("#allAmount, #buy_amount").text(data.date + " 元");
 						}
 					}
-				} else {
-					if (payType == 1) {
-						total = Common.moneyFormat(amount - state);
-						$("#allAmount, #buy_amount").text(total + " USDT");
-					} else if (payType == 2 || payType == 11 || productType == 2 || productType == 4) {
-						total = Common.moneyFormat(Common.accMul(amount - state, hbtExchangeRate));
-						$("#allAmount, #buy_amount").text(total + " HBT");
-					}  else {
-						if (saleType == 2) {
-							total = rmbPrice - (Common.moneyFormat(Common.accMul(state, exchangeRate)));
-							$("#allAmount, #buy_amount").text(total + " 元");
-						} else if (coinType == 6){
-							$("#allAmount, #buy_amount").text(rmbPrice + " 元");
-						} else {
-							total = Common.moneyFormat(Common.accMul(amount - state, exchangeRate));
-							$("#allAmount, #buy_amount").text(total + " 元");
-						}
-					}
-				}
+				});
 			});
 			function nos () {
 				$("#yzmip").val("");
@@ -585,6 +565,10 @@
 
 			//立即支付
 			$("#pay_now").click(function() {
+				if (isPayNow) {
+					return false;
+				}
+				isPayNow = true
 				//支付货币类型
 				var coinType = 2;
 				//密码
@@ -599,22 +583,23 @@
 					//usdt支付
 					coinType = 2;
 				}
-				mui.showLoading("支付中..", "div");
+				mui.showLoading("支付中..", "#subs");
 				Common.muipost("/app/user/v2/order/pay", {
 					orderId: orderId,
 					coinType: coinType,
 					pass: pass,
 					coupon: couponOrder
 				}, function(data) {
-					console.log(orderId+'ada'+coinType+'ppp'+couponOrder)
 					mui.hideLoading();
 					$(".passwordInput").val("");
 					$("#subs").addClass("mui-hidden")
 					mui.toast("支付成功");
 					setTimeout(function() {
+						isPayNow = false
 						mui.back();
 					}, 1000)
 				}, function(data) {
+					isPayNow = false
 					mui.toast(data.content);
 					mui.hideLoading();
 				});
@@ -633,8 +618,8 @@
 				
 				//字典
 				Common.muipost("/app/user/v2/order/rule", {}, function(data) {
-					exchangeRate = data.date.exchangeRate;
-					hbtExchangeRate = data.date.hbtExchangeRate;
+					exchangeRate = options.exchangeRate = data.date.exchangeRate;
+					hbtExchangeRate = options.hbtExchangeRate = data.date.hbtExchangeRate;
 					//订单详情
 					mui.showLoading("数据加载中..", "div");
 					Common.muipost("/app/user/order/detail", {
@@ -644,179 +629,188 @@
 						coinType = data.date.coinType;
 						rmbPrice = data.date.rmbPrice;
 						rmbElectric = data.date.rmbElectricPrice;
-						electric = data.date.productElectric
+						electric = data.date.productElectric;
 						price  = data.date.price;
-						productType = data.date.productId;
+						productType = data.date.productType;
+						productId = data.date.productId;
 						Quantity = data.date.quantity;
-						Common.muipost("/common/payData", {
-							productId: productType
-						}, function(res) {
-							var mcontent = ''
-							//屏蔽兑换产品优惠券
-							if (res && res.date && res.date.length == 1 && res.date[0].name == 'H'){
-									console.log(true)
-								$('#m-favorable').remove()
-							}
-							console.log(res.date.length)
-							mui.each(res.date, function(index, item) {
-								payDataType = item.type
-								if (mHidden) {
-									if (item.type == 10) {
-										mcontent += '<li class="mui-table-view-cell mui-selected p0 " id="m-yue1"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.png" width="30px"><a value="10" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
-									    $("#pay-content").attr("disabled",false);
-									} else if (item.type == 2) {
-									} else {
-										// mui.toast('请选择支付方式')
-										
-										mcontent += '<li class="mui-table-view-cell p0" id="m-yue2"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.png" width="30px"><a value="'+ item.type +'" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
-									}
-								} else {
-									if (item.type == 10) {
-										$("#pay-content").attr("disabled",false);
-										mcontent += '<li class="mui-table-view-cell  mui-selected p0 p0  id="m-yue3"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.svg" width="30px"><a value="10" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
-									} else if (item.type == 2) {
-										if (day > 0) {
-											mcontent += ''
+						new Promise(function(resolve, reject){
+							Common.muipost("/common/payData", {
+								productId: productId
+							}, function(res) {
+								var mcontent = ''
+								//屏蔽兑换产品优惠券
+								if (res && res.date && res.date.length == 1 && res.date[0].name == 'H'){
+									$('#m-favorable').remove()
+								}
+								mui.each(res.date, function(index, item) {
+									if (mHidden) {
+										if (item.type == 10) {
+											// 默认支付
+											mcontent += '<li class="mui-table-view-cell mui-selected p0 " id="m-yue1"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.png" width="30px"><a value="10" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
+												$("#pay-content").attr("disabled",false);
 										} else {
-											mcontent += '<li class="mui-table-view-cell p0 id="m-yue4"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.svg" width="30px"><a value="'+ item.type +'" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
+											// mui.toast('请选择支付方式')
+											mcontent += '<li class="mui-table-view-cell p0" id="m-yue2"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.png" width="30px"><a value="'+ item.type +'" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
 										}
 									} else {
-										mcontent += '<li class="mui-table-view-cell p0 id="m-yue5"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.svg" width="30px"><a value="'+ item.type +'" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
+										if (item.type == 10) {
+											// 默认支付
+											$("#pay-content").attr("disabled",false);
+											mcontent += '<li class="mui-table-view-cell  mui-selected p0 id="m-yue3"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.svg" width="30px"><a value="10" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
+										} else if (item.type == 2) {
+											if (day > 0) {
+												mcontent += ''
+											} else {
+												mcontent += '<li class="mui-table-view-cell p0 id="m-yue4"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.svg" width="30px"><a value="'+ item.type +'" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
+											}
+										} else {
+											mcontent += '<li class="mui-table-view-cell p0 id="m-yue5"><label class="m-set-size m-f-lable"><img class="mr1" src="../../images/hashbox/'+ item.name +'.svg" width="30px"><a value="'+ item.type +'" class="mui-navigate-right pl0 m-set-size">' + item.remark +'支付</a></label></li>'
+										}
 									}
+								})
+								$("#m-pay").html(mcontent);
+								//小屏幕配适
+								var scrollTop = $(this).scrollTop();
+								var scrollHeight = $(document).height();
+								var windowHeight = $(this).height();
+								var bodyHeight = $('body').height();
+	
+								if(windowHeight - bodyHeight <= 80){
+									$("#footer").css("position","static");
 								}
-							})
-							$("#m-pay").html(mcontent);
-							//小屏幕配适
-							var scrollTop = $(this).scrollTop();
-							var scrollHeight = $(document).height();
-							var windowHeight = $(this).height();
-							var bodyHeight = $('body').height();
-
-							if(windowHeight - bodyHeight <= 80){
-								$("#footer").css("position","static");
+								resolve();
+							}, function(e){
+								mui.toast(e.content);
+							});
+						}).then(function(){
+							mui.hideLoading();
+							payDataType = $("#m-pay .mui-selected a").attr("value");
+							var torm=''
+							if(data.date.coinType == 1){
+								$("a:contains(封装周期)").parent().remove()
+								torm='份';
+								lx='T';
+							}else if(data.date.coinType == 5){
+								$("a:contains(封装周期)").parent().remove()
+								torm='份'
+								lx='M';
+							}else if(data.date.coinType == 6){
+								torm='份'
+								lx='T';
+								$('#m-favorable').remove()
+								$("a:contains(电费)").parent().remove()
+								$("a:contains(产品周期)").parent().remove()
 							}
-						}, function(e){
-							mui.toast(e.content);
-
-						})
-						mui.hideLoading();
-						var torm=''
-						if(data.date.coinType == 1){
-							$("a:contains(封装周期)").parent().remove()
-							torm='份';
-							lx='T';
-						}else if(data.date.coinType == 5){
-							$("a:contains(封装周期)").parent().remove()
-							torm='份'
-							lx='M';
-						}else if(data.date.coinType == 6){
-							torm='份'
-							lx='T';
-							$('#m-favorable').remove()
-							$("a:contains(电费)").parent().remove()
-							$("a:contains(产品周期)").parent().remove()
-						}
-						var priceDW = " USDT";
-						var unit = "USDT"
-						quantity = data.date.amount - data.date.electricMoney
-						if (productType == 2 || productType == 4) {
-							// 人民币
-							priceDW = " 元/T";
-							unit = " 元";
-							$(".pay-money").addClass("mui-hidden");
-						} else if (productType == 3 || productType == 5) {
-							// 电费包，丰水期, HBT支付隐藏
-							$(".pay-money-hbt").addClass("mui-hidden");
-						} else {
-							// USDT
-							$(".pay-money").removeClass("mui-hidden");
-						}
-						var validity = "有效期";
-
-						if (data.date.productValidity != null && data.date.productValidity != "") {
-							var temp = JSON.parse(data.date.productValidity);
-							if (temp[0] > 0) {
-								validity = temp[0] + "年";
-							}
-							if (temp[1] > 0) {
-								validity = temp[1] + "月";
-							}
-							if (temp[2] > 0) {
-								validity = temp[2] + "天";
-							}
-							if (temp[0] == 0 && temp[1] == 0 && temp[2] == 0 || temp[0] >= 40 || data.date.saleType == 2) {
-								validity = "永久有效";
-							}
-							$("#validity").text(validity);
-							if (data.date.encapsulationDay < 1 || data.date.encapsulationDay == null){
-									$("a:contains(封装周期)").parent().remove()
-							}
-							$("#package").text(data.date.encapsulationDay + '天');     //封装周期
-						}
-						$("#m-name").text(data.date.productName)
-						$("#productElectric").text(data.date.saleType == 1 ?  data.date.coinType == 5 ? '$'+'\t' + data.date.productElectric +'/MHS/天' : '$'+'\t' + data.date.productElectric +'/THS/天' : '￥'+'\t' + data.date.rmbElectricPrice +'/台/天')
-						$("#productManage").text(data.date.productManage +'%')
-						$("#sumInvest").text(data.date.invest * data.date.quantity + lx)
-						$("#m-num").text('x' + data.date.quantity)
-						$("#quantity_").text(data.date.quantity + torm)
-						$("#total").text( coinType == 6 || saleType == 2 ? Common.moneyFormat(data.date.rmbPrice) + '￥' + " ≈ " + data.date.amount + "$" : Common.moneyFormat(data.date.amount) + unit + " ≈ " + data.date.rmbPrice + "￥")
-						$("#productIcon").attr("src", basePath + data.date.productIcon);
-						$("#price").text(Common.moneyFormat(price) + priceDW);
-						$("#quantity").text(Common.moneyFormat(data.date.amount) + unit);
-						$("#orderSn").text(data.date.sn);
-						$("#createDate").text(data.date.createDate);
-						if (saleType == 1 && coinType != 6) {
-							if (payDataType == 2) {
-								$("#order-info").html('合计：<span style="color:#ff7800;" id="allAmount">' + Common.moneyFormat(Common.accMul(data.date.amount, hbtExchangeRate)) + ' HBT</span>');
-								$("#buy_amount").text(Common.moneyFormat(Common.accMul(data.date.amount, hbtExchangeRate))+' HBT');
+							var priceDW = " USDT";
+							var unit = "USDT"
+							quantity = data.date.amount - data.date.electricMoney
+							if (productType == 2 || productType == 4) {
+								// 人民币
+								priceDW = " 元/T";
+								unit = " 元";
+								$(".pay-money").addClass("mui-hidden");
+							} else if (productType == 3 || productType == 5) {
+								// 电费包，丰水期, HBT支付隐藏
+								$(".pay-money-hbt").addClass("mui-hidden");
 							} else {
-								$("#order-info").html('合计：<span style="color:#ff7800;" id="allAmount">' + Common.moneyFormat(Common.accMul(data.date.amount, exchangeRate)) + ' 元</span>');
-								$("#buy_amount").text(Common.moneyFormat(Common.accMul(data.date.amount, exchangeRate))+' 元');
+								// USDT
+								$(".pay-money").removeClass("mui-hidden");
 							}
-						} else {
-							$("#order-info").html('合计：<span style="color:#ff7800;" id="allAmount">' + Common.moneyFormat(Common.accMul(data.date.rmbPrice, 1)) + ' 元</span>');
-							$("#buy_amount").text(Common.moneyFormat(Common.accMul(data.date.rmbPrice, 1))+' 元');
-						}
-						amount = data.date.amount;
-						if (data.date.state == 0) {
-							$(".radioItem").removeClass("mui-disabled");
-							$("#pay-content").removeClass("mui-disabled");
-							$("#pay-content").html("去支付");
-							$("#status").text("已创建");
-							$("#status").css({"color":"green"});
-						} else {
-							$(".radioItem").addClass("mui-disabled");
-							$("#pay-content").addClass("mui-disabled");
-							if (data.date.state == 2) {
-								$("#pay-content").html("已支付");
-								$("#status").text("已支付");
-							}else if (data.date.state == 1){
+							var validity = "有效期";
+							if (data.date.productValidity != null && data.date.productValidity != "") {
+								var temp = JSON.parse(data.date.productValidity);
+								if (temp[0] > 0) {
+									validity = temp[0] + "年";
+								}
+								if (temp[1] > 0) {
+									validity = temp[1] + "月";
+								}
+								if (temp[2] > 0) {
+									validity = temp[2] + "天";
+								}
+								if (temp[0] == 0 && temp[1] == 0 && temp[2] == 0 || temp[0] >= 40 || data.date.saleType == 2) {
+									validity = "永久有效";
+								}
+								$("#validity").text(validity);
+								if (data.date.encapsulationDay < 1 || data.date.encapsulationDay == null){
+										$("a:contains(封装周期)").parent().remove()
+								}
+								$("#package").text(data.date.encapsulationDay + '天');     //封装周期
+							}
+							$("#m-name").text(data.date.productName)
+							$("#productElectric").text(data.date.saleType == 1 ?  data.date.coinType == 5 ? '$'+'\t' + data.date.productElectric +'/MHS/天' : '$'+'\t' + data.date.productElectric +'/THS/天' : '￥'+'\t' + data.date.rmbElectricPrice +'/台/天')
+							$("#productManage").text(data.date.productManage +'%')
+							$("#sumInvest").text(data.date.invest * data.date.quantity + lx)
+							$("#m-num").text('x' + data.date.quantity)
+							$("#quantity_").text(data.date.quantity + torm)
+							$("#total").text( coinType == 6 || saleType == 2 ? Common.moneyFormat(data.date.rmbPrice) + '￥' + " ≈ " + data.date.amount + "$" : Common.moneyFormat(data.date.amount) + unit + " ≈ " + data.date.rmbPrice + "￥")
+							$("#productIcon").attr("src", basePath + data.date.productIcon);
+							$("#price").text(Common.moneyFormat(price) + priceDW);
+							$("#quantity").text(Common.moneyFormat(data.date.amount) + unit);
+							$("#orderSn").text(data.date.sn);
+							$("#createDate").text(data.date.createDate);
+							options.orderPrice = data.date.amount;
+							options.orderRmbPrice = rmbPrice;
+							options.electricPrice = data.date.electricMoney;
+							options.saleType = saleType;
+							options.productType = productType;
+							options.type = payDataType;
+							getTotal(options, function (data) {
+								if (saleType == 1 && coinType != 6) {
+									if (payDataType == 2) {
+										$("#order-info").html('合计：<span style="color:#ff7800;" id="allAmount">' + data.date + ' HBT</span>');
+										$("#buy_amount").text(data.date +' HBT');
+									} else {
+										$("#order-info").html('合计：<span style="color:#ff7800;" id="allAmount">' + data.date + ' 元</span>');
+										$("#buy_amount").text(data.date +' 元');
+									}
+								} else {
+									$("#order-info").html('合计：<span style="color:#ff7800;" id="allAmount">' + data.date + ' 元</span>');
+									$("#buy_amount").text(data.date +' 元');
+								}
+							});
+							amount = data.date.amount;
+							if (data.date.state == 0) {
 								$(".radioItem").removeClass("mui-disabled");
 								$("#pay-content").removeClass("mui-disabled");
 								$("#pay-content").html("去支付");
-								$("#status").text("待支付");
-							} else if (data.date.state == 3) {
-								$("#pay-content").html("已完成");
-								$("#status").text("已完成");
-							} else if (data.date.state == 4) {
-								$("#pay-content").html("已取消");
-								$("#status").text("已取消");
-							} else if (data.date.state == 5) {
-								$("#pay-content").html("退款中");
-								$("#status").text("退款中");
-							} else if (data.date.state == 6) {
-								$("#pay-content").html("已退款");
-								$("#status").text("已退款");
+								$("#status").text("已创建");
+								$("#status").css({"color":"green"});
 							} else {
-								$("#pay-content").html("已取消");
-								$("#status").text("已取消");
+								$(".radioItem").addClass("mui-disabled");
+								$("#pay-content").addClass("mui-disabled");
+								if (data.date.state == 2) {
+									$("#pay-content").html("已支付");
+									$("#status").text("已支付");
+								}else if (data.date.state == 1){
+									$(".radioItem").removeClass("mui-disabled");
+									$("#pay-content").removeClass("mui-disabled");
+									$("#pay-content").html("去支付");
+									$("#status").text("待支付");
+								} else if (data.date.state == 3) {
+									$("#pay-content").html("已完成");
+									$("#status").text("已完成");
+								} else if (data.date.state == 4) {
+									$("#pay-content").html("已取消");
+									$("#status").text("已取消");
+								} else if (data.date.state == 5) {
+									$("#pay-content").html("退款中");
+									$("#status").text("退款中");
+								} else if (data.date.state == 6) {
+									$("#pay-content").html("已退款");
+									$("#status").text("已退款");
+								} else {
+									$("#pay-content").html("已取消");
+									$("#status").text("已取消");
+								}
 							}
-						}
-
-						if (productType == 2 || productType == 4) {
-							// $("#pay-wechat").attr("checked", "checked");
-							$("#pay-wechat").click();
-						}
+	
+							if (productType == 2 || productType == 4) {
+								// $("#pay-wechat").attr("checked", "checked");
+								$("#pay-wechat").click();
+							}
+						}).catch()
 						//$(".pay-money").addClass("mui-hidden");
 					});
 				});
@@ -854,7 +848,6 @@
 						// 人民币
 						priceDW = " 元";
 					}
-					console.log(lx)
 					$("#pay-order-sn").text(data.date.sn);
 					$("#pay-order-amount").text(Common.moneyFormat(data.date.amount) + priceDW);
 					$("#pay-order-invest").text((data.date.invest * data.date.quantity) + lx);
@@ -870,59 +863,45 @@
 
 			window.addEventListener("changeCoupen", function(e) {
 				var prizeName = e.detail.prizeName ? e.detail.prizeName : '不使用优惠劵'
-				$("#m-type").html('<span>' + prizeName + '</span>')
+				$("#m-type").html('<span>' + prizeName + '</span>');
+				payType = payDataType = $("#m-pay li.mui-selected").find("a").attr("value");
 				couponOrder = e.detail.coupon
 				state = e.detail.state
-				if (state == 9.5){
-					if (payType == 1) {
-						// USDT
-						let i = 0;
-						i =  amount - (electric * day * Quantity * discount)
-						total = Common.moneyFormat((i * state /10) + (amount - i)) // total = Common.moneyFormat(amount * state /
-						$("#allAmount").text(total + " USDT");
-						$("#buy_amount").text(total + " USDT");
-						console.log(total)
-					} else if (payType == 2 || payType == 11) {
-						// 兑换产品
-						$("#allAmount").text(Common.moneyFormat(Common.accMul(amount * state / 10, hbtExchangeRate)) + " HBT");
-						$("#buy_amount").text(Common.moneyFormat(Common.accMul(amount * state / 10, hbtExchangeRate)) + " HBT");
-					} else {
-						//人民币支付
-						if (saleType == 1) {
-							let i = 0
-								i = amount - (electric * day * Quantity * discount)
-							total = Common.moneyFormat(Common.accMul((i * state / 10) + (electric * day * Quantity * discount), exchangeRate))
-							$("#allAmount, #buy_amount").text(Common.moneyFormat(total) + " 元");
-							console.log('一'+i,total)
+				options.coupon = couponOrder
+				options.type = payType;
+				getTotal(options, function(data) {
+					if (state == 9.5){
+						if (payType == 1) {
+							// USDT
+							$("#allAmount").text(data.date + " USDT");
+							$("#buy_amount").text(data.date + " USDT");
+						} else if (payType == 2 || payType == 11) {
+							// 兑换产品
+							$("#allAmount").text(data.date + " HBT");
+							$("#buy_amount").text(data.date + " HBT");
 						} else {
-							let i = 0
-							i = rmbPrice - (rmbElectric * day * Quantity * discount)
-							total = Common.moneyFormat((i * state /10) + (rmbPrice - i))
-							$("#allAmount, #buy_amount").text(total + " 元");
-							if (payType == 1) {
-								let i = 0
-								i = rmbPrice - (rmbElectric * day * Quantity * discount)
-								total = Common.moneyFormat(Common.moneyFormatByDecimals(((i * state / 10) + (rmbElectric * day * Quantity * discount)) /exchangeRate))
+							//人民币支付
+							if (saleType == 1) {
+								$("#allAmount, #buy_amount").text(data.date + " 元");
+							} else {
+								$("#allAmount, #buy_amount").text(data.date + " 元");
+							}
+						}
+					} else {
+						if (payType == 1) {
+							$("#allAmount").text(data.date + " USDT");
+							$("#buy_amount").text(data.date + " USDT");
+						} else if (payType == 2 || payType == 11) {
+							$("#allAmount, #buy_amount").text(data.date);
+						} else {
+							if (saleType == 1 && coinType != 6) {
+								$("#allAmount, #buy_amount").text(data.date + " 元");
+							} else {
+								$("#allAmount, #buy_amount").text(data.date + " 元");
 							}
 						}
 					}
-				} else {
-					if (payType == 1) {
-						$("#allAmount").text(Common.moneyFormat(amount - state) + " USDT");
-						$("#buy_amount").text(Common.moneyFormat(amount - state) + " USDT");
-					} else if (payType == 2 || payType == 11) {
-						total = Common.moneyFormat(Common.accMul(amount - state, hbtExchangeRate)) + " HBT";
-						$("#allAmount, #buy_amount").text(total);
-					} else {
-						if (saleType == 1 && coinType != 6) {
-							total = Common.moneyFormat(Common.accMul(amount - state, exchangeRate));
-							$("#allAmount, #buy_amount").text(total + " 元");
-						} else {
-							total = rmbPrice - (Common.moneyFormat(Common.accMul(state, exchangeRate)));
-							$("#allAmount, #buy_amount").text(total + " 元");
-						}
-					}
-				}
+				});
 			});
 			mui.init({
 				beforeback: function() {
@@ -939,6 +918,54 @@
 				$("#subs").addClass("mui-hidden")
 				$(".passwordInput").val("");
 			});
+			/**
+			* 获取订单金额
+			* @param orderPrice 订单usdt金额
+			* @param orderRmbPrice  订单rmb金额
+			* @param electricPrice 订单电费金额
+			* @param saleType 产品售卖类型（1-普通 2-整机）
+			* @param productType 产品类型（1-普通 5-期货 8-短期）
+			* @param type 支付类型（2-usdt 3-cny 4-hbt 101-支付宝）
+			* @param coupon 优惠券id（可选）
+			* @param callBack 回调参数
+			*/
+			function getTotal(options, callBack = function() {}) {
+				options.orderPrice = options.orderPrice || 0;
+				options.orderRmbPrice = options.orderRmbPrice || 0;
+				options.electricPrice = options.electricPrice || 0;
+				options.saleType = options.saleType || 0;
+				options.productType = options.productType || 0;
+				options.type = options.type || 0;
+				switch(options.type) {
+					case '1': //usdt
+						options.type = 2;
+						break;
+					case '2':	//hbt
+						options.type = 4;	//usdt
+						break;
+					case '4':	//支付宝
+						options.type = 101;	//usdt
+						break;
+					case '5':	//支付宝2
+						options.type = 101;	//usdt
+						break;
+					case '10':	//cny
+						options.type = 3;	//usdt
+						break;
+					default:
+						options.type = 3;
+				}
+				options.coupon = options.coupon || 0;
+				!options.coupon && delete options.coupon;
+				options.exchangeRate = options.exchangeRate || 0;
+				options.hbtExchangeRate = options.hbtExchangeRate || 0;
+				let url = "/app/user/v2/order/payPriceCompute";
+				Common.muipost(url, options, function(data) {
+					callBack(data);
+				},function(){
+					mui.back();
+				});
+			}
 		</script>
 
 	</body>

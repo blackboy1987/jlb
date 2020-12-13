@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -45,7 +45,6 @@
     .mui-push-right:after {content: '';}
     .mui-navigate-right {height: 170px;}
     .myHashList .record-data .date {float: left;color: #969699;font-size: 14px;}
-    #itemmobil3e {background: #fff;border: none;width: 95%;margin: 0 auto}
     .change {color: #FF7800;}
     .xian {border-bottom: 1px solid #E5E5E5;margin: 0 5px 0 2px;width: 100%;}
     .status {display: flex;width: 100%;height: 40px;justify-content: space-between;}
@@ -112,11 +111,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div id="item3mobile" class="mui-slider-item mui-control-content">
-                        <ul id="itemmobil3e"></ul>
-                    </div>
                 </div>
                 <ul id="itemmobile" style="margin-top: 0;">
 
@@ -131,6 +125,7 @@
 
 <script>
     var _coinType = "1"
+    var _this = null;
     var sort,
         r = 0,
         _id = 0,
@@ -145,6 +140,7 @@
 
     load()
     function load() {
+        $('.mui-scroll-wrapper').html('')
         Common.muipost("/app/user/v2/invest/invest", {coinType: _coinType}, function (data) {
             if (_coinType == 1) {
                 $("#invest").text(data.date.invest + 'T');
@@ -210,36 +206,21 @@
             },
         }
     });
-    window.onscroll = function () {
-        if (document.body.scrollTop >= 120) {
-            $("#slider").css('position', 'fixed')
-            $(".m-staic").css('position', 'fixed')
-            $("#slider").css('top', '44px')
-            $(".m-staic").css('top', '93px')
-            $(".m-bbm").css("borderBottom", "1px solid #E5E5E5")
-        } else {
-            $("#slider").css('position', 'unset')
-            $(".m-staic").css('position', 'relative')
-            $("#slider").css('top', '120px')
-            $(".m-staic").css('top', '0')
-            $(".m-bbm").css("borderBottom", "none")
-        }
-    }
 
     mui("body").on("tap", ".m-block1", function () {
-        _id = $(this).attr("_id")
+        mui('#itemmobile').pullRefresh().refresh(true);
         type = $(this).attr("_type")
         orderType = $(this).attr("_orderType")
         $("#itemmobile > li").remove();
-        $("#leaseContainer > li").remove();
-        $("#itemmobil3e > li").remove();
         page = 1
         excision = 0
         pullupRefresh()
     })
 
     mui("body").on("tap", ".mui-control-item-a", function () {
+        mui('#itemmobile').pullRefresh().refresh(true);
         _coinType = $(this).attr("_coinType")
+        type = 1
         if (_coinType == 1) {
             $("#bore").text('BTC总算力');
         } else if (_coinType == 5){
@@ -247,18 +228,11 @@
         }else if (_coinType == 6){
             $("#bore").text('FIL总算力');
         }
-        $(".m-staic").css('position', 'relative')
-        $("#slider").css('position', 'unset')
-        $("#slider").css('top', 'unset')
-        $(".m-staic").css('top', '0')
         _id = $(this).attr("_id")
-
         $("#itemmobile > li").remove();
         $("#leaseContainer > li").remove();
-        $("#itemmobil3e > li").remove();
         page = 1
         excision = 0
-        type = $(".mui-scroll > a.mui-active").attr('_type')
 
         if (type == 0) {
             orderType = sl
@@ -273,7 +247,9 @@
 
     //上拉刷新
     function pullupRefresh() {
-        var _this = this;
+        if (!_this) {
+            _this = this;
+        }
         Common.muipost("/app/user/v2/order/myPage", {
             excision: excision,
             page: page,
@@ -300,7 +276,7 @@
                     var createDate = Date.parse(item.investTime)
                     var cur = Date.parse(item.today)
                     var _status = ''
-                    if (item.state == 1) {
+                    if (!item.state || item.state == 1) {
                         if (createDate < cur) {
                             state = '<div class="success m-size15" style="color:red">待支付</div>'
                             _status = true
@@ -316,8 +292,6 @@
                     var isReward = ''
                     if (item.isReward) {
                         isReward = '<span class="m-size12" style="padding:0px 10px;border-radius:15px;display:inline-block;margin-right:5px;color:#fff;background:#FF3A3F;">奖励</span>'
-                    } else {
-                        isReward = ''
                     }
                     var sn = item.sn ? item.sn : ''
                     content += '<li class="mui-table-view-cell mt1 mt10 toDetails toDetails' + type + '" _status="' + _status + '" _state=' + item.state + ' _id=' + item.id + '>' +
@@ -328,7 +302,7 @@
                         '</div>' +
                         '<div class="xian"></div>' +
                         '<div class="buy-record">' +
-                        '<div class="record-name m-size18 e2e">' + isReward +
+                        '<div class="record-name m-size15 e2e">' + isReward +
 
                         '<div class="productName">' + item.productName + ' <span class="quantity">x' + item.quantity + '' + sort + '</span></div><div class="unitPrice">' + item.createDate + '</div>' + '</div>' +
                         '<div class="record-data">' +
@@ -340,7 +314,7 @@
                     '</li>';
                 });
                 if (type == 1 || type == 5 || type == 8 || type == 12) {
-                    if ($(".toDetails1").length > 0) {
+                    if ($(".toDetails").length > 0) {
                         $("#itemmobile > li:last").after(content);
                     } else {
                         $("#itemmobile").prepend(content);
@@ -348,35 +322,26 @@
                 };
                 excision = data.date.excision;
                 page++;
-                _this.endPullupToRefresh(data.date.totalPage <= data.date.page); //结束转雪花进度条的“正在加载...”过程
-                if (data.date.totalPage <= data.date.page) {
-                    _this.endPullupToRefresh(true);
+                if (data.date.page >= data.date.totalPage) {
+                    _this.endPullupToRefresh(false);
                 }
-                mui('#itemmobile').pullRefresh().refresh(true);
-            } else {
-                _this.endPullupToRefresh(true);
+                _this.endPullupToRefresh(data.date.totalPage <= data.date.page); //结束转雪花进度条的“正在加载...”过程
             }
         }, function (err) {
-            if (err.type == 500 && err.content == '没有更多数据了') {
+            if (err.type == 500 && $(".toDetails").length == 0){
                 _this.endPullupToRefresh(true);
             }
-            regress()
-            mui.toast(err.content);
-            mui('#itemmobile').pullRefresh().endPulldownToRefresh(true);
-            mui('#itemmobile').pullRefresh().refresh(true);
         });
-        mui('#itemmobile').pullRefresh().endPulldownToRefresh(true);
-        mui('#itemmobile').pullRefresh().refresh(true);
     }
 
-    pulldownRefresh()
+    // pulldownRefresh()
 
     //下拉刷新
     function pulldownRefresh() {
-        $('.m-block1.mui-active').click();
-        // load();
         excision = 0;
-        var _this = this;
+        if (!_this) {
+            _this = this;
+        }
         page = 1
         Common.muipost("/app/user/v2/order/myPage", {
             excision: excision,
@@ -405,7 +370,7 @@
                     var createDate = Date.parse(item.investTime)
                     var cur = Date.parse(item.today)
                     var _status = ''
-                    if (item.state == 1) {
+                    if (!item.state || item.state == 1) {
                         if (createDate < cur) {
                             state = '<div class="success m-size15" style="color:red">待支付</div>'
                             _status = true
@@ -449,7 +414,7 @@
                         '</div>' +
                         '<div class="xian"></div>' +
                         '<div class="buy-record">' +
-                        '<div class="record-name m-size18 e2e">' + isReward +
+                        '<div class="record-name m-size15 e2e">' + isReward +
                         '<div class="productName">' + item.productName + '<span class="quantity">x' + item.quantity + ''+sort+'</span></div><div class="unitPrice">' + item.createDate + '</div>' +
                         '</div>' +
                         '<div class="record-data">' +
@@ -471,26 +436,19 @@
                 excision = data.date.excision;
                 page++;
                 if (data.date.page >= data.date.totalPage) {
-                    _this.disablePullupToRefresh(true);
+                    _this.endPullupToRefresh(true)
                     mui('#itemmobile').pullRefresh().disablePullupToRefresh();
                 }
             }
-            if ($('#itemmobile > .mui-table-view-cell').length <= 0){
+        }, function (err) {			//请求失败
+            if (err.type == 500){
                 _this.endPullupToRefresh(true);
             }
-        }, function (err) {			//请求失败
-            regress()
             mui('#itemmobile').pullRefresh().endPulldownToRefresh(true);
-            mui('#itemmobile').pullRefresh().refresh(true);
         });
     }
 
-    window.addEventListener('refresh', function (e) {
-        pulldownRefresh()
-    })
-    window.addEventListener('zlrefresh', function (e) {
-        pulldownRefresh()
-    })
+
 
     //详情页面跳转
     mui("body").on("tap", "li.toDetails", function () {
@@ -534,6 +492,7 @@
             id: '/index/profit.html'
         });
     });
+
 </script>
 </body>
 </html>

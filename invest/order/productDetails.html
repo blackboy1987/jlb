@@ -200,6 +200,7 @@
 			var state = 0
 			var mDay = 0
 			var phone = ''
+			var isOkey = true
 			mui.plusReady(function() {
 				var current = plus.webview.currentWebview();
 				orderId = current.orderId;
@@ -438,7 +439,11 @@
 				} else if (payType == 10) {
 					coinType = 3;
 				}
-				mui.showLoading("支付中..", "div");
+				if (!isOkey) {
+					return false;
+				}
+				isOkey = false;
+				mui.showLoading("支付中..", "#subs");
 				Common.muipost("/app/user/v2/order/pay", {
 					orderId: orderId,
 					coinType: coinType,
@@ -448,6 +453,7 @@
 					$(".passwordInput").val("");
 					$("#subs").addClass("mui-hidden")
 					mui.toast("支付成功");
+					isOkey = true
 					if (day != 7) {
 						setTimeout(function() {
 							mui.openWindow({
@@ -459,6 +465,7 @@
 							});
 						}, 500)
 					} else {
+						isOkey = true
 						mDay = 7
 						setTimeout(function() {
 							mui.back()
@@ -467,6 +474,7 @@
 				}, function(data) {
 					mui.toast(data.content);
 					mui.hideLoading();
+					isOkey = true
 				});
 			});
 			// 页面初始化数据

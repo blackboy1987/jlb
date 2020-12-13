@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>我的算力</title>
+		<title>购电结算</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -242,6 +242,7 @@
 			var percentage = 0
 			var phone = ''
 			var electricDiscount;
+			var isPayNow = false
 			mui.plusReady(function() {
 				var current = plus.webview.currentWebview();
 				arr = current.arr;
@@ -422,16 +423,29 @@
 				})
 			}
 			//立即购买
+
+			function payTimeOut(){
+				$("#pay-content").css('pointer-events','none')
+				setTimeout(function (){
+					$("#pay-content").css('pointer-events','auto')
+				},1000)
+			}
+
 			$("#pay-content").click(function() {
+				console.log(111)
 				var payTy = 0
+				// 是否正在购买中
+				if (isPayNow) {
+					return false;
+				}
 				// 判断是否可以购买
 				if ($("#pay-content").hasClass("mui-disabled")) {
-
 					return false;
 				} else {
+					isPayNow = true
 					if (payType < 3 || payType == 10) {
 						var info = "/app/user/info/index";
-						mui.showLoading("支付中..", "div");
+						mui.showLoading("支付中..", payTimeOut());
 						Common.muipost(info, null, function(data) {
 							//已设置资金密码
 							if (!data.date.addPass) {
@@ -485,6 +499,7 @@
 							orderData = data.date
 							order = decodeURIComponent(data.date).match(/out_trade_no":"(\S*)","subject/)[1]
 							pay('alipay')
+							isPayNow = false
 						})
 					} else {
 						var payTy = 1;
@@ -554,8 +569,10 @@
 									}
 								});
 							}
+							isPayNow = false
 						}, function(data) {
 							mui.toast(data.content);
+							isPayNow = false
 						});
 					}
 				}
