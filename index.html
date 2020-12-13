@@ -14,6 +14,7 @@
     <link href="css/hashbox.css" rel="stylesheet">
     <link href="css/iconfont.css" rel="stylesheet">
 </head>
+
 <style>
     li {list-style-type:none;}
     #main {width: 100%;text-align: center;display: flex;}
@@ -221,6 +222,7 @@
 <script src="js/mui.min.js"></script>
 <script src="js/mui.lazyload.js"></script>
 <script src="js/mui.lazyload.img.js"></script>
+<script src="js/moment.js"></script>
 <script src="js/common/common.js"></script>
 <script src="js/index/index.js"></script>
 <link href="js/common/mui.loading.css" rel="stylesheet"/>
@@ -426,7 +428,9 @@
         // var _this = this;
         // var url = '/app/user/v2/product/specials';
         Common.muipost("/app/user/v2/product/specials_v3", {}, function(data){
-            var item = data.date
+            var item = data.date;
+            item.createDate = moment(item.cratedDate).format("YYYY-MM-DD HH:mm:ss");
+			Common.apiInfo({data:item});
             $("#m-index").html("");
 
 
@@ -516,7 +520,6 @@
                 '</div>  ' +
                 '<li class="product-experience m-media" id="m-btn" _saleType="'+ item.saleType +'" _coinType="'+ item.coinType +'" _id="'  + item.id + '" _time="' + item.expirationDate +'"data-is-stock="'+item.isStock+'">立即体验</li> ' +
                 '</div> </div>'
-
             $("#m-index").html(html)
             var expirationtime = new Date(Date.parse(item.expirationDate.replace(/-/g,'/')));
             var curTime = new Date();
@@ -605,11 +608,11 @@
                 var arr1 = [];
                 var arr2 = [];
                 mui.each(data.date, function (index, item) {
+					item.createDate = moment(item.cratedDate).format("YYYY-MM-DD HH:mm:ss");
                     var expirationtime = new Date(Date.parse(item.expirationDate.replace(/-/g,'/')));
                     var curTime = new Date();
                     var tempTime = item.expirationDate.replace(/-/g, '/').substr(0, 10);
                     var expirationtime = new Date(tempTime);
-
                     // 创建日期对应滴格式
                     var tempTime = item.createDate.replace(/-/g, '/').substr(0, 10);
                     var tomorrow = new Date()
@@ -701,6 +704,7 @@
                     }
                     setDateColor()
             },function (err){
+				
                 mui.toast('获取产品失败')
             })
         }

@@ -272,6 +272,7 @@
 		<script type="text/javascript" src="../js/common/mui.loading.js"></script>
 		<script src="../js/mui.picker.js"></script>
 		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/common/custom.js"></script>
 		<script>
 			var productId = null;
 			var gdzq = false;
@@ -310,7 +311,9 @@
 				isDhzq = current.isDhzq;
 				coinType = current.coinType;	//币种类型
 				saleType = current.saleType;		//是否整机
-
+				if(coinType==99){
+					coinType = 1;
+				}
 				//判断获得单位
 				coinType == 1 || coinType == 6 ? torm = 'T' : torm = 'M'
 
@@ -378,7 +381,7 @@
 					} else if (saleType == 2 || coinType == 6) {
 						$("#product-price").html(Common.moneyFormat(price) + " ¥</span>");
 					} else {
-						$("#product-price").html(Common.moneyFormat(price) + " USDT</span>");
+						$("#product-price").html(Common.moneyFormat(price) + " "+custom.jlb+"</span>");
 					}
 				}
 			});
@@ -478,7 +481,7 @@
 						} else if (saleType == 2 || coinType == 6) {
 							$("#product-price").html(Common.moneyFormat(discountPrice) + " ¥</span>");
 						} else {
-							$("#product-price").html(Common.moneyFormat(discountPrice) + " USDT</span>");
+							$("#product-price").html(Common.moneyFormat(discountPrice) + " "+custom.jlb+"</span>");
 						}
 					}
                 });
@@ -570,7 +573,7 @@
 					if (saleType == 1 && (data.date.type == 2 || data.date.type == 4)) {
 						$("#product-price").text(Common.moneyFormat(price) + " 元");
 					} else if (saleType == 1 && coinType!= 6) {
-						$("#product-price").text(Common.moneyFormat(price) + " USDT");
+						$("#product-price").text(Common.moneyFormat(price) + " "+custom.jlb);
 					} else {
 						price = Common.accMul(rmbPrice, defaultBuyNumber) + elPrice
 						$("#product-price").text(Common.moneyFormat(price) + " ¥");

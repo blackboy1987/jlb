@@ -3,7 +3,7 @@ var Common = function () {
 var version = 1;
 var siteName = '克夫婆';
 var basePath = "http://api.suanlifeng.com";//生产
-var basePath1 = "http://blackboy1987.eicp.net";//生产/
+var basePath1 = "http://192.168.1.102:9998";//生产/
 // basePath = "http://api.test.suanlifeng.com";//测试服务器
 // basePath = "http://192.168.0.122:8113";//小谢机器
 // basePath = "http://192.168.1.124:8113";//崔佳俊机器
@@ -109,63 +109,8 @@ function convertData(data) {
 }
 
 // get请求
-Common.muiget = function (url, params, callback, errCallBack, index) { 
-    var baseApi = basePath + url;
-	var baseApi = basePath + url;
-		if(url==="/app/auth/login"){
-			baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/v2/product/specials_v3'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/common/news-readNum'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/v2/product/list/coinType'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/v2/product/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/v2/product/detail'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/info/index'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}
-		mui.ajax('http://blackboy1987.eicp.net/icon/api',{
-			data:{
-				params:JSON.stringify(params),
-														url:baseApi,
-														url1:url,
-														method:'get',
-														data:'返回值之前调用',
-			},
-			dataType:'json',
-			type:'POST',         
-			success:function(data){
-				
-			},
-			error:function(xhr,type,errorThrown){
-				alert(JSON.stringify(errorThrown));
-			}
-		});
+Common.muiget = function (url, params, callback, errCallBack, index) {
+    const baseApi = Common.resetBaseApi(url);
     ajax({
         type: 'GET',
         url: baseApi,
@@ -178,24 +123,14 @@ Common.muiget = function (url, params, callback, errCallBack, index) {
                 mui.toast('网络异常');
             }
         },
-        success: function (data) { 
-			mui.ajax('http://blackboy1987.eicp.net/icon/api',{
-								data:{
-									params:JSON.stringify(params),
-																			url:baseApi,
-																			url1:url,
-																			method:'get',
-																			data:JSON.stringify(data)
-								},
-								dataType:'json',
-								type:'POST',         
-								success:function(data){
-									
-								},
-								error:function(xhr,type,errorThrown){
-									alert(JSON.stringify(errorThrown));
-								}
-							});
+        success: function (data) {
+            Common.apiInfo({
+                params:JSON.stringify(params),
+                url:baseApi,
+                url1:url,
+                method:'get',
+                data:JSON.stringify(data)
+            })
             if (data.type == 200) { 
                 callback(data)
             } else if (data.type == 0) {
@@ -214,6 +149,13 @@ Common.muiget = function (url, params, callback, errCallBack, index) {
             }
         },
         error: function () {
+            Common.apiInfo({
+                params:JSON.stringify(params),
+                url:baseApi,
+                url1:url,
+                method:'erro',
+                data:JSON.stringify(data)
+            })
             try {
                 mui.hideLoading();
             } catch (err) {}
@@ -232,10 +174,20 @@ Common.muiget = function (url, params, callback, errCallBack, index) {
 			data:JSON.stringify(params)
 		}
  */
-Common.apiInfo = function(params){
-	mui.ajax('http://blackboy1987.eicp.net/icon/api',{
+Common.apiInfo = function({
+                              params,
+    data,
+    url,
+    baseUrl,
+    method
+}){
+	mui.ajax(basePath1+'/icon/api',{
 		data:{
-			data:JSON.stringify(params)
+			data,
+            url,
+            baseUrl,
+            method,
+            params,
 		},
 		dataType:'json',
 		type:'POST',
@@ -243,75 +195,65 @@ Common.apiInfo = function(params){
 			
 		},
 		error:function(xhr,type,errorThrown){
-			alert(JSON.stringify(errorThrown));
 			},
 		});
 }
 
+Common.resetBaseApi=function (url){
+
+    let baseApi = "";
+    if(url==="/app/auth/login"){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/product/specials_v3'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/news-readNum'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/product/list/coinType'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/product/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/product/detail'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/order/create'){
+        baseApi = basePath1+url;
+    }else if(url==='/user/electric/page'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/adversite'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/info/index'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else{
+        baseApi = basePath+url;
+    }
+    return baseApi;
+}
+
 // muipost提交
 Common.muipost = function (url, params, callback, errCallBack, index) {
-    var baseApi = basePath + url;
-	var baseApi = basePath + url;
-		if(url==="/app/auth/login"){
-			baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/v2/product/specials_v3'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/common/news-readNum'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/v2/product/list/coinType'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/v2/product/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/v2/product/detail'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/info/index'){
-				baseApi = basePath1+url;
-		}else if(url==='/user/electric/page'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}else if(url==='/app/user/money/list'){
-				baseApi = basePath1+url;
-		}
-		mui.ajax('http://blackboy1987.eicp.net/icon/api',{
-			data:{
-				params:JSON.stringify(params),
-														url:baseApi,
-														url1:url,
-														method:'post',
-														data:'返回值之前调用',
-			},
-			dataType:'json',
-			type:'POST',         
-			success:function(data){
-				
-			},
-			error:function(xhr,type,errorThrown){
-				alert(JSON.stringify(errorThrown));
-			}
-		});
+	const baseApi = Common.resetBaseApi(url);
     if (mui.os.ios) {
         ajax({
             type: "POST",
             url: baseApi,
             dataType: "json",
             data: params,
+            headers: {'App-Version': version, 'Device-Id': device_uuid,userId1:localStorage.getItem("userId1")},
             beforeSend: function () {
                 try {
                     mui.hideLoading();
@@ -352,27 +294,14 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
             dataType: 'json', //服务器返回json格式数据
             type: 'POST',
             timeout: 8000, //超时时间设置为10秒；
-            headers: {'App-Version': version, 'Device-Id': device_uuid},
+            headers: {'App-Version': version, 'Device-Id': device_uuid,userId1:localStorage.getItem("userId1")},
             success: function (data) {
-				
-				mui.ajax('http://blackboy1987.eicp.net/icon/api',{
-									data:{
-										params:JSON.stringify(params),
-																				url:baseApi,
-																				url1:url,
-																				method:'post',
-																				data:JSON.stringify(data)
-									},
-									dataType:'json',
-									type:'POST',         
-									success:function(data){
-										
-									},
-									error:function(xhr,type,errorThrown){
-										alert(JSON.stringify(errorThrown));
-									}
-								});
-				
+				Common.apiInfo({
+					url:baseApi,
+					method:'POST',
+					params:JSON.stringify(params),
+					data:JSON.stringify(data),
+				})
                 try {
                     mui.hideLoading();
                 } catch (err) {
@@ -401,6 +330,12 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
                     mui.hideLoading();
                 } catch (err) {
                 }
+				Common.apiInfo({
+					url:baseApi,
+					method:'error',
+					data1:'a',
+					data:"error",
+				})
                 mui.toast('网络异常，无法访问');
             }
         });

@@ -196,7 +196,6 @@
 					type: 'POST',
 					timeout: 10000, //超时时间设置为10秒；
 					success: function(data) {
-						alert(JSON.stringify(data));
 						mui.hideLoading();
 						if (data.type == 200) {
 							mui.toast("注册成功，正在跳转登录页面");
