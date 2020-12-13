@@ -98,15 +98,16 @@
 	<script src="../js/common/common.js"></script>
 	<script type="text/javascript" src="../js/common/mui.loading.js"></script>
 	<script>
-	    mui.init({
+		mui.init({
 			swipeBack: true //启用右滑关闭功能
 		});
 		
-	    var orderId = 0;
-	    mui.plusReady(function(){
-		    var self = plus.webview.currentWebview();
-		    orderId = self.orderId;//获得参数
-		    loadOrder();
+		var orderId = 0;
+		var isPyaNow = false
+		mui.plusReady(function(){
+			var self = plus.webview.currentWebview();
+			orderId = self.orderId;//获得参数
+			loadOrder();
 		});
 		
 		function loadOrder() {
@@ -160,9 +161,13 @@
 		document.getElementById("pay-btn").addEventListener("tap", function() {
 			// 验证输入是否正确
 			var value = $("#pay-pass").val();
+			if (isPyaNow) {
+				return false;
+			}
 			if (value == "" || value == null) {
 				return false;
 			} else {
+				isPayNow = true;
 				var payUrl = "/app/user/order/pay";
 				mui.showLoading("支付中...", "div");
 				Common.muipost(payUrl, {'orderId': orderId, "pass": value}, function(data){
@@ -176,7 +181,10 @@
 					} else {
 						mui.toast(data.content);
 					}
-				}, function(da){});
+					isPyaNow = false;
+				}, function(da){
+					isPyaNow = false;
+				});
 			}
 			/*mui.prompt(Common.moneyFormat(data.date) + ' USDT','','请输入密码',['取消','确认支付'], function(e){
 			}, 'div'); */
