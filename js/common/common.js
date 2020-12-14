@@ -3,10 +3,8 @@ var Common = function () {
 var version = 1;
 var siteName = '克夫婆';
 var basePath = "http://api.suanlifeng.com";//生产
-var basePath1 = "http://192.168.1.102:9998";//生产/
-// basePath = "http://api.test.suanlifeng.com";//测试服务器
-// basePath = "http://192.168.0.122:8113";//小谢机器
-// basePath = "http://192.168.1.124:8113";//崔佳俊机器
+var basePath2 = "http://192.168.1.102:9998";//生产/
+var basePath1 = "http://v8.js-lcd.com";//生产/
 
 var device_uuid = '';
 var loginUser = '{}';

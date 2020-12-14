@@ -227,6 +227,7 @@
 		}
 		
 		function isUpdate(data, version) {
+        	alert(JSON.stringify(data.data));
 			if (data.date.version > version) {
 				var wgtUrl = "";
 				if (mui.os.android) {
