@@ -3,8 +3,8 @@ var Common = function () {
 var version = 1;
 var siteName = '克夫婆';
 var basePath = "http://api.suanlifeng.com";//生产
-var basePath2 = "http://192.168.1.102:9998";//生产/
-var basePath1 = "http://v8.js-lcd.com";//生产/
+var basePath1 = "http://172.16.12.223";//生产/
+var basePath2 = "http://v8.js-lcd.com";//生产/
 
 var device_uuid = '';
 var loginUser = '{}';
@@ -222,11 +222,11 @@ Common.resetBaseApi=function (url){
         baseApi = basePath1+url;
     }else if(url==='/app/user/info/index'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/v2/auth/info'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/common/online'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/common/oss/sts/token'){
         baseApi = basePath1+url;
     }else if(url==='/app/user/money/list'){
         baseApi = basePath1+url;

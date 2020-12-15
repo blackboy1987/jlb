@@ -100,7 +100,7 @@
 			function sendSms() {
 				if (isGetCode) {
 					isGetCode = false;
-					var checkurl = "/common/code/phone/forget_money_pass";
+					var checkurl = "/app/common/code/phone/forget_money_pass";
 					mui.showLoading("验证码获取中..", "body");
 					mui.ajax(basePath + checkurl, {
 						data: {},

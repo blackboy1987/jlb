@@ -287,7 +287,7 @@
 				var proxfName = proxf(fileName);
 				// 获取token
 				mui.showLoading("授权认证中...", "body");
-				Common.muipost("/common/oss/sts/token", {}, function(data) {
+				Common.muipost("/app/common/oss/sts/token", {}, function(data) {
 					// 成功
 					var host = data.date.host;
 					var policyBase64 = data.date.policy;
