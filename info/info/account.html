@@ -118,14 +118,14 @@
 			}
 			// 初始化传值
 			mui.plusReady(function () {
-				var current = plus.webview.currentWebview();
+				var current = JSON.parse(plus.storage.getItem("loginUser"));
 				userName = current.name;
-				userId = JSON.parse(plus.storage.getItem("loginUser")).id
+				userId = current.id
 				$("#accountUser").attr("value",userName);
 				userBtn()
 			})
 			function userBtn () {
-				Common.muipost("/receipt/receipt", {userId: userId}, function(data) {
+				Common.muipost("/app/user/receipt/receipt", {userId: userId}, function(data) {
 					if (data.date) {
 						// disabled()
 						$("#area").val(data.date.area);
@@ -157,7 +157,7 @@
 					return false;
 				}
 				mui.showLoading()
-				Common.muipost("/receipt/create", Object.assign(params), function(data) {
+				Common.muipost("/app/user/receipt/create", Object.assign(params), function(data) {
 					mui.hideLoading();
 					mui.toast("操作成功");
 					// disabled()

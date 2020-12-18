@@ -38,13 +38,15 @@
 			var type = 3;
 			var parms = {
 				type:type
-			}
+			};
 			Common.muipost("/app/user/v2/new/detail", parms, function(data) {
-			    var linkUrl = basePath + data.date.linkUrl;//获得参数
+				alert("abc");
+			   // var linkUrl = basePath + data.date.linkUrl;//获得参数
 			    var title = data.date.title;//获得参数
 			    var height = window.screen.height;
 				$("#pay-content").css("height", height);
-			    loadOrder(linkUrl);
+			    // loadOrder(linkUrl);
+				$("#pay-content").html(data.date.content);
 			})
 		    
 		    

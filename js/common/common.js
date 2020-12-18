@@ -228,6 +228,66 @@ Common.resetBaseApi=function (url){
         baseApi = basePath1+url;
     }else if(url==='/app/common/oss/sts/token'){
         baseApi = basePath1+url;
+    }else if(url==='/app/user/receipt/receipt'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/receipt/create'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/new/detail'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/relation/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/page'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/profit/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/invest/page/byDate'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/invest/page'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/invest/invest'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/myPage'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
+        baseApi = basePath1+url;
     }else if(url==='/app/user/money/list'){
         baseApi = basePath1+url;
     }else if(url==='/app/user/money/list'){
@@ -317,7 +377,7 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
                 } else if (data.type == 401) {
                     mui.toast(data.content + '\nexceptionId:' + data.exceptionId);
                 } else {
-                    // mui.toast(data.content);
+                    //mui.toast(data.content);
                     // 500 warn
                     errCallBack(data);
                 }
@@ -332,7 +392,7 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
 					url:baseApi,
 					method:'error',
 					data1:'a',
-					data:"error",
+					data:JSON.stringify(params),
 				})
                 mui.toast('网络异常，无法访问');
             }
