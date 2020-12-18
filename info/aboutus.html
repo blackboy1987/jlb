@@ -40,8 +40,7 @@
 				type:type
 			};
 			Common.muipost("/app/user/v2/new/detail", parms, function(data) {
-				alert("abc");
-			   // var linkUrl = basePath + data.date.linkUrl;//获得参数
+			    var linkUrl = basePath + data.date.linkUrl;//获得参数
 			    var title = data.date.title;//获得参数
 			    var height = window.screen.height;
 				$("#pay-content").css("height", height);

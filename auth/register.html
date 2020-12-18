@@ -32,10 +32,19 @@
 			.mui-input-row.back{margin-top: 10%;margin-bottom: 10%;}
 			.achieve{right: 14px;color: #0560f5 !important;}
 			#login-form.mui-input-group .mui-input-row {margin-bottom: 10px;}
-			.login-content button#register{border-radius: 20px;font-size: 16px;display: block;width: 85%;margin: 0 auto;padding: 15px 0;line-height: 0;background: #ffd200;color:#000000;border:none;margin-bottom: 10%;}
+			.login-content button#register{border-radius: 20px;font-size: 16px;display: block;width: 85%;margin: 0 auto;padding: 15px 0;line-height: 0;background: #ffd200;color:#000;border:none;margin-bottom: 10%;}
 			#particles{background: url("../images/login-register/bj-03.png")no-repeat center center;height: 100%;position: relative;overflow: auto !important;}
 			.mui-input-row{width: 85%;margin: 0 auto;}
 			#login-form, .mui-content-padded{margin: 0}
+			#login-form .mui-input-row {
+				display: flex;
+				align-items: center;
+			}
+			#login-form .error-msg {
+				width: 4%;
+				margin-bottom: 3%;
+				color: rgb(207, 54, 54);
+			}
 			.link-arealink-area{width: 100%;padding-top: 20px;padding-bottom: 60px;text-align: center;height: 12px;}
 			.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before {color: #ffffff;background: #ffffff;border-radius: 34px;}
 			.reg .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before {font-size: 19px;}
@@ -51,26 +60,32 @@
 				</div>
 				<form id='login-form' class="">
 				<div class="mui-input-row">
-					<input id='name' name="name" type="text" class="mui-input-clear mui-input" placeholder="请输入姓名" maxlength="12" value="张三">
+					<div class="error-msg">*</div>
+					<input id='name' name="name" type="text" class="mui-input-clear mui-input" placeholder="请输入姓名" maxlength="12">
 				</div>
 				<div class="mui-input-row">
-					<input id='phone' name="phone" type="number" pattern="\d*" class="mui-input-clear mui-input" placeholder="请输入手机号码"maxlength="11" style="padding: 10px 15px;" value="19971579891">
+					<div class="error-msg">*</div>
+					<input id='phone' name="phone" type="number" pattern="\d*" class="mui-input-clear mui-input" placeholder="请输入手机号码"maxlength="11" style="padding: 10px 15px;">
 				</div>
 				<div class="mui-input-row">
-					<input id='password' name="password" type="password" class="mui-input-clear mui-input" placeholder="请输入8-16位密码" value="12345678"
+					<div class="error-msg">*</div>
+					<input id='password' name="password" type="password" class="mui-input-clear mui-input" placeholder="请输入8-16位密码"
 					 maxlength="16">
 				</div>
 				<div class="mui-input-row">
-					<input id='repassword' name="repassword" type="password" class="mui-input-clear mui-input" placeholder="请再次输入密码" value="12345678"
+					<div class="error-msg">*</div>
+					<input id='repassword' name="repassword" type="password" class="mui-input-clear mui-input" placeholder="请再次输入密码"
 					 maxlength="16">
 				</div>
 
 				<div class="mui-input-row yzm">
-					<input id='yzm' type="number" pattern="\d*" name="phonecode" class="mui-input-clear mui-input" placeholder="请输入短信验证码" value=""
+					<div class="error-msg">*</div>
+					<input id='yzm' type="number" pattern="\d*" name="phonecode" class="mui-input-clear mui-input" placeholder="请输入短信验证码"
 					 maxlength="6">
 					<a type="button" class="achieve fc2c9 fs15" id="sendsms"><span style="border-bottom: 1px solid;">发送验证码</span></a>
 				</div>
 				<div class="mui-input-row">
+					<div class="error-msg"></div>
 					<input id='extendCode' name="extendCode" type="text" class="mui-input-clear mui-input" placeholder="请输入邀请码  (非必填)"
 					 maxlength="8">
 				</div>
@@ -270,7 +285,7 @@
 							//异常处理；
 							mui.hideLoading();
 							isGetCode = true;
-							mui.toast('网络异常，无法访问' + xhr.status);
+							mui.toast('网络异常，无法访问');
 						}
 					});
 				}

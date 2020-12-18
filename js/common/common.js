@@ -190,7 +190,7 @@ Common.apiInfo = function({
 		dataType:'json',
 		type:'POST',
 		success:function(data){
-			
+
 		},
 		error:function(xhr,type,errorThrown){
 			},
@@ -328,8 +328,10 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
                     plus.runtime.restart();
                 } else if (data.type == 400) {
                     // 400 error
+                    errCallBack(data);
                     mui.toast(data.content);
                 } else if (data.type == 401) {
+                    errCallBack(data)
                     mui.toast(data.content + '\nexceptionId:' + data.exceptionId);
                 } else {
                     // mui.toast(data.content);
@@ -373,11 +375,13 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
                     plus.runtime.restart();
                 } else if (data.type == 400) {
                     // 400 error
+                    errCallBack(data);
                     mui.toast(data.content);
                 } else if (data.type == 401) {
+                    errCallBack(data);
                     mui.toast(data.content + '\nexceptionId:' + data.exceptionId);
                 } else {
-                    //mui.toast(data.content);
+                    // mui.toast(data.content);
                     // 500 warn
                     errCallBack(data);
                 }
