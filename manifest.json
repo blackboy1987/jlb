@@ -2,8 +2,8 @@
     "id" : "H5B95E076",
     "name" : "聚力国际",
     "version" : {
-        "name" : "1.0.0",
-        "code" : 587
+        "name" : "6.8.1",
+        "code" : 681
     },
     "description" : "",
     "icons" : {
@@ -127,7 +127,32 @@
         "channel" : "",
         "distribute" : {
             "plugins" : {
-                "ad" : {}
+                "ad" : {
+                    "csj" : {},
+                    "gdt" : {},
+                    "ks" : {}
+                },
+                "payment" : {
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    }
+                },
+                "push" : {},
+                "share" : {},
+                "statics" : {}
+            },
+            "google" : {
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>"
+                ]
             }
         }
     },

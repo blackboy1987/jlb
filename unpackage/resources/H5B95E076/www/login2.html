@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/hashbox.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+
+		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+		<script type='text/javascript' src="js/mui.min.js"></script>
+		<script type='text/javascript' src='js/common/common.js'></script>
+		<link href="js/common/mui.loading.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/common/mui.loading.js"></script>
+	</head>
+
+	<style>
+		html,body{height: 100%}
+		::-webkit-input-placeholder { color:#b3b3b3;font-size: 15px; }
+		::-moz-placeholder { color:#b3b3b3;font-size: 15px; } /* firefox 19+ */
+		:-ms-input-placeholder { color:#b3b3b3;font-size: 15px; } /* ie */
+		input:-moz-placeholder { color:#b3b3b3;font-size: 15px; }
+		.login-header{position: absolute;z-index: 2222; top: 5%; width: 100%;}
+		.login-content{position: absolute; z-index: 2222; top: 40%; width: 100%}
+		.login-content button#login{border-radius: 5px;font-size: 16px;display: block;width: 100%;margin-bottom: 10px;padding: 15px 0;line-height: 0;background: #1F75DA;color:#fff;border:none;}
+	</style>
+
+	<body class="">
+		<div id="particles">
+			<header class="login-header">
+				<img src="images/hashbox/logo.png" height="100px">
+			</header>
+			<div class="mui-content login-content">
+				<form id='login-form' class="mui-input-group">
+					<div class="mui-input-row">
+						<input id='phone' name="phone" type="tel" pattern="\d*" class="mui-input-clear mui-input" placeholder="请输入手机号码"
+						 maxlength="11" style="padding: 10px 15px;">
+					</div>
+					<div class="mui-input-row">
+						<input id='password' name="password" type="password" class="mui-input-clear mui-input" placeholder="请输入密码"
+						 maxlength="16">
+					</div>
+				</form>
+				<div class="mui-content-padded">
+					<button id='login' onclick="loginSub()" type="button">登录</button>
+					<a href="auth/register.html" class="login-word mui-pull-left">注册</a>
+					<a href="auth/forget.html" class="login-word mui-pull-right">忘记密码?</a>
+				</div>
+			</div>
+		</div>
+		<div id="yzm" class="mui-popup-in meui-mask mui-hidden" style="z-index:99999;">
+			<div class="cons" style="height:118px">
+				<div class="mui-popup-inner">
+					<div class="mui-popup-text" style="margin:5px 0;text-align: center;border-bottom: 1px solid #E5E5E5;padding-bottom: 12px;">
+						短信验证
+					</div>
+					<p>常用登陆设备已更换</p><p>需验证手机后，方可继续登陆</p>
+					<div style="border: 1px solid rgba(0,0,0,.2);margin: 0 auto;width: 90%;height: 42px;">
+						<input id='yzmip' type="number" pattern="\d*" name="phonecode" class="mui-input-clear mui-input" style="float: left;width: 60%;margin-bottom: 0;border:none;" placeholder="短信验证码" maxlength="6">
+						<a type="button" class="fc2c9 fs15" style="line-height: 42px;" id="sendsms" onclick="sendSms()">获取验证码</a>
+					</div>
+					
+				</div>
+				<div class="mui-popup-buttons">
+					<span onclick="nos()" class="mui-popup-button" style="color: #333333;">取消</span>
+					<span id="confirm" style="color: #1F75DA;" class="mui-popup-button mui-popup-button-bold" onclick="sms()">确认</span>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="subs" class="mui-popup-in meui-mask mui-hidden" style="z-index:99999;">
+			<div class="cons" style="height:118px">
+			<div class="mui-popup-inner">
+				<div class="mui-popup-text" style="margin:5px 0;text-align: center;">
+					登陆异常
+				</div>
+				<div style="margin-top: 15px;font-size:15px;" id="buy_amount"></div>
+				<div>当前登陆设备非之前登陆设备</div>
+			</div>
+			<div class="mui-popup-buttons">
+				<span onclick="unusual(0)" class="mui-popup-button" style="color: #333333;">申请多设备登陆</span>
+				<span onclick="unusual(1)" style="color: #1F75DA;" class="mui-popup-button">更换设备登陆</span>
+			</div>
+			</div>
+		</div> -->
+	</body>
+	<script>
+		var version = 0;
+		var umengParams = "";
+		var uuid = ''
+		var model = ''
+		var s_version = ''
+		var s_uuid = ''
+		mui.plusReady(function() {
+			getDeviceInfo()
+			s_version = plus.storage.getItem('version')
+			s_uuid = plus.storage.getItem('uuid')
+			mui.getJSON("manifest.json", null, function(data) {
+				version = data.version.code;
+				try {
+					var umeng = data.plus.distribute.plugins.statics.umeng;
+					if (mui.os.ios) {
+						umengParams = umeng.channelid_ios;
+					} else {
+						umengParams = umeng.channelid_android;
+					}
+				} catch (err) {}
+			});
+			// if (uuid) {
+				// 自动登录
+				var url = "/app/auth/login";
+				//检查激活状态
+				var loginUser = plus.storage.getItem("loginUser");
+				if (!Common.isNull(loginUser)) {
+					var jsonObject = JSON.parse(loginUser);
+					$("#phone").val(jsonObject.username);
+					$("#password").val(jsonObject.password);
+					var newparams = {
+						phone: jsonObject.username,
+						password: jsonObject.password,
+						umeng: umengParams,
+						uuid: uuid,
+						mobile: model
+					};
+					mui.showLoading("自动登录中..", "body");
+					!s_version && plus.storage.setItem('version', JSON.stringify(version))
+					!s_uuid && plus.storage.setItem('uuid', JSON.stringify(uuid))
+					Common.muipost(url, newparams, function(data) {
+						//已激活        
+						location.href = "main.html?v=" + version;	
+						plus.storage.setItem("popover", '1');
+					}, function(data) {
+						$("#yzm").removeClass("mui-hidden")
+						// mui.toast(data.content);
+					});
+				}
+			// } else {
+			// 	plus.runtime.quit();
+			// }
+		});
+		function sendSms() {
+			var checkurl = "/common/obtain/phone/code";
+			mui.showLoading("短信发送中", "body");
+			var phone = $("#phone").val()
+			Common.muipost(checkurl, {tel: phone}, function (data) {
+				$("#sendsms").css("color", "#F20B0B");
+				mui.hideLoading();
+				reget(60);
+			}, function (data) {
+				mui.hideLoading();
+				mui.alert(data.content);
+			})
+		}
+		function reget(count) {
+			var btn = $("#sendsms");
+			var count = count;
+			btn.html("60s后重发");
+			var resend = setInterval(function() {
+				count--;
+				if (count > 0) {
+					btn.css('pointer-events','none')
+					btn.html(count + "s后重发");
+				} else {
+					clearInterval(resend);
+					$("#sendsms").css("color", "#00CDB9");
+					btn.html("重获验证码");
+				}
+			}, 1000);
+		}
+		function nos () {
+			$("#yzm").addClass("mui-hidden")
+		}
+		function sms () {
+			var phone = $("#phone").val()
+			var phonecode = $("#yzmip").val()
+			if (Common.isNull(phonecode)) {
+				mui.toast("短信验证码不能为空");
+				return false;
+			}
+			Common.muipost("/common/verifier/phone/code", {phone: phone, phonecode: phonecode}, function (data) {
+				mui.hideLoading();
+				$("#yzm").addClass("mui-hidden");
+				unusual(phonecode);
+			}, function (data) {
+				mui.alert(data.content);
+				$("#yzm").addClass("mui-hidden")
+				mui.hideLoading();
+			})
+		}
+		// 获取uuid
+		function getDeviceInfo(){
+			var device = plus.device
+			model = device.vendor + ' ' + device.model
+			if (mui.os.ios) {
+				uuid = device.uuid
+			} else {
+				var mainActivity = plus.android.runtimeMainActivity();  
+				var Settings = plus.android.importClass("android.provider.Settings");
+				uuid = Settings.Secure.getString(mainActivity.getContentResolver(),Settings.Secure.ANDROID_ID)
+			}
+		}
+		//异常
+		function unusual (index) {
+			var url = '/app/userBind/add';
+			var params = {
+				code: index,
+				phone: $("#phone").val(),
+				uuid: uuid,
+				mobile: model
+			}
+			Common.muipost(url, params, function(data) {
+				loginSub()
+			}, function (data) {mui.toast(data.content);})
+		}
+		// 手动登录
+		var form = $("#login-form");
+		function loginSub() {
+			// 请求url
+			var url = "/app/auth/login";
+			var params = {
+				phone: $("#phone").val(),
+				password: $("#password").val(),
+				umeng: umengParams,
+				uuid: uuid,
+				mobile: model
+			};
+			if (Common.isNull(params.phone)) {
+				mui.toast("请输入手机号码");
+				return false;
+			}
+			if (Common.isNull(params.password)) {
+				mui.toast("请输入密码");
+				return false;
+			}
+			// if (uuid) {
+				mui.showLoading("登录中..", "div");
+				Common.muipost(url, params, function(data) {
+					//本地存储
+					var cookie = data.date;
+					cookie.username = params.phone;
+					cookie.password = params.password;
+					plus.storage.setItem("loginUser", JSON.stringify(cookie));
+					plus.storage.setItem("popover", '1');
+					!s_version && plus.storage.setItem('version', JSON.stringify(version))
+					!s_uuid && plus.storage.setItem('uuid', JSON.stringify(uuid))
+					location.href = "main.html?v=" + version;
+				}, function(data) {
+					$("#yzm").removeClass("mui-hidden")
+					// mui.toast(data.content);
+				});
+			// } else {
+			// 	plus.runtime.quit();
+			// }
+		}
+	</script>
+</html>

@@ -3,8 +3,9 @@ var Common = function () {
 var version = 1;
 var siteName = '克夫婆';
 var basePath = "http://api.suanlifeng.com";//生产
-var basePath1 = "http://172.16.12.223";//生产/
-var basePath2 = "http://v8.js-lcd.com";//生产/
+var basePath2 = "http://172.16.12.223";//公司
+var basePath3 = "http://192.168.0.102";//家里
+var basePath1 = "http://v8.js-lcd.com";//生产/
 
 var device_uuid = '';
 var loginUser = '{}';
@@ -198,7 +199,6 @@ Common.apiInfo = function({
 }
 
 Common.resetBaseApi=function (url){
-
     let baseApi = "";
     if(url==="/app/auth/login"){
         baseApi = basePath1+url;
@@ -248,29 +248,55 @@ Common.resetBaseApi=function (url){
         baseApi = basePath1+url;
     }else if(url==='/app/user/v2/order/myPage'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/prize/coupon'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/v2/order'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/v2/order/rule'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/order/detail'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/v2/product/detail'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/user/electric/discount'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/v2/order/payPriceCompute'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url.indexOf("/user/electric/discount?productId=")>=0){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/common/payData'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/v2/order/payment'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/pay/request'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/money/details'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/pay/getCompanyBank'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/userWithdrawal/getBankCard'){
+        baseApi = basePath1+url;
+    }else if(url==='/common/obtain/phone/code'){
+        baseApi = basePath1+url; 
+    }else if(url==='/common/verifier/phone/code'){
+        baseApi = basePath1+url;
+    }else if(url==='/common/judgePass'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/userWithdrawal/requestWithdrawal'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/log/rmbList'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/record/page'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/news-pages'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/oneKeyRead'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/news-readNum'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/news-read'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/version'){
         baseApi = basePath1+url;
     }else if(url==='/app/user/money/list'){
         baseApi = basePath1+url;

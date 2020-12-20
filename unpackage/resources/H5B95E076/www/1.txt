@@ -1,0 +1,9 @@
+1. /app/common/news-readNum
+	{"userId":218776}
+	{
+		type:200,
+		content:'',
+		data:115,
+		code:null,
+		message:null
+	}

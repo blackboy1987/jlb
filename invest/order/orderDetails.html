@@ -357,13 +357,12 @@
 			function plusReady(){
 				plus.payment.getChannels(function(channels){
 					for(var i in channels){
-						var channel=channels[i]
-						pays[channel.id]=channel
+						var channel=channels[i];
+						pays[channel.id]=channel;
 					}
 				}, function(e){
 					alert("获取支付通道失败："+e.message)
 				});
-
 			}
 			document.addEventListener('plusready',plusReady,false);
 			// 支付
@@ -376,7 +375,8 @@
 					Common.muipost("/app/user/v2/order/inspectState", {
 						orderId: orderId
 					}, function(data) {
-						console.log(JSON.stringify(data))
+						alert(JSON.stringify(data));
+						
 						// mui.toast(data.content);
 						var priceDW = " USDT";
 						if (data.date.productType == 2 || data.date.productType == 4) {
@@ -416,8 +416,7 @@
 						$("#pay-result").removeClass("mui-hidden");
 					});
 				}, function(e){
-					console.log(JSON.stringify(e))
-					mui.toast('支付失败：'+ e.code)
+					mui.toast('支付失败：'+ e.code+":"+JSON.stringify(e))
 					if(e.code === -100){
 						mui.back();
 					}
@@ -771,6 +770,7 @@
 								}
 							});
 							amount = data.date.amount;
+							alert(data.date.state);
 							if (data.date.state == 0) {
 								$(".radioItem").removeClass("mui-disabled");
 								$("#pay-content").removeClass("mui-disabled");
