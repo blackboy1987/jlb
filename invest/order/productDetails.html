@@ -306,6 +306,7 @@
 						var info = "/app/user/info/index";
 						mui.showLoading("支付中..", "div");
 						Common.muipost(info, null, function(data) {
+							alert(data.date.addPass);
 							//已设置资金密码
 							if (!data.date.addPass) {
 								$("#subs").removeClass("mui-hidden");

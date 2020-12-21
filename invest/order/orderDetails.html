@@ -375,8 +375,6 @@
 					Common.muipost("/app/user/v2/order/inspectState", {
 						orderId: orderId
 					}, function(data) {
-						alert(JSON.stringify(data));
-						
 						// mui.toast(data.content);
 						var priceDW = " USDT";
 						if (data.date.productType == 2 || data.date.productType == 4) {
@@ -426,7 +424,6 @@
 			$("#pay-content").click(function() {
 				// 判断是否可以购买
 				if ($("#pay-content").hasClass("mui-disabled")) {
-
 					return false;
 				}
 					
@@ -770,7 +767,6 @@
 								}
 							});
 							amount = data.date.amount;
-							alert(data.date.state);
 							if (data.date.state == 0) {
 								$(".radioItem").removeClass("mui-disabled");
 								$("#pay-content").removeClass("mui-disabled");

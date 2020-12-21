@@ -127,11 +127,7 @@
         "channel" : "",
         "distribute" : {
             "plugins" : {
-                "ad" : {
-                    "csj" : {},
-                    "gdt" : {},
-                    "ks" : {}
-                },
+                "ad" : {},
                 "payment" : {
                     "alipay" : {
                         "__platform__" : [ "ios", "android" ]

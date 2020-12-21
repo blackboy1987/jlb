@@ -191,7 +191,7 @@
 		
         function upVersion(version) {
 		    //获取版本号
-		    mui.ajax(basePath + "/app/common/version", {
+		    mui.ajax(basePath1 + "/app/common/version", {
 	            data: {},
 	            dataType: 'json', //服务器返回json格式数据
 	            type: 'POST',
@@ -226,7 +226,6 @@
 		}
 		
 		function isUpdate(data, version) {
-        	alert(JSON.stringify(data.data));
 			if (data.date.version > version) {
 				var wgtUrl = "";
 				if (mui.os.android) {

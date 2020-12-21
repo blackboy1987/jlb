@@ -102,10 +102,11 @@
 					isGetCode = false;
 					var checkurl = "/app/common/code/phone/forget_money_pass";
 					mui.showLoading("验证码获取中..", "body");
-					mui.ajax(basePath + checkurl, {
+					mui.ajax(basePath1 + checkurl, {
 						data: {},
 						dataType: 'json', //服务器返回json格式数据
 						type: 'POST',
+						headers: {userId1:localStorage.getItem("userId1")},
 						timeout: 10000, //超时时间设置为10秒；
 						success: function(data) {
 							mui.hideLoading();
