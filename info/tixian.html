@@ -180,25 +180,31 @@
 						请通过转账的方式充值所需金额，请确保充值金额和实际转账金额一致。客服审核无误后方可到账。
 					</div>
 					<div class="card_list">
-						<div class="name">
+						<div class="name" style="display:none">
 							<div style="margin-top:10px;"><span style="color:#969699">收款方户名</span></div>
 							<div class="cd">
 								<span class="over" style="color:#333333;" id="cardName"></span>
 								<span class="copys" onclick="copy_fun(0)">复制</span>
 							</div>
 						</div>
-						<div class="name">
+						<div class="name" style="display:none">
 							<span style="color:#969699">收款方账户</span>
 							<div class="cd">
 								<span class="over" style="color:#333333;" id="cardNum"></span>
 								<span class="copys" onclick="copy_fun(1)">复制</span>
 							</div>
 						</div>
-						<div class="name">
+						<div class="name" style="display:none">
 							<span style="color:#969699">收款方银行</span>
 							<div class="cd" style="text-overflow: ellipsis;word-wrap: break-word;white-space: unset;">
 								<span class="over" style="color:#333333;" id="cards"></span>
 								<span class="copys" onclick="copy_fun(2)">复制</span>
+							</div>
+						</div>
+						<div class="name">
+							<div class="cd" style="text-align:center;">
+								<img style="width:50%" id="img" />
+								<div id="name" style="color:red;font-size:28px;font-weight:bold"></div>
 							</div>
 						</div>
 					</div>
@@ -383,6 +389,8 @@
 					$("#cardName").html(card_data.name);
 					$("#cardNum").html(card_data.bankCard);
 					$("#cards").html(card_data.area);
+					$("#img").attr("src",card_data.img);
+					$("#name").html(card_data.name);
 					
 				}, function(s) {
 					
