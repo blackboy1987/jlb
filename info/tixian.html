@@ -204,7 +204,7 @@
 						<div class="name">
 							<div class="cd" style="text-align:center;">
 								<img style="width:50%" id="img" />
-								<div id="name" style="color:red;font-size:28px;font-weight:bold"></div>
+								<div id="name" style="color:red;font-size:28px;font-weight:bold"  onclick="copy_fun(3)"></div>
 							</div>
 						</div>
 					</div>
@@ -385,6 +385,10 @@
 				Common.muipost("/app/user/pay/getCompanyBank",{
 					
 				}, function(res) {
+					if(!res.date){
+						mui.toast('系统暂时无法充值');
+						$("#submit").hide();
+					}
 					var card_data = res.date;
 					$("#cardName").html(card_data.name);
 					$("#cardNum").html(card_data.bankCard);
@@ -496,7 +500,10 @@
 					} else if (index == 1) {
 						copy = $("#cardNum").text()
 						
-					} else {
+					} else if (index == 3) {
+						copy = $("#name").text()
+						
+					}  else {
 						copy = $("#cards").text();
 					}
 					//判断是安卓还是ios

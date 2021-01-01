@@ -190,7 +190,7 @@
                     <img height="auto" src="images/slf_rewards.svg" width="45px;"/>
                     <div style=" color: rgba(46,46,49,1); font-size:  0.75rem;font-family: 'PingFang-SC-Regular';">幸运抽奖</div>
                 </div>
-                <div id="extensions" style="padding: 0.375rem;position: relative;">
+                <div id="extensions" style="padding: 0.375rem;position: relative;display: none;">
                     <div class="product-showreword">奖励</div>
                     <img height="auto" src="images/slf-invites.svg" width="45px;"/>
                     <div style=" color: rgba(46,46,49,1); font-size:  0.75rem;font-family: 'PingFang-SC-Regular';">邀请奖励</div>
@@ -215,6 +215,13 @@
                 </div>
                 <ul class="mui-table-view ml1" id="item-eth"/>
             </div>
+			<div class="m-item" id="row-jlb">
+			    <div class="ml1 m-wrap-title m-size18">
+					<img height="25px" src="images/slf_eth.svg" style="margin-right: 0.125rem;padding-bottom: 0rem;vertical-align: bottom;" width="25px"/>
+					平台力荐
+			    </div>
+			    <ul class="mui-table-view ml1" id="item-jlb"/>
+			</div>
         </div>
     </div>
 </div>
@@ -411,9 +418,10 @@
     function notice() {
         //首页公告接口
         var url = '/app/announcement/temporary';
-        mui.get(basePath + url, {
+        mui.get(basePath1 + url, {
 
         }, function(data) {
+			console.log(JSON.stringify(data.date));
             if (data.date && data.date[0].content.length > 0) {
                 data.date.forEach((item,index)=>{
                     // linkUrl=data.date.content[0].linkUrl;
@@ -428,6 +436,7 @@
         // var _this = this;
         // var url = '/app/user/v2/product/specials';
         Common.muipost("/app/user/v2/product/specials_v3", {}, function(data){
+			const userId1 = localStorage.getItem("userId1");
             var item = data.date;
             item.createDate = moment(item.cratedDate).format("YYYY-MM-DD HH:mm:ss");
 			Common.apiInfo({data:item});
@@ -502,11 +511,11 @@
                 rmbPrice = item.price + ' USDT'
             }
             html = '<div class="ml1 m-wrap-title m-size18 tryBtn" style="height: 47px;padding: 17px 25px;">' +
-                '<img class="tryImg" src="images/hot.png"/> <span style="font-size: 18px;">挖矿必选</span><span class="ml1" style="margin-left: 5px">爆款产品</span>' +
+                '<img class="tryImg" src="images/hot.png"/> <span style="font-size: 18px;">初级必选</span><span class="ml1" style="margin-left: 5px">爆款产品</span>' +
                 ' <div style="float: right;font-size: 15px"> </div> ' +
                 '</div>' +
                 ' <div class="m-mui-li m-media m-btc-li" style="background-color:white;font-size:18px;padding: 0px 15px 10px;margin: 10px;position: relative;">' +
-                '<div style="height: 35px"><div class="product-tip">精选产品</div> <div class="product-active"/> </div>' +
+                '<div style="height: 35px"><div class="product-tip">注册就送</div> <div class="product-active"/> </div>' +
                 '<div class="product-main">' +
                 '<div class="product-first"><div class="product-title" >'+ productName +'</div></div> ' +
                 '<div class="product-center"> ' +
@@ -518,7 +527,7 @@
                 '<div class="product-detail"> '+ tag +'</div> ' +
                 '<div class="product-detail" style="float:right;text-align:right;display: block;";>生效日期'+ ' '+ createDate +'</div> ' +
                 '</div>  ' +
-                '<li class="product-experience m-media" id="m-btn" _saleType="'+ item.saleType +'" _coinType="'+ item.coinType +'" _id="'  + item.id + '" _time="' + item.expirationDate +'"data-is-stock="'+item.isStock+'">立即体验</li> ' +
+                '<li '+(userId1 ? 'style="display:none;"' : '')+' class="product-experience m-media" id="m-btn" _saleType="'+ item.saleType +'" _coinType="'+ item.coinType +'" _id="'  + item.id + '" _time="' + item.expirationDate +'"data-is-stock="'+item.isStock+'">立即体验</li> ' +
                 '</div> </div>'
             $("#m-index").html(html)
             var expirationtime = new Date(Date.parse(item.expirationDate.replace(/-/g,'/')));
@@ -598,7 +607,7 @@
         $("#item-fil").html('');
         $("#item-eth").html('');+
         $("#item-btc").html('');
-        let coinType = [6,1,5]        // 1:BTC , 5:ETH , 6FIL
+        let coinType = [6,1,5,99]        // 1:BTC , 5:ETH , 6FIL
         for (value of coinType ){
             Common.muipost(url, {size: 2, coinType: value}, function (data) {
                 var content = "";
@@ -682,6 +691,9 @@
                     }else if (item.saleType == 2 || item.coinType == 6){          //整机显示rmb
                         productPrice = '￥' + item.rmbPrice
                         productRate = item.price.toFixed(2) + ' USDT'
+                    }else if (item.saleType == 99){          //整机显示rmb
+                        productPrice = '￥' + item.rmbPrice
+                        productRate = item.price.toFixed(2) + ' USDT'
                     }
                     if (curTime < expirationtime) {
                         content += '<li class="m-mui-li m-media m-btc-li" _isStock="'+ item.isStock +'" _saleType="'+ item.saleType +'" _coinType="'+ item.coinType +'" _id="'+ item.id +'" _time="'+ item.expirationDate +'"> <div style="height: 35px"><div class="product-tip">精选产品</div> '+ activeHtml +' </div><div class="product-main"><div class="product-first"><div class="product-title" >'+ productName +'</div></div> <div class="product-center"> <div class="product-matre">'+ productPrice +' &nbsp</div> <div class="product-detail"> ≈  '+ productRate +' </div> </div> <div class="box-border-top"/> <div class="product-end"> <div class="product-detail">'+ tag +'</div> <div class="product-detail" style="float:right;text-align:right;display: block;">生效日期'+' '+ createDate +'</div> </div>  </div></li>'
@@ -700,6 +712,9 @@
                         } else if (arr[i] && arr[i] != null && arr[i]!= undefined && arr[i].indexOf('_coinType="6"') != -1) {
                             $("#row-fil").css('display','block')
                             $("#item-fil").html(arr[i]);
+                        } else if (arr[i] && arr[i] != null && arr[i]!= undefined && arr[i].indexOf('_coinType="99"') != -1) {
+                            $("#row-jlb").css('display','block');
+                            $("#item-jlb").html(arr[i]);
                         }
                     }
                     setDateColor()

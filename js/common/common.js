@@ -4,8 +4,8 @@ var version = 1;
 var siteName = '克夫婆';
 var basePath = "http://api.suanlifeng.com";//生产
 var basePath2 = "http://172.16.12.223";//公司
-var basePath3 = "http://192.168.0.102";//家里
-var basePath1 = "http://v8.js-lcd.com";//生产/
+var basePath1 = "http://192.168.0.105";//家里
+var basePath3 = "http://v8.js-lcd.com";//生产/
 
 var device_uuid = '';
 var loginUser = '{}';
