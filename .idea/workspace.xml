@@ -1,12 +1,775 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="308d1d21-b1c0-4725-8314-2917c292d856" name="Default Changelist" comment="">
+    <list default="true" id="308d1d21-b1c0-4725-8314-2917c292d856" name="Default Changelist" comment="init">
+      <change afterPath="$PROJECT_DIR$/css/ion.rangeSlider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/ion.rangeSlider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/acount/FIL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/acount/JLB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/diyazhiyacopy-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/diyazhiyacopy-02.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/fil_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/fj-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hashbox/bj-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hashbox/dh-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hashbox/fil.banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hashbox/j-02.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hashbox/tanhao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hashbox/yhk-03.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hashbox/zfb-04.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/shijian.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/slf-06-12-19.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/syjs-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/tanhao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/hashrateDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/incomeCompute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/profitDayFull.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/assets/jlb_invest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/buy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/tixian1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invest/productDetails2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/ion.rangeSlider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/ion.rangeSlider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/progressbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manifest_back.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/apk/H5B95E076_cm.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/apk/apkurl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/apk/cmManifestCache.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/certdata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/.manifest/google-keystore.keystore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/.manifest/icon-android-hdpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/.manifest/icon-android-xhdpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/.manifest/icon-android-xxhdpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/.manifest/icon-android-xxxhdpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/agreement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/forget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/forget1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/config.codekit3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/feedback-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/feedback.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/hashbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/icons-extra.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/ion.rangeSlider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/ion.rangeSlider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui-l.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.dtpicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.imageviewer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.indexedlist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.listpicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.picker.all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.picker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.picker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.poppicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/num.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/poster.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/progresscircle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/share.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/swiper.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/verify.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/buyRecord.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/c2c.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/pay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/record.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/settle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/financing/financial.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/financing/financialSy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/fonts/mui-icons-extra.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/fonts/mui.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/forget_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/60x60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/about.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/acount/BTC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/acount/CNY.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/acount/ETH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/acount/FIL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/acount/HBT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/acount/JLB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/acount/USDT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/acount/ipfs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/act.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ass-icon01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ass-icon02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/assets_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/assets_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/b_b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/b_h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/b_t.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ban.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/banner1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/banzhang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/banzhang1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/bz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/c_b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/c_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/caidian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/BTC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/CNY.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/ETH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/HBT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/HPT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/RMB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/USDT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/baohu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/icon_USDT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/icon_btc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/icon_hbt-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/icon_hbt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/slf-safe.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/tejia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/coin/zichan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/collocation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/crouse-img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/dd_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/diyazhiyacopy-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/diyazhiyacopy-02.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/e_h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/e_h1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/earnings_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/earnings_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/electric_charge.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/expired.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/failes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/fanyongbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/favorable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/fil_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/fj-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/fx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/fx1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/fxjl-banne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/353abtc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/67182b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/82528.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/BTC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/CNY.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/CNY.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/FIL84125.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/H.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/H.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/HBT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/USDT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/USDT.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/aboutus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/account.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/alipay-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/alipay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/alipay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/alipay_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/banner_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/banner_sy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/banner_tz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/bg_product_shop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/bg_product_shop1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/bgm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/bj-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/c2c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/cg_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/copy2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/cp_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/cp_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/dh-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/dowload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/dzf_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/expired.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/fail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/favorable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/fgx_shu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/fil.banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/hy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon-48.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon-49.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_about.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_certification.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_contact.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_cproblem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_invitation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_out.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_personal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_phone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_pwd_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/icon_team.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/idcard_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/idcard_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/j-02.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/jxz_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/moneybag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/mphone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/myAssets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/news_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/problem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/product.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/qx_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/re-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/real.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/realname-info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/safe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/scan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/sldd-banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/slf-33.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/slf-34.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/slf-47-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/slf-47.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/suanli.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/sy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/sy_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/sy_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/tanhao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/team.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/tkz_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/uhead.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/unionPay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/wc_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/wd_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/wd_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/wechat-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/wechat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/wechat_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/yhk-03.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/yjs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/yjs_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/yl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/yl_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/ytk_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/yzf_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/zc_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/zc_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/zfb-04.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hashbox/zhanghu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/018.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/021.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/022.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/023.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/head/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/home1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/home_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/home_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/home_default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/home_default.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/home_high.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/homepage_icon_nformation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/homepage_icon_people nearly.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/homepage_icon_pk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/homepage_icon_scan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/hot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/icon_inform.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/icon_inform_close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/iconfont-tianjia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index-icon-org.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index-icon02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/index8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/invite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/botton1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/botton2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/container-box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/container-header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/container-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/images/container-header1_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/images/container-header2_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs/images/container-header_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ipfs_.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/jftc_14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/jiaocheng.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/little-head.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/login-register/bj-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/login-register/bj-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/login-register/password.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/login-register/register-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/login-register/shouji.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/loginOut.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/logo_head.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/activity.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/center.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/hs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/inform.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/pointer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/prize.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/rule.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/turntable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/winning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/lottery/xxcy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/me_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/me_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf-favorable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf-money.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf-order.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf-tb-id.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf-tb-version.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf-team.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf_authed.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf_failed.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf_tb-about.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf_tb-acount.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf_tb-help.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf_tb-power.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine/slf_tb-set.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine_default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine_default.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/mine_high.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/money_default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/money_default.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/money_high.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/money_high.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/my1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/my2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/newZhanweifu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/notice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/orders.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/paizhang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/paizhang1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/pass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/pop-message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/product-tab-btc-default.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/product-tab-btc.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/product-tab-eth.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/product/rx580-8g.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/product_default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/product_default.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/product_high.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/pz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/qihoo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/qq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/register_login/bj-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/register_login/bj-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/register_login/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/register_login/mobile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/register_login/pwd.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/saomiao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/set.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/share/qq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/share/wechat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/share/wechat_cicle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/shijian.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/shouye1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/shouye2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/shuzu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/sinaweibo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-06-12-19.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-06-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-06.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-invites.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-notify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-over.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-power.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf-powers.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_btc.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_dian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_dians.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_eth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_eth.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_friend.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_friend.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_message.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_power.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_power.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_profile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_profiles.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_reward.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/slf_rewards.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/study/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/syjs-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/tanhao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/team.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/tg-icon01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/tg-icon02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/tuanzhang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/tuanzhang1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/tz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/user-photo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/vip-no.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/vip.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/weixin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/wx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/xiaobanzhang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/xiaobing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/xiaobing1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/xjt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/xx_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/yaoqingma.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ygq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/yinsheng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/yinzhang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/yjt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/ysy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/zc-banner.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/zhanweifu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/zichan1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/zichan2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/zilibgc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/zuli1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/zuli2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/ETHDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/ETHDetailsSy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/EthDayFull.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/btcDayFull.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/hashrateDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/incomeCompute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/myHashDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/myHashbox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/news.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profitDayFull.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profitDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profitDetailsSy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/record.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/status.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/aboutus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/detailed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/invest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/jlb_invest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/lease.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/qr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/withdraw.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assetsPass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assetsPassRe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/coin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/detail_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/favorable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/hbt_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/idCard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/personalProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/realName.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/updatePassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/updatePhone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/userHead.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invest_money.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invite.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invite_share.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/ipfs/activity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/jiaoyi_details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/new_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/problem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/records.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/rmb/bankAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/rmb/bankCard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/rmb/investRmb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/shengji.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team/buyDetail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team/profit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team/reward.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team/team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian_over.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/contract/contract.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/leaseDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/orderDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/productDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/reel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/zuli_status.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/pay/alipay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/pay/c2c.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/pay/shuzu_pay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/pay/unionpay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/pay/wechat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/pay/yinsheng_pay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/pay/yl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/productDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/productDetails2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/rentDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/arttmpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/ase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/beecloud.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/city.data-3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/city.data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/clipboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common_new.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/mui.loading.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/mui.loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/crypto-js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/feedback-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/feedback.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/financing/financing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/html5plus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/immersed.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/ion.rangeSlider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/ion.rangeSlider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/jquery-1.11.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/jquery.particleground.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/jquery.particleground.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/jquery.qrcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mSlide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui-l.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.dtpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.enterfocus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.imageViewer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.indexedlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.lazyload.img.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.lazyload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.listpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.locker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.picker.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.picker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.poppicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.previewimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.pullToRefresh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.pullToRefresh.material.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/mui.zoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/my/extension.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/num-alignment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/num.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/player/images/bg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/player/index_mp4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/player/index_video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/polyfill.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/productDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/progressbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/progresscircle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/qrcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/qrcode.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/reaName/ID.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/swiper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/verify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/watch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/web.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/webviewGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/yzm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/zepto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lease.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/libs/easymob-webim-sdk/easemob.im-1.0.5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/libs/easymob-webim-sdk/jquery-1.11.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/libs/easymob-webim-sdk/json2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/libs/easymob-webim-sdk/quickstart.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/libs/easymob-webim-sdk/strophe-custom-2.0.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/accest/assetsDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/accest/detailed-back.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/course.1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/course.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/link.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/my/aboutus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/my/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/my/extension.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/my/myOrders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/my/withdrawal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/product/order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/product/pay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/product/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/product/question.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/product/questionCourse.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/login2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/lottery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/record.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/rule.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/manifest_back.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/manifest_for_mac.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/manifest_for_windwos.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/my.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/my1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/nbt_app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/product1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/reg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/setting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/unlock.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210112100742.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210112164801.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/ion.rangeSlider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/ion.rangeSlider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/acount/FIL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/acount/JLB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/diyazhiyacopy-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/diyazhiyacopy-02.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/fil_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/fj-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/bj-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/dh-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/fil.banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/j-02.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/tanhao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/yhk-03.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/zfb-04.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/shijian.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/slf-06-12-19.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/syjs-01.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/tanhao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/hashrateDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/incomeCompute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDayFull.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/jlb_invest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/buy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/productDetails2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/ion.rangeSlider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/ion.rangeSlider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/progressbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest_back.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/hashbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/hashbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electricity/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/electricity/record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hashbox/slf-47-white.svg" beforeDir="false" afterPath="$PROJECT_DIR$/images/hashbox/slf-47-white.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/slf-06-white.svg" beforeDir="false" afterPath="$PROJECT_DIR$/images/slf-06-white.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/myHashDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/myHashDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/myHashbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/myHashbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/profit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/profitDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/profitDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/profitDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/profitDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/assets/detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets/detailed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/assets/invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets/invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/info/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/info/idCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/idCard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/info/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/realName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/invest_money.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/invest_money.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/jiaoyi_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/jiaoyi_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/rmb/investRmb.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/rmb/investRmb.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/info/tixian.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/tixian.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/tixian_over.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/tixian_over.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/order/orderDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/order/orderDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/order/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/order/productDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/productDetails.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/mui.picker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/mui.picker.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/my.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/hashbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/hashbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/electricity/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/electricity/record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/slf-47-white.svg" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/hashbox/slf-47-white.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/slf-06-white.svg" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/slf-06-white.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/ETHDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/ETHDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/myHashDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/myHashDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/myHashbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/myHashbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/aboutus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/detailed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assetsPassRe.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assetsPassRe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/updatePhone.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/updatePhone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invest_money.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invest_money.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invite_share.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invite_share.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/jiaoyi_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/jiaoyi_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team/buyDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team/buyDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian_over.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian_over.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/orderDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/orderDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/productDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/common/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/mui.picker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/mui.picker.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/lease.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/lease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest_for_windwos.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest_for_windwos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/product.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +798,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/yunxiaocha/page" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/pdd/pdd_page" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\black\Documents\HBuilderProjects\1234\info" />
       <recent name="C:\Users\black\Documents\HBuilderProjects\1234\js" />
       <recent name="C:\Users\black\Documents\HBuilderProjects\1234\invest" />
       <recent name="C:\Users\black\Documents\HBuilderProjects\1234" />
@@ -77,6 +841,19 @@
       <workItem from="1608684926050" duration="3226000" />
       <workItem from="1608772194495" duration="3406000" />
       <workItem from="1609042175952" duration="95000" />
+      <workItem from="1609516514747" duration="1497000" />
+      <workItem from="1609548186556" duration="9157000" />
+      <workItem from="1609600958106" duration="46000" />
+      <workItem from="1609923108958" duration="734000" />
+      <workItem from="1609924560369" duration="50000" />
+      <workItem from="1609924646045" duration="709000" />
+      <workItem from="1609981249756" duration="1188000" />
+      <workItem from="1610067389317" duration="970000" />
+      <workItem from="1610285964909" duration="3612000" />
+      <workItem from="1610331308032" duration="785000" />
+      <workItem from="1610413481544" duration="4919000" />
+      <workItem from="1610429659770" duration="1795000" />
+      <workItem from="1610443776081" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1607340636248</created>
@@ -169,7 +946,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608625308127</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="init">
+      <created>1609516533742</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609516533742</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

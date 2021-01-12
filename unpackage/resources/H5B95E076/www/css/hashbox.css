@@ -156,7 +156,7 @@ body .account-assets{background-color: #fff;}
 .shouyi .shouyi-name div p:nth-of-type(1){ color: #89b7db;}
 .shouyi .shouyi-name div p{ color: #2C95E8;}
 .shouyi .shouyi-name div:nth-of-type(1){ border: none; }
-.shouyi .shouyi-name{background: url('../images/hashbox/fgx_shu.png') no-repeat center center;}
+/*.shouyi .shouyi-name{background: url('../images/hashbox/fgx_shu.png') no-repeat center center;}*/
 .gmje.mui-table-view:before{height: 1px!important; background-color: #f2f2f2;}
 .gmje{margin: 0 10px;}
 .gmje li{ padding:11px 0 ; font-size: 15px;color: #666;}

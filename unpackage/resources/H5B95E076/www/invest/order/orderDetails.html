@@ -148,7 +148,7 @@
 					</div>
 				</div>
 			</div>
-							
+
 			<div class="footer-buy" id="footer">
 				<div class="mui-pull-left proDe" id="order-info">--</div>
 				<button class="mui-btn main-button mui-disabled" id="pay-content">去支付</button>
@@ -173,7 +173,7 @@
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 				<h1 class="mui-title" id="pay-info">支付成功</h1>
 			</header>
-			
+
 			<div class="mui-content pay-content" style="background: #fff; padding-top: 39px;">
 				<div class="pays success">
 					<img src="../../images/hashbox/success.png" width="55px" style="margin-top: -5px;" />
@@ -357,13 +357,12 @@
 			function plusReady(){
 				plus.payment.getChannels(function(channels){
 					for(var i in channels){
-						var channel=channels[i]
-						pays[channel.id]=channel
+						var channel=channels[i];
+						pays[channel.id]=channel;
 					}
 				}, function(e){
 					alert("获取支付通道失败："+e.message)
 				});
-
 			}
 			document.addEventListener('plusready',plusReady,false);
 			// 支付
@@ -427,10 +426,9 @@
 			$("#pay-content").click(function() {
 				// 判断是否可以购买
 				if ($("#pay-content").hasClass("mui-disabled")) {
-
 					return false;
 				}
-					
+
 				else {
 					if (payType < 3 || payType == 10) {
 						var info = "/app/user/info/index";
@@ -517,9 +515,9 @@
 						}, function(data) {
 							console.log('进入4 ')
 							console.log(JSON.stringify(data))
-							
+
 							if (payTy == 1) {
-								//支付宝	
+								//支付宝
 								mui.openWindow({
 									url: '../pay/alipay.html',
 									id: '../pay/alipay.html',
@@ -615,7 +613,7 @@
 				}else{
 					$("#pay-content").attr("disabled",false);
 				}
-				
+
 				//字典
 				Common.muipost("/app/user/v2/order/rule", {}, function(data) {
 					exchangeRate = options.exchangeRate = data.date.exchangeRate;
@@ -675,7 +673,7 @@
 								var scrollHeight = $(document).height();
 								var windowHeight = $(this).height();
 								var bodyHeight = $('body').height();
-	
+
 								if(windowHeight - bodyHeight <= 80){
 									$("#footer").css("position","static");
 								}
@@ -744,7 +742,8 @@
 							$("#sumInvest").text(data.date.invest * data.date.quantity + lx)
 							$("#m-num").text('x' + data.date.quantity)
 							$("#quantity_").text(data.date.quantity + torm)
-							$("#total").text( coinType == 6 || saleType == 2 ? Common.moneyFormat(data.date.rmbPrice) + '￥' + " ≈ " + data.date.amount + "$" : Common.moneyFormat(data.date.amount) + unit + " ≈ " + data.date.rmbPrice + "￥")
+							// $("#total").text( coinType == 6 || saleType == 2 ? Common.moneyFormat(data.date.rmbPrice) + '￥' + " ≈ " + data.date.amount + "$" : Common.moneyFormat(data.date.amount) + unit + " ≈ " + data.date.rmbPrice + "￥")
+							$("#total").text(Common.moneyFormat(data.date.amount) + unit + " ≈ " + Common.moneyFormat(data.date.rmbPrice) + "￥");
 							$("#productIcon").attr("src", basePath + data.date.productIcon);
 							$("#price").text(Common.moneyFormat(price) + priceDW);
 							$("#quantity").text(Common.moneyFormat(data.date.amount) + unit);
@@ -805,7 +804,7 @@
 									$("#status").text("已取消");
 								}
 							}
-	
+
 							if (productType == 2 || productType == 4) {
 								// $("#pay-wechat").attr("checked", "checked");
 								$("#pay-wechat").click();
@@ -814,7 +813,7 @@
 						//$(".pay-money").addClass("mui-hidden");
 					});
 				});
-				
+
 			}
 
 			window.addEventListener('refresh', function(e) {

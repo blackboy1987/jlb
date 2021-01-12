@@ -57,7 +57,7 @@
 					var content = "";
 					mui.each(data.date.list, function(index, item) {
 						var changeValue = "";
-						if (item.assetTypeName == "BTC" || item.assetTypeName == "ETH") {
+						if (item.assetTypeName == "BTC" || item.assetTypeName == "ETH" || item.assetTypeName == "FIL") {
 							changeValue = Common.moneyFormatByDecimals(item.changeValue, 8);
 						} else {
 							changeValue = Common.moneyFormat(item.changeValue);
@@ -115,7 +115,7 @@
 					var content = "";
 					mui.each(data.date.list, function(index, item) {
 						var changeValue = "";
-						if (item.assetTypeName == "BTC" || item.assetTypeName == "ETH") {
+						if (item.assetTypeName == "BTC" || item.assetTypeName == "ETH" || item.assetTypeName == "FIL") {
 							changeValue = Common.moneyFormatByDecimals(item.changeValue, 8);
 						} else {
 							changeValue = Common.moneyFormat(item.changeValue);

@@ -3,8 +3,9 @@ var Common = function () {
 var version = 1;
 var siteName = '克夫婆';
 var basePath = "http://api.suanlifeng.com";//生产
-var basePath2 = "http://192.168.1.102:9998";//生产/
-var basePath1 = "http://v8.js-lcd.com";//生产/
+var basePath2 = "http://172.16.12.223";//公司
+var basePath3 = "http://192.168.0.103";//家里
+var basePath1 = "http://v6.shengjing88.com";//生产/
 
 var device_uuid = '';
 var loginUser = '{}';
@@ -190,7 +191,7 @@ Common.apiInfo = function({
 		dataType:'json',
 		type:'POST',
 		success:function(data){
-			
+
 		},
 		error:function(xhr,type,errorThrown){
 			},
@@ -198,7 +199,6 @@ Common.apiInfo = function({
 }
 
 Common.resetBaseApi=function (url){
-
     let baseApi = "";
     if(url==="/app/auth/login"){
         baseApi = basePath1+url;
@@ -221,6 +221,92 @@ Common.resetBaseApi=function (url){
     }else if(url==='/app/common/adversite'){
         baseApi = basePath1+url;
     }else if(url==='/app/user/info/index'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/auth/info'){
+        baseApi = basePath1+url;
+    }else if(url==='/common/online'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/oss/sts/token'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/receipt/receipt'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/receipt/create'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/new/detail'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/relation/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/page'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/profit/list'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/invest/page/byDate'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/invest/page'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/invest/invest'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/myPage'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/prize/coupon'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/rule'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/order/detail'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/product/detail'){
+        baseApi = basePath1+url;
+    }else if(url==='/user/electric/discount'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/payPriceCompute'){
+        baseApi = basePath1+url;
+    }else if(url.indexOf("/user/electric/discount?productId=")>=0){
+        baseApi = basePath1+url;
+    }else if(url==='/common/payData'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/payment'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/pay/request'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/details'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/pay/getCompanyBank'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/userWithdrawal/getBankCard'){
+        baseApi = basePath1+url;
+    }else if(url==='/common/obtain/phone/code'){
+        baseApi = basePath1+url;
+    }else if(url==='/common/verifier/phone/code'){
+        baseApi = basePath1+url;
+    }else if(url==='/common/judgePass'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/userWithdrawal/requestWithdrawal'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/log/rmbList'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/record/page'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/news-pages'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/oneKeyRead'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/news-readNum'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/news-read'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/common/version'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/safe/recash'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/pay'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/v2/order/detail'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/userBind/add'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/money/list'){
         baseApi = basePath1+url;
     }else if(url==='/app/user/money/list'){
         baseApi = basePath1+url;
@@ -268,8 +354,10 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
                     plus.runtime.restart();
                 } else if (data.type == 400) {
                     // 400 error
+                    errCallBack(data);
                     mui.toast(data.content);
                 } else if (data.type == 401) {
+                    errCallBack(data)
                     mui.toast(data.content + '\nexceptionId:' + data.exceptionId);
                 } else {
                     // mui.toast(data.content);
@@ -313,8 +401,10 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
                     plus.runtime.restart();
                 } else if (data.type == 400) {
                     // 400 error
+                    errCallBack(data);
                     mui.toast(data.content);
                 } else if (data.type == 401) {
+                    errCallBack(data);
                     mui.toast(data.content + '\nexceptionId:' + data.exceptionId);
                 } else {
                     // mui.toast(data.content);
@@ -332,7 +422,7 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
 					url:baseApi,
 					method:'error',
 					data1:'a',
-					data:"error",
+					data:JSON.stringify(params),
 				})
                 mui.toast('网络异常，无法访问');
             }
@@ -344,7 +434,7 @@ Common.muipost = function (url, params, callback, errCallBack, index) {
 // 判断银行卡号
 Common.isCard = function (str) {
     str = str.replace(/\s+/g, "");
-    var pattern = /^([1-9]{1})(\d{14}|\d{18})$/;
+    var pattern = /^([1-9]{1})(\d{15,18})$/;
     if (!pattern.test(str)) {
         return true;
     } else {

@@ -42,7 +42,7 @@
 		}
 		#drawNum { width: 76%; }
 		.mui-bar .mui-btn-link{color:#000000;}
-		.a-assets .assets-all{background:unset;background:url('../../images/b_b.png') no-repeat;background-size: 100% 100%;}
+		.a-assets .assets-all{background:unset;background-size: 100% 100%;}
 		.a-assets .assets-all .all-ass, .a-assets .assets-all p{text-align: left;color:#fff;}
 		.pay-tb.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{border:none;}
 		.pay-tb.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item{font-size:20px;border:none;}
@@ -307,27 +307,50 @@
 		// console.log(assetName)
 		var loginUser = plus.storage.getItem("loginUser");
 		phone = JSON.parse(loginUser).username
-		if (assetType == 1 || assetType == 5) {
-			$("#m-n").removeClass("mui-hidden")
-			$("#m-btc").addClass("mui-hidden")
-			assetType == 1 ? $("#m-n").text('暂时不支持BTC充值') && $('#tb-addr').attr('placeholder', '输入或长按粘贴地址 (仅支持OMNI)') : $("#m-n").text('暂时不支持ETH充值')
-			if (assetType == 5){
-				$('.assets-all').css(
-						{
-							'background': "unset",
-							'background': "url('../../images/e_h1.png') no-repeat",
-							'backgroundSize': "100% 100%"
-						}
-				)
-			}
-		} else {
+		// if (assetType == 1 || assetType == 5 || assetType == 6) {
+		// 	$("#m-n").removeClass("mui-hidden")
+		// 	$("#m-btc").addClass("mui-hidden")
+		// 	if (assetType == 5){
+		// 		$('.assets-all').css(
+		// 				{
+		// 					'background': "unset",
+		// 					'background': "url('../../images/e_h1.png') no-repeat",
+		// 					'backgroundSize': "100% 100%"
+		// 				}
+		// 		)
+		// 	}
+		// } else {
+		// 	$(".assets-all").css({'background': "unset"})
+		// 	$(".assets-all").css({'background': "url('../../images/b_t.png') no-repeat"})
+		// 	$(".assets-all").css({'backgroundSize': "100% 100%"})
+		// }
+		
+		if (assetType == 5){
+			$('.assets-all').css(
+				{
+					'background': "unset",
+					'background': "url('../../images/e_h1.png') no-repeat",
+					'backgroundSize': "100% 100%"
+				}
+			)
+		} else if (assetType == 6) {
+			$('.assets-all').css(
+				{
+					'background': "unset",
+					'background': "url('../../images/fil_bg.png') no-repeat",
+					'backgroundSize': "100% 100%"
+				}
+			)
+		} else if (assetType == 2) {
 			$(".assets-all").css({'background': "unset"})
 			$(".assets-all").css({'background': "url('../../images/b_t.png') no-repeat"})
 			$(".assets-all").css({'backgroundSize': "100% 100%"})
+		} else {
+			$(".assets-all").css({'background': "unset"})
+			$(".assets-all").css({'background': "url('../../images/b_b.png') no-repeat"})
+			$(".assets-all").css({'backgroundSize': "100% 100%"})
 		}
-
-
-		price = current.price;
+		assetType == 1 ? $("#m-n").text('暂时不支持BTC充值') && $('#tb-addr').attr('placeholder', '输入或长按粘贴地址 (仅支持OMNI)') : assetType == 5 ? $("#m-n").text('暂时不支持ETH充值') : $("#m-n").text('暂时不支持FIL充值')
 		$('#mPrice').text('≈ ' + price +' 元')
 		$("#detialTitle").html(assetName);
 		//$("#detialCountTitle").html("总资产  " + assetName);
@@ -345,25 +368,37 @@
 				var money = data.date.money.money;
 				var frozenMoney = data.date.money.frozenMoney;
 				var totalMoney = parseFloat(money) + parseFloat(frozenMoney);
+				assetType = data.date.money.assetType;
+				assetName = data.date.money.name;
+				price = data.date.money.price;
+				$("#mPrice").text('≈ ' + price +' 元');
+				$("#walletExplain").html("向如下地址汇入" + assetName + "完成充值");
+				$("#detialTitle").html(assetName);
+				assetType == 1 ? $("#m-n").text('暂时不支持BTC充值') && $('#tb-addr').attr('placeholder', '输入或长按粘贴地址 (仅支持OMNI)') : assetType == 5 ? $("#m-n").text('暂时不支持ETH充值') : $("#m-n").text('暂时不支持FIL充值')
 				//$("#moneyFormat").html(Common.moneyFormat(money));
 				//$("#detialFrozenMoney").html(Common.moneyFormat(frozenMoney));
-				if (assetName == "BTC" || assetName == "ETH") {
+				if (assetName == "BTC" || assetName == "ETH" || assetName == "FIL") {
 					$("#detialTotalMoney").html(Common.moneyFormatByDecimals(totalMoney, 8));
 					withdrawMax = Common.moneyFormatByDecimals(data.date.withdraw, 8);
 				} else {
 					$("#detialTotalMoney").html(Common.moneyFormatByDecimals(totalMoney,8));
 					withdrawMax = Common.moneyFormat(data.date.withdraw);
 				}
-				$("#walletQrCode").html(wallet.walletAdd);
-				$("#walletQrcodeImg").text("")
-				var qrcode = new QRCode('walletQrcodeImg', {
-					text: wallet.walletAdd,
-					width: 180,
-					height: 180,
-					colorDark: '#000000',
-					colorLight: '#ffffff',
-					correctLevel: QRCode.CorrectLevel.H
-				});
+				if (wallet.walletAdd) {
+					$("#walletQrCode").html(wallet.walletAdd);
+					$("#walletQrcodeImg").text("")
+					var qrcode = new QRCode('walletQrcodeImg', {
+						text: wallet.walletAdd,
+						width: 180,
+						height: 180,
+						colorDark: '#000000',
+						colorLight: '#ffffff',
+						correctLevel: QRCode.CorrectLevel.H
+					});
+				} else {
+					$("#m-n").removeClass("mui-hidden")
+					$("#m-btc").addClass("mui-hidden")
+				}
 				var walletDescText = assetName + " 地址只能充值 " + assetName + " 资产，任何充入非 " + assetName + " 资产将不可找回。使用" + assetName +
 						"地址充值需要" + data.date.coinNum + "个网络确认才能到账。最低存入金额为" + data.date.rule.rechargeLimit + " " + assetName + " 。";
 				$("#walletDesc").html(walletDescText);
@@ -480,6 +515,8 @@
 			regex = /^\d+?.*$/
 		} else if (type == 5) {
 			regex = /^0x+?.*$/
+		} else if (type == 6) {
+			regex = /^(f|F)+?.*$/
 		} else {
 			return true
 		}

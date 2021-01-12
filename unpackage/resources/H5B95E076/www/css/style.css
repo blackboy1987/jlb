@@ -318,7 +318,7 @@ body .account-assets{ background-color: #3063b0;}
 .box-border-bottom:after {position: absolute;bottom: 0;left: 0;height: 1px !important;width:200%;content: '';-webkit-transform: scale(.5);transform: scale(.5);transform-origin: left top;background-color: #e5e5e5;}
 .box-border-top:after { position: absolute; top: 0; left: 0; height: 1px !important; width: 200%; content:''; display: block; -webkit-transform: scale(0.5); transform: scale(0.5); transform-origin: left top; background-color: #e5e5e5; -moz-transform: scale(0.5); -ms-transform: scale(0.5); -o-transform: scale(0.5); }
 .box-border-right:after { position: absolute; top: 0; right: 0; height: 200%; width: 1px; content:''; display: block; -webkit-transform: scale(0.5); transform: scale(0.5); transform-origin: left top; background-color: #e5e5e5; -moz-transform: scale(0.5); -ms-transform: scale(0.5); -o-transform: scale(0.5); }
-.box-border:after {position: absolute;top: 0;left: 0;width:200%;height: 200%;content: '';-webkit-transform: scale(.5);transform: scale(.5);transform-origin: left top;box-sizing: border-box;border: 1px solid #bfbfbf;border-radius: 4px;}
+.box-border:after {position: absolute;top: 0;left: 0;width:198%;height: 200%;content: '';-webkit-transform: scale(.5);transform: scale(.5);transform-origin: left top;box-sizing: border-box;border: 1px solid #bfbfbf;border-radius: 4px;}
 .tb-form .tb-title{margin: 0 15px; color: #333; font-size: 14px;padding-top: 10px;}
 .tb-form input{ font-size: 14px;}
 .tb-form.mui-input-group .mui-input-row:after{right: 15px;}

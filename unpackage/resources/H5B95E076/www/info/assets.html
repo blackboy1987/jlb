@@ -44,7 +44,7 @@
 			<!-- background: url(../images/zc-banner.svg) no-repeat;object-fit: cover; -->
 			<div class="cont">
 				<div class="bgcs" style="width: 100%;display: inline-block;justify-content: space-around">
-				<div class="one" style="width: 80%; padding-left: 0.9375rem; padding-top: 1.25rem;">
+				<div class="one" style="width: 100%; padding-left: 0.9375rem; padding-top: 1.25rem;">
 					<span style="color: #FFFFFF;font-size:0.875rem;white-space: nowrap;">总资产（RMB）</span>
 					<span style="color: #FFFFFF;font-size:1.875rem;padding-top: 0.3rem;" id="totalMoney"></span>
 				</div>
@@ -135,7 +135,23 @@
 							rightIcon = "mui-icon-arrowright";							
 							color = "#f3f0fb";
 							values = "<div style=\"margin-top: -5px;margin-bottom:10px\"><span style=\"color: #787880;\">≈ " + item.price + "</span>" + "</div>";
-						}else {
+						} else if (item.name == "FIL") {
+							aStart = "<a  _href=\"assets/invest.html\"  price=\"" + item.price + "\"  _assetType=\"" + item.assetType +
+								"\"  _name=\"" + item.name +
+								"\" class=\"mui-clearfix clickable \" style=\"display: flex;position: relative; width: 100%\">";
+							money = Common.moneyFormatByDecimals(item.money,8);
+							rightIcon = "mui-icon-arrowright";							
+							color = "#f3f0fb";
+							values = "<div style=\"margin-top: -5px;margin-bottom:10px\"><span style=\"color: #787880;\">≈ " + item.price + "</span>" + "</div>";
+						}  else if (item.name == "JLB") {
+							aStart = "<a  _href=\"assets/jlb_invest.html\"  price=\"" + item.price + "\"  _assetType=\"" + item.assetType +
+								"\"  _name=\"" + item.name +
+								"\" class=\"mui-clearfix clickable \" style=\"display: flex;position: relative; width: 100%\">";
+							money = Common.moneyFormatByDecimals(item.money,8);
+							rightIcon = "mui-icon-arrowright";							
+							color = "#f3f0fb";
+							values = "<div style=\"margin-top: -5px;margin-bottom:10px\"><span style=\"color: #787880;\">≈ " + item.price + "</span>" + "</div>";
+						}  else {
 							aStart = "<a price=\"" + item.price + "\"  _assetType=\"" + item.assetType +
 								"\"  _name=\"" + item.name +
 								"\" class=\"mui-clearfix clickable\" style=\"display: flex;position: relative; width: 100%\">";
@@ -143,9 +159,6 @@
 							rightIcon = "mui-icon-arrowright";
 							color = "#ecf3fa";
 							values = "<div style=\"margin-top: -5px;margin-bottom:10px\"><span style=\"color: #787880;\">≈ " + item.price + "</span>" + "</div>";
-							
-							
-							
 						}
 
 						var aEnd = "</a>";
@@ -259,7 +272,24 @@
 							rightIcon = "mui-icon-arrowright";
 							color = "#f3f0fb";
 							values = "<div style=\"margin-top: -5px;margin-bottom:10px\"><span style=\"color: #787880;\">≈ " + item.price + "元</span>" + "</div>";
-						} else {
+						} else if (item.name == "FIL") {
+							aStart = "<a  _href=\"assets/invest.html\"  price=\"" + item.price + "\"  _assetType=\"" + item.assetType +
+								"\"  _name=\"" + item.name +
+								"\" class=\"mui-clearfix clickable \" style=\"display: flex;position: relative; width: 100%\">";
+							money = Common.moneyFormatByDecimals(item.money,8);
+							rightIcon = "mui-icon-arrowright";							
+							color = "#f3f0fb";
+							values = "<div style=\"margin-top: -5px;margin-bottom:10px\"><span style=\"color: #787880;\">≈ " + item.price + "</span>" + "</div>";
+						} else if (item.name == "JLB") {
+							aStart = "<a  _href=\"assets/jlb_invest.html\"  price=\"" + item.price + "\"  _assetType=\"" + item.assetType +
+								"\"  _name=\"" + item.name +
+								"\" class=\"mui-clearfix clickable \" style=\"display: flex;position: relative; width: 100%\">";
+							money = Common.moneyFormatByDecimals(item.money,8);
+							rightIcon = "mui-icon-arrowright";							
+							color = "#f3f0fb";
+							values = "<div style=\"margin-top: -5px;margin-bottom:10px\"><span style=\"color: #787880;\">≈ " + item.price + "</span>" + "</div>";
+						}  else {
+							alert("aa");
 							aStart = "<a  _href=\"hbt_info.html\"  price=\"" + item.price + "\"  _assetType=\"" + item.assetType +
 								"\"  _name=\"" + item.name +
 								"\" class=\"mui-clearfix clickable\" style=\"display: block;position: relative;\">";
@@ -284,7 +314,7 @@
 						li += "<li class=\"mui-clearfix m-btn-ra p1\" style='display:block;margin-bottom: 10px;height:74px;background-color:" + color + " ' id=\"" + item.name.toLowerCase() +
 							"\">" +
 							aStart +
-							"<img src=\"" + img + "\" width=\"40px\" height='40px' style='\\'>" +
+							"<img src=\"" + img + "\" width=\"40px\" height='40px' style=''>" +
 							"<div style=\"top: 10px;position: absolute;left:50px;\"> <span class='mm'>" + item.name + "</span>" +
 							"</div>" +
 							"<div style=\"color: #787880;\" class=\"zc-qk\">" +

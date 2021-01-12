@@ -312,7 +312,7 @@
 			<h1 class="mui-title header-title">产品</h1>
 			<div style="position: absolute; width: 30px; height: 30px; right: 0;" id="m-news">
 				<div style="position: absolute;right:1rem;top:.75rem;" id="m-header">
-					<img src="images/slf-06-white.svg" width="20px" height="20px" id="m-img"/>
+					<img src="images/slf-06-12-19.svg" width="20px" height="20px" id="m-img" />
 				</div>
 		</div>
 		</header>
@@ -390,7 +390,7 @@
 				type = 1
 				pullup = true
 				load();
-				if (coinType == 5){
+				if (coinType == 5 || coinType == 6){
 					var eth = '<a _id="0" class="mui-control-item m-block mui-active box-border" _name="普通产品" _type="1">普通产品</a>\n' +
 							'<a _id="1" class="mui-control-item m-block box-border" _name="期货产品" _type="5">期货产品</a>\n' +
 							'<a _id="3" class="mui-control-item m-block box-border" _name="短期产品" _type="8">短期产品</a>\n' +
@@ -542,11 +542,11 @@
 							let price;
 							let rmbPrice;
 							if (item.saleType == 1){
-								price = item.price + ' JLB'
+								price = item.price + ' USDT'
 								rmbPrice = '￥'+ item.rmbPrice
 							}else {
 								price = item.rmbPrice + ' ￥'
-								rmbPrice = item.price + ' JLB'
+								rmbPrice = item.price + ' USDT'
 							}
 							isDhzq = false;
 							text += '<li class="mui-table-view-cell m-mui-li m-media create-product-li" _coinType="'+ item.coinType +'" _saleType="'+ item.saleType +'" _isStock="'+ item.isStock +'" type="'+ item.type +'" _id="'+ item.id +'" _time="'+ item.expirationDate +'">' +
@@ -602,10 +602,15 @@
 					mui.toast("产品已过期，请选择其他产品");
 					return
 				}
-				var _href = 'invest/productDetails.html';
+				var _href;
 				var _id = $(this).attr("_id");
 				var	saleType = $(this).attr("_saleType");
 				var	coinType = $(this).attr("_coinType");
+				if (coinType == 6 && saleType == 2){
+					_href = 'invest/productDetails2.html';
+				}else {
+					_href = 'invest/productDetails.html';
+				}
 				var webview = mui.openWindow({
 					url: _href,
 					id: _href,

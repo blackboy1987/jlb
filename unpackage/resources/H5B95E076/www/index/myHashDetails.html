@@ -230,15 +230,16 @@
             $("#profuctIcon").attr("onerror", "this.src='../images/hashbox/product.png'");
             $("#productName").text(data.date.productName);
             $("#quantity").text(data.date.quantity);
+            torm = '份'
             if (data.date.coinType == 5) {
-                torm = '份'
                 types = '电费 MHS/天'
                 type = 'M'
-            } else if (data.date.coinType == 5 || data.date.coinType == 6) {
-                torm = '份'
+            } else if (data.date.coinType == 5 && data.date.saleType == 2) {
+                types = '电费 MHS/台/天'
+                type = 'M'
+            } else {
                 types = '电费 THS/天'
                 type = 'T'
-
             }
 
             if (data.date.productType == 2 || data.date.productType == 4) {
@@ -266,9 +267,9 @@
             if (data.date.coinType == 6) {
                 $("li:contains(购买电费包)").remove()
                 $("li:contains(电费)").remove()
-                if (data.date.encapsulationDay != null){
+                if (data.date.encapsulationDay && data.date.encapsulationDay > 0){
                     $('#packageTime').css('display','block')
-                    $('#package').parent().text(data.date.encapsulationDay)
+                    $('#package').text(data.date.encapsulationDay + "天")
                 }
             }
             $("#cycle").text(data.date.day ? data.date.day + '天' : 0 + '天')

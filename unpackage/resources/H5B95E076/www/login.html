@@ -259,8 +259,12 @@
 					!s_uuid && plus.storage.setItem('uuid', JSON.stringify(uuid))
 					location.href = "main.html?v=" + version;
 				}, function(data) {
-					$("#yzm").removeClass("mui-hidden")
-					// mui.toast(data.content);
+					// 第一次新设备登录校验
+					if (data.type == 500) {
+						$("#yzm").removeClass("mui-hidden");
+						return false
+					}
+					mui.toast(data.content);
 				});
 			// } else {
 			// 	plus.runtime.quit();
