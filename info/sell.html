@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>账户资产</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--标准mui.css-->
+	<link rel="stylesheet" href="../css/mui.min.css">
+	<!--App自定义的css-->
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/hashbox.css">
+	<style>
+		::-webkit-input-placeholder { color:#b3b3b3; }
+		::-moz-placeholder { color:#b3b3b3; } /* firefox 19+ */
+		:-ms-input-placeholder { color:#b3b3b3; } /* ie */
+		input:-moz-placeholder { color:#b3b3b3; }
+		.pay-tb-all .tb-pay-addr{ width: 80%; margin: 0 auto;}
+		.copyBtn{ position: relative;top: -20px;}
+		.pay-color{color:#7D7D80;}
+		.tb-addr-img {
+			width: 20px;
+			height: 20px;
+			margin-top: -10px;
+		}
+		.tb-addr-img img {
+			float: right;
+			margin-top: 10px;
+		}
+		.tb-addr-a {
+			width: 61px;
+			height: 20px;
+			margin-top: -12px;
+		}
+		.tb-addr-a a {
+			float: right;
+			margin-top: 10px;
+		}
+		.tb-form input{
+			width: 88%;
+		}
+		#drawNum { width: 76%; }
+		.mui-bar .mui-btn-link{color:#000000;}
+		.a-assets .assets-all{background:unset;background-size: 100% 100%;}
+		.a-assets .assets-all .all-ass, .a-assets .assets-all p{text-align: left;color:#fff;}
+		.pay-tb.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{border:none;}
+		.pay-tb.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item{font-size:20px;border:none;}
+		.m-p span{display: inline-block;color:#7D7D80;}
+		.mui-active span{border-bottom: 3px solid #1F74D7;color:#323233;}
+		.tb-form .tb-title{color:#323233;font-size: 16px;}
+		.tb-addr-img a, .tb-form .tb-how span{border:none;color:#FF7800;}
+		.mui-input-row .mui-input-clear~.mui-icon-clear{right:27px;}
+		#drawForm > div:nth-child(4) > span{right: 67px}
+	</style>
+
+</head>
+<body id="pullrefresh">
+<header class="mui-bar mui-bar-nav">
+	<a class="c2c-address mui-pull-left mui-action-back"><span class="mui-icon mui-icon-back"></span></a>
+	<h1 class="mui-title" id="detialTitle">账户资产</h1>
+	<a id="detailedLink" data-href="detailed.html" class="mui-pull-right mui-btn-link">挂单记录</a>
+</header>
+<div class="mui-content a-assets" style="background: #fff">
+	<div class="assets-all p2">
+		<div class="all-ass pl1" id="detialCountTitle">总资产 </div>
+		<p id="detialTotalMoney" class="pl1">--</p>
+		<p id="mPrice" class="pl1">--</p>
+	</div>
+	<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+	<div class="mui-slider-group pay-tb-all pad10">
+		<div id="item2mobile" class="mui-slider-item mui-content ">
+			<form class="tb-form  mui-input-group" id="drawForm">
+				<p class="tb-title">卖币数量</p>
+				<div class="mui-input-row">
+					<input id='drawNum' type="number" class="mui-input-clear mui-input" placeholder="最低挂单数量1个" name="jlbCount" onchange="drawNumChange(this)">
+					<div class="tb-addr-img tb-addr-a" onclick="drawAll()"><a href="javascript:void(0);">全部挂单</a></div>
+				</div>
+				<div class="tb-how">最多可以挂单 <span id="maxDrawNum"> 0 JLB </span>，冻结<span id="lockMoney"> 0 JLB </span></div>
+				<p class="tb-title">总价格</p>
+				<div class="mui-input-row">
+					<input id='tb-addr' type="number" class="mui-input-clear mui-input" name="rmbAmount">
+				</div>
+			</form>
+			<div class="tb-pay-tips">
+				<p>温馨提示</p>
+				<p id="drawDesc">JLB单价因市场行情动态变化，请实时关注JLB行情</p>
+			</div>
+			<div class="tf-btn">
+				<button class="mui-btn mui-btn-block mui-btn-primary m-btn-ra" style="line-height: 0;font-size: 16px;" id="drawBtn">确认挂单</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="yzm" class="mui-popup-in meui-mask mui-hidden" style="z-index:99999;">
+	<div class="cons" style="height:118px">
+		<div class="mui-popup-inner">
+			<div class="mui-popup-text" style="margin:5px 0;text-align: center;border-bottom: 1px solid #E5E5E5;padding-bottom: 12px;">
+				短信验证
+			</div>
+			<div style="border: 1px solid rgba(0,0,0,.2);margin: 0 auto;width: 90%;height: 42px;">
+				<input id='yzmip' type="number" pattern="\d*" name="phonecode" class="mui-input-clear mui-input" style="float: left;width: 60%;margin-bottom: 0;border:none;" placeholder="短信验证码" maxlength="6">
+				<a type="button" class="fc2c9 fs15" style="line-height: 42px;" id="sendsms" onclick="sendSms()">获取验证码</a>
+			</div>
+
+		</div>
+		<div class="mui-popup-buttons">
+			<span onclick="nos()" class="mui-popup-button" style="color: #333333;">取消</span>
+			<span id="confirm" style="color: #1F75DA;" class="mui-popup-button mui-popup-button-bold" onclick="sms()">确认验证码</span>
+		</div>
+	</div>
+</div>
+<div id="txsubs" class="mui-popup-in meui-mask mui-hidden" style="z-index:99999;">
+	<div class="cons" style="height:118px">
+		<div class="mui-popup-inner">
+			<div class="mui-popup-text" id="m-value" style="margin:5px 0;text-align: center;border-bottom: 1px solid #E5E5E5;padding-bottom: 12px;font-size: 14px;">
+
+			</div>
+			<div style="border: 1px solid rgba(0,0,0,.2);margin: 0 auto;width: 90%;height: 42px;">
+				<input class="passwordInput" id="passwordInput" type="password" maxlength="6" style="float: left;width: 60%;margin-bottom: 0;border:none;" />
+			</div>
+
+		</div>
+		<div class="mui-popup-buttons">
+			<span onclick="cancel()" class="mui-popup-button" style="color: #333333;">取消</span>
+			<span id="pay_now" style="color: #1F75DA;" class="mui-popup-button mui-popup-button-bold">确认挂单</span>
+		</div>
+	</div>
+</div>
+</body>
+<script src="../js/mui.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="../js/common/mui.loading.css" />
+<script type="text/javascript" src="../js/common/mui.loading.js"></script>
+<script>
+	var price = 0
+	// 处理点击事件
+	var openw = null;
+	var waiting = null;
+	var w = window;
+	var phone = ''
+
+	function closeWaiting() {
+		waiting && waiting.close();
+		waiting = null;
+	}
+	function clicked(id, wa, ns, ws) {
+		if (openw) { //避免多次打开同一个页面
+			return null;
+		}
+		if (w.plus) {
+			wa && (waiting = plus.nativeUI.showWaiting());
+			ws = ws || {};
+			ws.scrollIndicator || (ws.scrollIndicator = 'none');
+			ws.scalable || (ws.scalable = false);
+			var pre = ''; //'http://192.168.1.178:8080/h5/';
+			openw = plus.webview.create(pre + id, id, ws);
+			ns || openw.addEventListener('loaded', function() {
+				//页面加载完成后才显示
+				//		setTimeout(function(){//延后显示可避免低端机上动画时白屏
+				openw.show(as);
+				closeWaiting();
+				//		},200);
+			}, false);
+			openw.addEventListener('close', function() { //页面关闭后可再次打开
+				openw = null;
+			}, false);
+			return openw;
+		} else {
+			w.open(id);
+		}
+		return null;
+	};
+
+	//下拉刷新
+	mui.init({
+		pullRefresh: {
+			container: '#pullrefresh',
+			down: {
+				style: 'circle',
+				callback: pulldownRefresh
+			},
+		}
+	});
+	function nos () {
+		$("#yzmip").val("");
+		$("#yzm").addClass("mui-hidden");
+	}
+	function pulldownRefresh() {
+		setTimeout(function() {
+			loadDetail();
+			mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+		}, 1000);
+	}
+
+	var assetName = "";
+	var assetType = "6";
+	var withdrawLimit = 0;
+	var withdrawMax = 0;
+	var withdrawRate = 0;
+	var addrMinLength = 0;
+	mui.plusReady(function() {
+		var current = plus.webview.currentWebview();
+		const assetType = 6;
+		assetName = current.name;
+		var loginUser = plus.storage.getItem("loginUser");
+		phone = JSON.parse(loginUser).username
+		
+		$('.assets-all').css(
+			{
+				'background': "unset",
+				'background': "url('../images/fil_bg.png') no-repeat",
+				'backgroundSize': "100% 100%"
+			}
+		)
+		
+		$('#mPrice').text('≈ ' + price +' 元')
+		$("#detialTitle").html(assetName+"挂单");
+
+		loadDetail();
+	});
+
+	function loadDetail() {
+		Common.muipost("/app/user/money/details", {
+			asset: assetType
+		}, function(data) {
+			if (data.type == 200 && data.date.money) {
+				var wallet = data.date.wallet;
+				var money = data.date.money.money;
+				var frozenMoney = data.date.money.frozenMoney;
+				var lockMoney = data.date.money.lockMoney;
+				var totalMoney = parseFloat(money) + parseFloat(frozenMoney);
+				var lockMoney = parseFloat(lockMoney);
+				assetType = data.date.money.assetType;
+				assetName = data.date.money.name;
+				price = data.date.money.price;
+				$("#mPrice").text('≈ ' + price +' 元');
+				$("#detialTitle").html(assetName+"挂单");
+				$("#detialTotalMoney").html(Common.moneyFormatByDecimals(totalMoney,8));
+				withdrawMax = Common.moneyFormat((totalMoney-lockMoney)*0.92);
+				$("#maxDrawNum").html(Common.moneyFormat(withdrawMax) + " " + assetName);
+				$("#lockMoney").html(Common.moneyFormat(lockMoney) + " " + assetName);
+				$("#m-n").removeClass("mui-hidden")
+				$("#m-btc").addClass("mui-hidden")
+			} else {
+				// console.log("未获取到数据");
+			}
+		}, function() {});
+	}
+
+	function drawAll() {
+		$("#drawNum").val(withdrawMax);
+	}
+	var name = '';
+	mui("body").on("tap", "#detailedLink", function() {
+		var webview = mui.openWindow({
+			url: "./sell_detail.html",
+			id: "./sell_detail.html",
+		});
+	});
+	
+	function reget(count) {
+		var btn = $("#sendsms");
+		var count = count;
+		btn.html("60s后重发");
+		var resend = setInterval(function() {
+			count--;
+			if (count > 0) {
+				btn.css('pointer-events','none')
+				btn.html(count + "s后重发");
+			} else {
+				clearInterval(resend);
+				btn.css('pointer-events','unset')
+				$("#sendsms").css("color", "#00CDB9");
+				btn.html("重获验证码");
+			}
+		}, 1000);
+	}
+	function sms () {
+		var phonecode = $("#yzmip").val()
+		if (Common.isNull(phonecode)) {
+			mui.toast("短信验证码不能为空");
+			return false;
+		}
+		Common.muipost("/common/verifier/phone/code", {phone: phone, phonecode: phonecode}, function (data) {
+			mui.hideLoading();
+			$("#yzm").addClass("mui-hidden")
+			tx()
+		}, function (data) {
+			mui.alert(data.content);
+			$("#yzm").addClass("mui-hidden")
+			mui.hideLoading();
+		})
+	}
+	//发送验证码
+	function sendSms() {
+		var checkurl = "/common/obtain/phone/code";
+		mui.showLoading("短信发送中", "body");
+		Common.muipost(checkurl, {tel: phone}, function (data) {
+			$("#sendsms").css("color", "#F20B0B");
+			mui.hideLoading();
+			reget(60);
+		}, function (data) {
+			mui.hideLoading();
+			mui.alert(data.content);
+		})
+	}
+	function cancel () {
+		$("#txsubs").addClass("mui-hidden")
+	}
+	mui(".tf-btn").on("tap", "#drawBtn", function() {
+		if (+withdrawMax < +($("#drawNum").val())) {
+			mui.alert("因帐号数量不足，无法继续操作")
+		} else {
+			var text = '请输入资金密码';
+			$("#m-value").text(text)
+			$("#txsubs").removeClass("mui-hidden")
+		}
+	})
+	$("#pay_now").click(function() {
+		if (!$('#passwordInput').val()) {
+			mui.alert("请填写资金密码")
+			return
+		} else if($('#passwordInput').val().length < 6) {
+			mui.alert("请填写正确资金密码")
+			return
+		}
+		Common.muipost("/common/judgePass", {
+			password: $('#passwordInput').val()
+		}, function (data) {
+			$("#txsubs").addClass("mui-hidden")
+			$("#yzm").removeClass("mui-hidden")
+		}, function (err) {
+			mui.toast(err.content);
+		})
+	})
+	function tx () {
+		var drawNum = $("#drawNum").val().replace(/^(.*\..{8}).*$/, "$1");
+		$("#drawNum").val(drawNum);
+		var rmbAmount = $("#tb-addr").val();
+		var jlbCount = $("#drawNum").val();
+
+		mui.showLoading("挂单处理中..", "body");
+		Common.muipost("/app/user/sell/submit", {
+			rmbAmount,
+			jlbCount,
+			pass: $('#passwordInput').val()
+		}, function(data) {
+			if (data.type == 200) {
+				mui.alert("挂单申请成功，待审核", function() {
+					plus.webview.currentWebview().reload(true);
+				});
+			} else {
+				mui.toast(data.content);
+			}
+		}, function(da) {});
+	};
+
+	function drawNumChange(thizz) {
+		thizz.value = Math.abs(thizz.value.replace(/^(.*\..{8}).*$/, "$1"));
+	}
+</script>
+</html>

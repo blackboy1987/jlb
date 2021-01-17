@@ -121,6 +121,10 @@
 					<img src="images/mine/slf_tb-power.svg" width="45px;" height="auto"/>
 					<div style=" color: rgba(46,46,49,1); font-size:  14px;" PingFang-SC-Regular";">买入</div>
 				</div>
+				<div id="sell" href="#" style="padding: 0.375rem 0rem;">
+					<img src="images/mine/slf_tb-power.svg" width="45px;" height="auto"/>
+					<div style=" color: rgba(46,46,49,1); font-size:  14px;" PingFang-SC-Regular";">挂单</div>
+				</div>
 			</div>
 			<div class="mui-row m-white" id="m-main">
 				<div id="problem" href="#" style="padding: 0.375rem 0rem;">
@@ -228,6 +232,14 @@
 				mui.openWindow({
 					url: 'info/buy.html',
 					id: '/info/buy.html'
+				});
+			});
+
+			// 卖出
+			$("#sell").click(function () {
+				mui.openWindow({
+					url: 'info/sell.html',
+					id: '/info/sell.html'
 				});
 			});
 

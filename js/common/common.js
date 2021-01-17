@@ -6,6 +6,7 @@ var basePath = "http://api.suanlifeng.com";//生产
 var basePath2 = "http://172.16.12.223";//公司
 var basePath3 = "http://192.168.0.103";//家里
 var basePath1 = "http://v6.shengjing88.com";//生产/
+var uploadPath = "http://v6.shengjing88.com/common/upload";
 
 var device_uuid = '';
 var loginUser = '{}';
@@ -310,17 +311,41 @@ Common.resetBaseApi=function (url){
         baseApi = basePath1+url;
     }else if(url==='/common/oss/sts/auth'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/buy/list'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/buy/info'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/buy/submit'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/buy/record'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/sell/submit'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/money/list'){
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
+        baseApi = basePath1+url;
+    }else if(url==='/app/user/sell/record'){
         baseApi = basePath1+url;
     }else{
         baseApi = basePath+url;
