@@ -59,7 +59,10 @@
 
 		<div class="mui-content my" style="background: #f5f5f5" id="pullrefresh">
 			<div class="my-head m0 py-sm-1 m-whit"style="padding-left: 1.25rem;" id="toAssets">
-				<div id="m-author-content"><img id="author_img" width="18px" height="17px" style="margin-right: 0.375rem;margin-left: 0.375rem;"/>  <p id="author_title" style="font-size: 12px; color: white; height: 1.625rem; line-height: 1.625rem; padding: 0;margin: 0;"></p>  </div>
+				<div id="m-author-content">
+					<img id="author_img" width="18px" height="17px" style="margin-right: 0.375rem;margin-left: 0.375rem;"/> 
+					 <p id="author_title" style="font-size: 12px; color: white; height: 1.625rem; line-height: 1.625rem; padding: 0;margin: 0;"></p>  
+					 </div>
 				<div class="my-info mui-clearfix m-title p1">
 					<div id="userName">##</div>
 					<div style="display: inline-flex;position: relative;">
@@ -117,6 +120,10 @@
 				<div id="buy" href="#" style="padding: 0.375rem 0rem;">
 					<img src="images/mine/slf_tb-power.svg" width="45px;" height="auto"/>
 					<div style=" color: rgba(46,46,49,1); font-size:  14px;" PingFang-SC-Regular";">买入</div>
+				</div>
+				<div id="sell" href="#" style="padding: 0.375rem 0rem;">
+					<img src="images/mine/slf_tb-power.svg" width="45px;" height="auto"/>
+					<div style=" color: rgba(46,46,49,1); font-size:  14px;" PingFang-SC-Regular";">挂单</div>
 				</div>
 			</div>
 			<div class="mui-row m-white" id="m-main">
@@ -225,6 +232,14 @@
 				mui.openWindow({
 					url: 'info/buy.html',
 					id: '/info/buy.html'
+				});
+			});
+
+			// 卖出
+			$("#sell").click(function () {
+				mui.openWindow({
+					url: 'info/sell.html',
+					id: '/info/sell.html'
 				});
 			});
 

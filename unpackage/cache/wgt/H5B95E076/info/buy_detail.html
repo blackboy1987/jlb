@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>买入</title>
+		<title>买入记录</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -14,7 +14,7 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				height: 5rem;
+				height: 6.5rem;
 				font-size: 1rem;
 			}
 		</style>
@@ -22,8 +22,7 @@
 	<body>
 		<header class="mui-bar mui-bar-nav other">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title" style="font-size: 16px;" id="teamName">买入</h1>
-			<a id="record" class="mui-pull-right mui-btn-link">买入记录</a>
+			<h1 class="mui-title" style="font-size: 16px;" id="teamName">买入记录</h1>
 		</header>
 		<div class="mui-content" id="pullrefresh">
 		    <ul class="mui-table-view" id="itemmobile"></ul>
@@ -31,6 +30,7 @@
 	</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/mui.js"></script>
+		<script src="../js/moment.js"></script>
 		<script src="../js/artTemplate.js"></script>
 		<script src="../js/common/common.js"></script>
 		<script type="text/html" id="tpl">
@@ -40,9 +40,27 @@
 					<div class="count">数量：{{item.jlbCount}}</div>
 					<div class="amount">金额：{{item.rmbAmount}}</div>
 					<div class="seller">卖家：{{item.sellerName}}</div>
+					<div class="seller">购买时间：{{dateFormat(item.buyDate)}}</div>
 				</div>
 				<div class="right">
-					<button class="buy" data-id="{{item.id}}">购买</button>
+					{{if item.status==0}}
+						待确认
+					{{/if}}
+					{{if item.status==1}}
+						交易中
+					{{/if}}
+					{{if item.status==2}}
+						待确认
+					{{/if}}
+					{{if item.status==3}}
+						已确认
+					{{/if}}
+					{{if item.status==4}}
+						已取消
+					{{/if}}
+					{{if item.status==5}}
+						已拒绝
+					{{/if}}
 				</div>
 			</li>
 			{{/each}}
@@ -68,12 +86,15 @@
 			var page =1;
 			function pullupRefresh() {
 			    var _this = this;
-			    var url = "/app/user/buy/list";
+			    var url = "/app/user/buy/record";
 			    Common.muipost(url, {
 			        limit: 10,
 			        page: page,
 			    }, function (data) {
 			        if (data.date.content && data.date.content.length > 0) {
+						template.defaults.imports.dateFormat = function(date, format){
+							return moment(date).format(format || 'YYYY-MM-DD HH:mm:ss');
+						};
 						var html = template('tpl', data);
 			            if ($(".mui-table-view-cell").length > 0) {
 			                $("#itemmobile > li:last").after(html);
@@ -95,12 +116,15 @@
 			}
 			function pulldownRefresh() {
 			    page = 1;
-			    var url = "/app/user/buy/list";
+			    var url = "/app/user/buy/record";
 			    Common.muipost(url, {
 			        limit: 10,
 			        page: page,
 			    }, function (data) {
 			        if (data.date.content && data.date.content.length > 0) {
+						template.defaults.imports.dateFormat = function(date, format){
+							return moment(date).format(format || 'YYYY-MM-DD HH:mm:ss');
+						};
 			            var html = template('tpl', data);
 			            $("#itemmobile").html(html);
 			            page++;
@@ -116,24 +140,6 @@
 			    mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
 			    mui('#pullrefresh').pullRefresh().refresh(true);
 			}
-			mui("body").on("tap", ".buy", function() {
-				const _this = $(this);
-				const id = _this.data("id");
-				mui.openWindow({
-					url: 'buy_info.html',
-					id: 'buy_info.html.html',
-					extras:{
-						orderId:id,
-					}
-				});
-			});
-			
-			mui("body").on("tap", "#record", function() {
-				mui.openWindow({
-					url: './buy_detail.html',
-					id: './buy_detail.html'
-				});
-			});
 		</script>
 
 	</body>

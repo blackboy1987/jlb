@@ -10,12 +10,25 @@
 		<link rel="stylesheet" href="../css/mui.min.css">
 		<style type="text/css">
 			li.item{
-				padding:0 0.5rem;
+				padding: 0.5rem;
+				display: flex;
+				flex-direction: column;
+				font-size: 1rem;
+				border-bottom: solid 2px red;
+			}
+			.user{
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				height: 5rem;
-				font-size: 1rem;
+			}
+			.user .icon{
+				width: 64px;
+				height: 64px;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+			.user .icon>img{
+				width: 100%;
 			}
 		</style>
 	</head>
@@ -36,13 +49,17 @@
 		<script type="text/html" id="tpl">
 			{{each date.content item key}}
 			<li class="item mui-table-view-cell">
+				<div class="user">
+					<div class="icon">
+						<img id="author_img" src="../images/head/017.png"/>
+					</div>
+					<div class="bianhao">编号：1234567</div>
+					<button class="buy" data-id="{{item.id}}">购买</button>
+				</div>
 				<div class="left">
 					<div class="count">数量：{{item.jlbCount}}</div>
 					<div class="amount">金额：{{item.rmbAmount}}</div>
 					<div class="seller">卖家：{{item.sellerName}}</div>
-				</div>
-				<div class="right">
-					<button class="buy" data-id="{{item.id}}">购买</button>
 				</div>
 			</li>
 			{{/each}}
