@@ -53,24 +53,34 @@
     <a class="mui-action-back mui-pull-left"><img src="../images/hashbox/slf-47-white.svg"style="width: 15px;margin-top: 5px"></a>
     <div id="sliderSegmentedControl"
          class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-        <a class="mui-control-item mui-control-item-m mui-active" _types="1">
+        <a class="mui-control-item mui-control-item-m mui-active" _types="1" style="display: none;">
             <span>BTC算力</span>
             <div class="btc-left"></div>
         </a>
-        <a class="mui-control-item mui-control-item-m" _types="5">
+        <a class="mui-control-item mui-control-item-m" _types="5" style="display: none;">
             <span>ETH算力</span>
             <div class="btc-right"></div>
         </a>
-        <a class="mui-control-item mui-control-item-m" _types="6">
+        <a class="mui-control-item mui-control-item-m" _types="6" style="display: none;">
             <span>FIL算力</span>
             <div class="btc-right"></div>
+        </a>
+        <a class="mui-control-item mui-control-item-m mui-active" _types="99">
+            <span>JLB算力</span>
+            <div class="btc-left"></div>
         </a>
     </div>
 </header>
 <div class="mui-content my shouyi" id="profitcontent">
     <div class=" box-sd m10" style="background-color: #fff!important;margin-bottom: 26px">
         <div class="mui-row shouyi-name">
-            <div class="mui-col-xs-6">
+			<div class="mui-col-xs-12">
+			    <div class="box-border-right">
+			    <p id="bore">JLB总收益</p>
+			    <p id="allJlb" type='btcOr'>--</p>
+			    </div>
+			</div>
+            <div class="mui-col-xs-6" style="display: none;">
                 <div class="box-border-right">
                 <p id="bore">BTC总收益</p>
                 <p id="allBtc" type='btcOr'>--</p>
@@ -82,7 +92,7 @@
                     <p id="allFil">--</p>
                 </div>
             </div>
-            <div class="mui-col-xs-6">
+            <div class="mui-col-xs-6" style="display: none;">
                 <div>
                     <p style="font-size: 15px;margin-top: 22px;margin-bottom: 12.5px;">HBT总收益</p>
                     <p id="allHpt">--</p>
@@ -91,7 +101,7 @@
         </div>
         <ul class="mui-table-view mui-table-view-chevron gmje box-border-top" id="detailed"
             style="height: 47px;background-color: #fbfbfb;box-shadow: 0px 2px 5px 1px #eeeff1;">
-            <li class="mui-table-view-cell mui-collapse-content" style="margin: revert;top: 3px;"><p id="income" style="float: left">BTC总收益明细</p> <span
+            <li class="mui-table-view-cell mui-collapse-content" style="margin: revert;top: 3px;"><p id="income" style="float: left">JLB总收益明细</p> <span
                     class="mui-pull-right"><span class="mui-icon mui-icon-arrowright" style="font-size: 22px;margin-top: -6px;position: relative;right: -7px;"></span></span>
             </li>
         </ul>
@@ -133,8 +143,9 @@
 <script>
     var isFirst = true;
     var allBtc = "";
+    var allJbl = "";
     var allHpt = "";
-    var type = 1;
+    var type = 99;
     var time =[]
     var allEarnings = 0;
     var data;
@@ -159,6 +170,11 @@
             $("#income").text('FIL总收益明细');
             $("#fil").css('display','block');
             $(".mui-col-xs-6").addClass('mui-col-xs-4')
+        }if (type == 1) {
+            $("#bore").text('JLB总收益');
+            $("#income").text('JLB总收益明细');
+            $("#fil").css('display','none');
+            $(".mui-col-xs-6").removeClass('mui-col-xs-4')
         }
 
         load();
@@ -168,6 +184,7 @@
 
     function load() {
         $("#allBtc").text('--');
+        $("#allJLB").text('--');
         $("#allHpt").text('--');
         $("#allBtc").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈</p>");
         $("#allHpt").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈</p>");
@@ -213,6 +230,11 @@
                     allDealFilPrice = data.date.allDealFilPrice;   //FIL待释放总收益RMB
                     btcoreth = 'FIL';
                     break;
+				case 99:
+					btcoreth = 'JLB'
+					allEarnings = data.date.allJLB;
+					allEarningsPrice = data.date.allJLBPrice;
+					break;
                 default:
                     break;
             }
@@ -222,7 +244,7 @@
             if (data.date.list && data.date.list.length > 0) {
                 var ul = "";
                 mui.each(data.date.list, function (index, item) {
-                    var temp = JSON.parse(item.validity);;
+                    var temp = JSON.parse(item.validity);
                     if (item.lastTime != null && item.lastTime != undefined) {item.lastTime = item.lastTime.substring(0, 10)+'到期'}
                     if (item.validity){if (temp[0]  >= 40) {item.lastTime='永久有效'}}
                     switch (item.coinType) {
@@ -237,6 +259,10 @@
                         //FIL
                         case 6:
                             earnings = item.allFil
+                            break;
+                        //JLB
+                        case 99:
+                            earnings = item.allJlb
                             break;
                         default:
                             earnings = 0
@@ -407,6 +433,7 @@
     //总收益明细 -- 跳转
     $("#detailed").click(function () {
         responseData = {};
+        responseData.allJlb = allJlb;
         responseData.allBtc = allBtc;
         responseData.allHpt = allHpt;
         responseData.type = type;

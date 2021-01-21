@@ -81,6 +81,8 @@
 				<div class="mui-input-row">
 					<input id='tb-addr' type="number" class="mui-input-clear mui-input" name="rmbAmount">
 				</div>
+				<p class="tb-title">支付方式</p>
+				<div id="payInfo"></div>
 			</form>
 			<div class="tb-pay-tips">
 				<p>温馨提示</p>
@@ -141,6 +143,7 @@
 	var waiting = null;
 	var w = window;
 	var phone = ''
+	let payInfoId='';
 
 	function closeWaiting() {
 		waiting && waiting.close();
@@ -220,8 +223,32 @@
 		$("#detialTitle").html(assetName+"挂单");
 
 		loadDetail();
+		loadReceiptAccountInfo();
 	});
-
+	function loadReceiptAccountInfo() {
+		Common.muipost("/app/user/receiptAccount/list", {
+		}, function(data) {
+			const {type,date} = data;
+			console.log(JSON.stringify(date));
+			if(type===200){
+				if(date.length===0){
+					mui.confirm(data.content, "温馨提示", ["确定"], function(e) {
+						mui.openWindow({
+							url: '/info/info/account.html',
+							id: '/info/info/account.html'
+						});
+					});
+					return false;
+				}
+				let html="";
+				date.forEach(item=>{
+					payInfoId = item.id;
+					html = html+'<div class="mui-input-row mui-radio mui-left"><label>'+item.theirBank+'</label><input name="radio1" checked type="radio"></div>'
+				});
+				$("#payInfo").html(html);
+			}
+		}, function() {});
+	}
 	function loadDetail() {
 		Common.muipost("/app/user/money/details", {
 			asset: assetType
@@ -346,6 +373,7 @@
 		Common.muipost("/app/user/sell/submit", {
 			rmbAmount,
 			jlbCount,
+			payInfoId,
 			pass: $('#passwordInput').val()
 		}, function(data) {
 			if (data.type == 200) {

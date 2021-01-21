@@ -89,6 +89,7 @@
 			// 加载数据
 			function loadAuth() {
 				Common.muipost("/app/user/v2/auth/info", {}, function(data) {
+					console.log(JSON.stringify(data.date));
 					if (data.date == null) {
 						// 无数据，带提交
 						$(".realname").removeClass("mui-hidden");
@@ -99,7 +100,7 @@
 						$("#card").removeAttr("readonly");
 					} else {
 						// 显示数据
-						var images = JSON.parse(data.date.certPhoto);
+						var images = data.date.certPhoto;
 
 						// 验证是否为服务器图片
 						var zheng = images[0];

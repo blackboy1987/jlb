@@ -55,7 +55,7 @@
 					</div>
 					<div class="mui-text-center up-images" id="picture" _index="2">
 						<div class="pa-hand py1 m-title">手持身份证和签名照</div>
-						<p class="m-nav">请上传一张手持身份证正面和个人签字的照片，签字内容包含姓名、算力蜂和认证日期，人脸完全露出。确保证件照上的所有信息清晰</p>
+						<p class="m-nav">请上传一张手持身份证正面和个人签字的照片，签字内容包含姓名、聚力国际和认证日期，人脸完全露出。确保证件照上的所有信息清晰</p>
 					 	<div style="width: 60%;margin: 0 auto;"><img id="hand" src="../../images/hashbox/idcard_02.png" style="width: 100%;" /></div>
 					</div>
 				</div>
@@ -296,18 +296,19 @@
 					var key = data.date.dir + uuid(32, 54) + proxfName;
 
 					mui.showLoading("照片上传中...", "body");
-					var task = plus.uploader.createUpload(host, {method: "POST"}, function(t, status) {
+					var task = plus.uploader.createUpload("http://172.16.12.223/common/upload", {method: "POST"}, function(t, status) {
+						const result = JSON.parse(t.responseText);
 						mui.hideLoading();
 						if (status == 200) {
 							mui.toast("上传成功");
 							var heightz = $('#zheng').height() > $(window).height() / 2 ? $(window).height() / 2 : $('#zheng').height();
 							var heighth = $('#hand').height() > $(window).height() / 2 ? $(window).height() / 2 : $('#hand').height();
 							if (index == 1) {
-								$("#zheng").attr("src", files);
+								$("#zheng").attr("src", result.date);
 								$("#zheng").css("height", heightz)
 								image.zheng = key;
 							} else {
-								$("#hand").attr("src", files);
+								$("#hand").attr("src", result.date);
 								$("#hand").css("height", heighth)
 								image.hand = key;
 							}

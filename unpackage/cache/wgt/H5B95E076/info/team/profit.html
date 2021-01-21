@@ -20,7 +20,7 @@
 		</header>
 		<div class="mui-content team my-proifit" style="background: #fff">
 			<img src="../../images/hashbox/banner_sy.png" width="100%" />
-			<div class="box-sd m10 pad10 mui-clearfix">
+			<!-- <div class="box-sd m10 pad10 mui-clearfix">
 				<img src="../../images/hashbox/BTC.png" width="30px" />BTC奖励<span class="mui-pull-right" id="allBtc"></span>
 			</div>
 			<div class="box-sd m10 pad10 mui-clearfix">
@@ -28,6 +28,12 @@
 			</div>
 			<div class="box-sd m10 pad10 mui-clearfix">
 				<img src="../../images/hashbox/HBT.png" width="30px" />HBT奖励<span class="mui-pull-right" id="allHbt"></span>
+			</div> -->
+			<div class="box-sd m10 pad10 mui-clearfix">
+				<img src="../../images/hashbox/moneybag.png" width="30px" />JLB奖励<span class="mui-pull-right" id="allJlb"></span>
+			</div>
+			<div class="box-sd m10 pad10 mui-clearfix">
+				<img src="../../images/hashbox/moneybag.png" width="30px" />CNY奖励<span class="mui-pull-right" id="allCny"></span>
 			</div>
 			<!--<div class="box-sd m10 pad10 mui-clearfix">
 				<img src="../../images/hashbox/moneybag.png" width="30px" height="30px" />RMB提成收益<span class="mui-pull-right">0.00 RMB <a href="#" id="toTx">提现</a></span>
@@ -66,9 +72,11 @@
 
 		function load() {
 			Common.muipost("/app/user/v2/profituser/detail", {}, function(data) {
-				$("#allBtc").text(Common.moneyFormatByDecimals(data.date.profitBtc, 8) + " BTC");
-				$("#allUsdt").text(Common.moneyFormat(data.date.profitUsdt) + " USDT");
-				$("#allHbt").text(Common.moneyFormat(data.date.profitHbt) + " HBT")
+				// $("#allBtc").text(Common.moneyFormatByDecimals(data.date.profitBtc, 8) + " BTC");
+				// $("#allUsdt").text(Common.moneyFormat(data.date.profitUsdt) + " USDT");
+				// $("#allHbt").text(Common.moneyFormat(data.date.profitHbt) + " HBT")
+				$("#allJlb").text(Common.moneyFormat(data.date.profitJlb) + " JLB")
+				$("#allCny").text(Common.moneyFormat(data.date.profitCny) + " CNY")
 			})
 		}
 	</script>

@@ -80,24 +80,6 @@
 			    <p id="allJlb" type='btcOr'>--</p>
 			    </div>
 			</div>
-            <div class="mui-col-xs-6" style="display: none;">
-                <div class="box-border-right">
-                <p id="bore">BTC总收益</p>
-                <p id="allBtc" type='btcOr'>--</p>
-                </div>
-            </div>
-            <div id="fil" class="mui-col-xs-6" style="display: none">
-                <div class="box-border-right" style="height: 74px">
-                    <p style="font-size: 15px;margin-top: 22px;margin-bottom: 12.5px;">FIL<sapn style="color: #c4e3ff">待释放</sapn></p>
-                    <p id="allFil">--</p>
-                </div>
-            </div>
-            <div class="mui-col-xs-6" style="display: none;">
-                <div>
-                    <p style="font-size: 15px;margin-top: 22px;margin-bottom: 12.5px;">HBT总收益</p>
-                    <p id="allHpt">--</p>
-                </div>
-            </div>
         </div>
         <ul class="mui-table-view mui-table-view-chevron gmje box-border-top" id="detailed"
             style="height: 47px;background-color: #fbfbfb;box-shadow: 0px 2px 5px 1px #eeeff1;">
@@ -106,19 +88,6 @@
             </li>
         </ul>
     </div>
-<!--    <div id="slider" class="mui-slider pay-tb">-->
-<!--        <div id="sliderSegmentedControl"-->
-<!--             class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">-->
-<!--            <a class="mui-control-item mui-control-item-m mui-active" _types="1">-->
-<!--                <span>BTC算力</span>-->
-<!--                <div class="btc-left"></div>-->
-<!--            </a>-->
-<!--            <a class="mui-control-item mui-control-item-m" _types="5">-->
-<!--                <span>ETH算力</span>-->
-<!--                <div class="btc-right"></div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--    </div>-->
     <div class="mui-content" id="index-html" style="background: #fff">
         <div class="mui-control-content mui-active myHashbox product">
         </div>
@@ -153,46 +122,12 @@
     var allDealFilPrice = 0;
     var allEarningsPrice = 0;
     var earnings = '';
-    mui("body").on("tap", ".mui-control-item-m", function () {
-        type = Number($(this).attr('_types'))
-        if (type == 1) {
-            $("#bore").text('BTC总收益');
-            $("#income").text('BTC总收益明细');
-            $("#fil").css('display','none');
-            $(".mui-col-xs-6").removeClass('mui-col-xs-4')
-        } else if(type == 5) {
-            $("#bore").text('ETH总收益');
-            $("#income").text('ETH总收益明细');
-            $("#fil").css('display','none');
-            $(".mui-col-xs-6").removeClass('mui-col-xs-4')
-        }else if(type == 6) {
-            $("#bore").html('FIL<span style="color: #ffcda0">已释放</span>');
-            $("#income").text('FIL总收益明细');
-            $("#fil").css('display','block');
-            $(".mui-col-xs-6").addClass('mui-col-xs-4')
-        }if (type == 1) {
-            $("#bore").text('JLB总收益');
-            $("#income").text('JLB总收益明细');
-            $("#fil").css('display','none');
-            $(".mui-col-xs-6").removeClass('mui-col-xs-4')
-        }
-
-        load();
-    })
     load();
 
 
     function load() {
-        $("#allBtc").text('--');
         $("#allJLB").text('--');
-        $("#allHpt").text('--');
-        $("#allBtc").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈</p>");
-        $("#allHpt").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈</p>");
-        if (type == 6){
-            $("#allFil").text('--')
-            $("#allFil").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈</p>");
-        }
-
+        $("#allJLB").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈</p>");
         Common.muipost("/app/user/profit/list", {
             coinType: type
         }, function (data) {
@@ -203,15 +138,6 @@
             } else {
                 lorm = 'M'
             }
-            // if (type == 1) {
-            //     btcoreth = 'BTC'
-            //     allEarnings = data.date.allBtc;
-            //     allEarningsPrice = data.date.allBtcPrice;
-            // } else {
-            //     btcoreth = 'ETH';
-            //     allEarnings = data.date.allEth;
-            //     allEarningsPrice = data.date.allEthPrice;
-            // }
             switch (type) {
                 case 1:
                     btcoreth = 'BTC'
@@ -238,7 +164,6 @@
                 default:
                     break;
             }
-
 
             $('.profitcontroller').remove();
             if (data.date.list && data.date.list.length > 0) {
@@ -291,7 +216,6 @@
                     ul += '<li class="mui-table-view-cell mui-collapse-content box-border-bottom" style="height: 73.5px;position: relative;">';
                     ul += '<div class="mui-row sy-row">'
                     ul += '<div class="mui-col-xs-12">' + btcoreth + '算力产出<span class="mui-pull-right" style="color: #ff7800">' + Common.moneyFormatByDecimals(earnings, 8) + '</span></div>';
-                    ul += '<div class="mui-col-xs-12" style="margin-top: 10px">HBT奖励 <span class="mui-pull-right" style="color: #ff7800">' + Common.moneyFormat(item.allHpt) + '</span></div>';
                     ul += '</div>';
                     ul += '</li>';
                     ul += '<li class="mui-table-view-cell detailed mui-collapse-content li-2" _allBtc="' + Common.moneyFormatByDecimals(
@@ -357,42 +281,6 @@
                 ul += '</div>';
                 $("#profitcontent").append(ul);
             }
-            // if ($(".container").length >= 1) {
-            //     $('.container').each(function(i) {
-            //         let bar = new ProgressBar.Line(this, {
-            //             strokeWidth: 7,
-            //             easing: 'easeInOut',
-            //             duration: 1400,
-            //             color: '#ffcda0',
-            //             trailColor: '#f7f7f7',
-            //             trailWidth: 7,
-            //             svgStyle: {width: '100%', height: '100%','border-radius': '4px'},
-            //             // text: {
-            //             //     style: {
-            //             //         // Text color.
-            //             //         // Default: same as stroke color (options.color)
-            //             //         color: '#999',
-            //             //         position: 'absolute',
-            //             //         right: '0',
-            //             //         top: '30px',
-            //             //         padding: 0,
-            //             //         margin: 0,
-            //             //         transform: null
-            //             //     },
-            //             //     autoStyleContainer: false
-            //             // },
-            //             from: {color: '#FFEA82'},
-            //             to: {color: '#ED6A5A'},
-            //             // step: (state, bar) => {
-            //             //     bar.setText(Math.round(bar.value() * 100) + ' %');
-            //             // }
-            //         });
-            //         bar.animate(time[i]);  // Number from 0.0 to 1.0
-            //         $('div.container > svg:nth-child(2)').remove()
-            //     });
-            //
-            // }
-
             $("#allBtc").text(Common.moneyFormatByDecimals(allEarnings, 8) ? Common.moneyFormatByDecimals(allEarnings, 8) :  '--');
             $("#allHpt").text(Common.moneyFormat(data.date.allHpt));
             $("#allBtc").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈ " + Common.moneyFormat(allEarningsPrice) + "元</p>");
@@ -404,6 +292,7 @@
                 $("#allFil").append("<p style='font-size: 14px;margin-top:12px;margin-bottom: 22px'>≈ " + Common.moneyFormat(allDealFilPrice) + "元</p>");
             }
         }, function (data) {
+			console.log(JSON.stringify(data));
             mui.toast('网络错误')
         });
     }

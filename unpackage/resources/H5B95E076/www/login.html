@@ -80,6 +80,20 @@
 		</div>
 	</div>
 	</div>
+	
+	<!-- 实名认证 -->
+	<div class="meui-mask" style="display: none;" id="bank_info">
+		<div class="cons">
+			<div style="margin-top: 40px;">
+				<h3 style="font-weight: 400;color:#373737;margin-top:25px;margin-bottom:15px">您还未实名认证</h3>
+			</div>
+			<p style="color:#999999;font-size: 16px;margin: 18px 0;">去完善认证信息吧</p>
+			<div class="go_set" style="height: 45px; margin: 0 auto;border-radius: 7px;width: 155px;background-color:#1F75DA;color:#FFFFFF;margin-top:15px;text-align: center;"><span
+				 style="line-height: 45px;">立即前往</span></div>
+			<img class="closes" src="../images/failes.png" style="margin-top: 55px;width: 35px;" />
+		</div>
+	</div>
+	
 	<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
 	<script type='text/javascript' src="js/mui.min.js"></script>
 	<script type='text/javascript' src='js/common/common.js'></script>
@@ -138,9 +152,15 @@
 					!s_version && plus.storage.setItem('version', JSON.stringify(version))
 					!s_uuid && plus.storage.setItem('uuid', JSON.stringify(uuid))
 					Common.muipost(url, newparams, function(data) {
-						//已激活        
-						location.href = "main.html?v=" + version;	
-						plus.storage.setItem("popover", '1');
+						localStorage.setItem("isAuth",data.isAuth);
+						if(!localStorage.getItem("isAuth")){
+							$("#bank_info").show();
+						}else{
+							//已激活
+							location.href = "main.html?v=" + version;	
+							plus.storage.setItem("popover", '1');
+						}
+						
 					}, function(data) {
 						$("#yzm").removeClass("mui-hidden")
 						// mui.toast(data.content);
@@ -150,6 +170,17 @@
 			// 	plus.runtime.quit();
 			// }
 		});
+		
+		
+		//去实名认证
+		$('.go_set').click(function() {
+			mui.openWindow({
+				url: './info/info/idCard.html',
+				id: './info/info/idCard.html',
+
+			});
+		});
+		
 		function sendSms() {
 			var checkurl = "/common/obtain/phone/code";
 			mui.showLoading("短信发送中", "body");
@@ -255,9 +286,14 @@
 					plus.storage.setItem("loginUser", JSON.stringify(cookie));
 					plus.storage.setItem("popover", '1');
 					localStorage.setItem("userId1",cookie.id);
+					localStorage.setItem("isAuth",cookie.isAuth);
 					!s_version && plus.storage.setItem('version', JSON.stringify(version))
-					!s_uuid && plus.storage.setItem('uuid', JSON.stringify(uuid))
-					location.href = "main.html?v=" + version;
+					!s_uuid && plus.storage.setItem('uuid', JSON.stringify(uuid));
+					if(!localStorage.getItem("isAuth")){
+						$("#bank_info").show();
+					}else{
+						location.href = "main.html?v=" + version;
+					}
 				}, function(data) {
 					// 第一次新设备登录校验
 					if (data.type == 500) {

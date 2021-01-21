@@ -2,14 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="308d1d21-b1c0-4725-8314-2917c292d856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/info/buy_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/sell.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/sell_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/artTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210118005227.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/info/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/buy_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/buy_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/sell.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/sell.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/my.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team/profit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210112100742.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210112164801.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/idCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/idCard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/realName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/rmb/investRmb.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/rmb/investRmb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team/profit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/common/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/info" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/block/block_page" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -105,7 +118,13 @@
       <workItem from="1610443776081" duration="27000" />
       <workItem from="1610444257383" duration="1256000" />
       <workItem from="1610499939467" duration="231000" />
-      <workItem from="1610862270989" duration="14018000" />
+      <workItem from="1610862270989" duration="14793000" />
+      <workItem from="1610899119482" duration="2168000" />
+      <workItem from="1610931794296" duration="10000" />
+      <workItem from="1611018927263" duration="1827000" />
+      <workItem from="1611042021331" duration="4917000" />
+      <workItem from="1611104591537" duration="2521000" />
+      <workItem from="1611190871516" duration="465000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1607340636248</created>
@@ -212,7 +231,28 @@
       <option name="project" value="LOCAL" />
       <updated>1610444268583</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="init">
+      <created>1610894800702</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1610894800702</updated>
+    </task>
+    <task id="LOCAL-00017" summary="init">
+      <created>1610894812137</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1610894812137</updated>
+    </task>
+    <task id="LOCAL-00018" summary="init">
+      <created>1610902166353</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610902166353</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
