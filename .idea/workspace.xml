@@ -1,68 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="308d1d21-b1c0-4725-8314-2917c292d856" name="Default Changelist" comment="init">
-      <change afterPath="$PROJECT_DIR$/images/register_login/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/dongtai.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/dongtai_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/dongtai_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/sell_detail_record.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/sell_record.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_detail_record.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_record.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210131164708.apk" afterDir="false" />
+    <list default="true" id="308d1d21-b1c0-4725-8314-2917c292d856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/agreement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/buy_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/buy_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/info/idCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/idCard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/dongtai.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/dongtai.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/info/info/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/realName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/invite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/ipfs/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/ipfs/activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/sell.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/sell.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/sell_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/sell_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/team/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/team/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common/common-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common/common-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/link/course.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/link/course.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest_back.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest_back.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest_for_windwos.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest_for_windwos.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/my.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/agreement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/idCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/idCard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/realName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/ipfs/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/ipfs/activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/course.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/course.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/manifest_back.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/manifest_back.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/manifest_for_windwos.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/manifest_for_windwos.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/agreement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/idCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/idCard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/realName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/ipfs/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/ipfs/activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/common/common-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/common/common-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/link/course.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/link/course.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest_back.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest_back.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest_for_windwos.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/manifest_for_windwos.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +117,7 @@
       <workItem from="1612143491785" duration="8000" />
       <workItem from="1612577361490" duration="4730000" />
       <workItem from="1612614832873" duration="1328000" />
-      <workItem from="1612659446634" duration="9474000" />
+      <workItem from="1612659446634" duration="10034000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1607340636248</created>
@@ -309,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611222513141</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="init">
+      <created>1612675052013</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1612675052013</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

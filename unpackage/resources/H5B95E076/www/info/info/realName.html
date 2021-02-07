@@ -296,7 +296,7 @@
 					var key = data.date.dir + uuid(32, 54) + proxfName;
 
 					mui.showLoading("照片上传中...", "body");
-					var task = plus.uploader.createUpload("http://172.16.12.223/common/upload", {method: "POST"}, function(t, status) {
+					var task = plus.uploader.createUpload("http://v6.shengjing88.com/common/upload", {method: "POST"}, function(t, status) {
 						const result = JSON.parse(t.responseText);
 						mui.hideLoading();
 						if (status == 200) {
