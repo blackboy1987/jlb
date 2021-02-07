@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>买入</title>
+		<title>交易中心</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -14,29 +14,36 @@
 				display: flex;
 				flex-direction: column;
 				font-size: 1rem;
-				border-bottom: solid 2px red;
 			}
-			.user{
+			.top{
 				display: flex;
-				justify-content: space-between;
 				align-items: center;
+				justify-content: space-between;
+				height: 3.125rem;
 			}
-			.user .icon{
-				width: 64px;
-				height: 64px;
+			.top .bianhao{
+				font-size: 1.1rem;
+			}
+			.bottom{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.bottom img{
+				width: 80px;
+				height: 80px;
 				border-radius: 50%;
-				overflow: hidden;
 			}
-			.user .icon>img{
-				width: 100%;
+			.bottom .info{
+				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav other">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title" style="font-size: 16px;" id="teamName">买入</h1>
-			<a id="record" class="mui-pull-right mui-btn-link">买入记录</a>
+			<h1 class="mui-title" style="font-size: 16px;" id="teamName">交易中心</h1>
+			<a id="record" class="mui-pull-right mui-btn-link">交易记录</a>
 		</header>
 		<div class="mui-content" id="pullrefresh">
 		    <ul class="mui-table-view" id="itemmobile"></ul>
@@ -49,17 +56,28 @@
 		<script type="text/html" id="tpl">
 			{{each date.content item key}}
 			<li class="item mui-table-view-cell">
-				<div class="user">
-					<div class="icon">
-						<img id="author_img" src="../images/head/017.png"/>
-					</div>
-					<div class="bianhao">编号：1234567</div>
-					<button class="buy" data-id="{{item.id}}">购买</button>
+				<div class="top">
+					<div class="bianhao">编号：{{item.sn}}</div>
+					<button class="buy mui-btn-blue" data-id="{{item.id}}">购买</button>
 				</div>
-				<div class="left">
-					<div class="count">数量：{{item.jlbCount}}</div>
-					<div class="amount">金额：{{item.rmbAmount}}</div>
-					<div class="seller">卖家：{{item.sellerName}}</div>
+				<div class="bottom">
+					<img id="author_img" src="../images/head/017.png"/>
+					<div class="info">
+						<div class="title">数量</div>
+						<div class="count">{{item.jlbCount}}</div>
+					</div>
+					<div class="info">
+						<div class="title">单价</div>
+						<div class="count">{{(item.rmbAmount/item.jlbCount).toFixed(6)}}</div>
+					</div>
+					<div class="info">
+						<div class="title">金额</div>
+						<div class="count">{{item.rmbAmount}}</div>
+					</div>
+					<div class="info">
+						<div class="title">卖家</div>
+						<div class="count">{{item.sellerName}}</div>
+					</div>
 				</div>
 			</li>
 			{{/each}}

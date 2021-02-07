@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>动态详情</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link href="../css/hashbox.css" rel="stylesheet" />
+		<style>
+			::-webkit-input-placeholder {
+				color: #ccc;
+				font-size: 15px;
+			}
+
+			::-moz-placeholder {
+				color: #ccc;
+				font-size: 15px;
+			}
+			/* firefox 19+ */
+
+			:-ms-input-placeholder {
+				color: #ccc;
+				font-size: 15px;
+			}
+			/* ie */
+
+			input:-moz-placeholder {
+				color: #ccc;
+				font-size: 15px;
+			}
+
+			.mui-input-group:after {
+				height: 0;
+			}
+			label{color:#333333;}
+			.m-right{text-align: right;color:#C8C8C8;}
+			.mui-input-group:before{height: 0;}
+			#submit{border-radius: 5px;font-size: 16px;display: block;width: 100%;margin-bottom: 10px;padding: 15px 0;line-height: 0;background: #1F75DA;color:#fff;border:none;}
+
+			.dongtai{
+				background: #FFF;
+				height: 7.5rem;
+				padding: 1.25rem;
+			}
+			.dongtai .dongtai-item .header{
+				display:flex;
+				align-items: center;
+				height: 4rem;
+				font-size: 1.125rem;
+			}
+			.dongtai .dongtai-item .header img{
+				height: 3.125rem;
+				width: 3.125rem;
+				border-radius: 3.125rem;
+				overflow: hidden;
+				margin-right: 1rem;
+			}
+			.dongtai .dongtai-item .header .username{
+				margin-right: 1rem;
+			}
+			.dongtai .dongtai-item .header .rank{
+				margin-right: 1rem;
+			}
+			.dongtai .dongtai-item .header .time{
+				float: right;
+			}
+			.dongtai .dongtai-item .content{
+				font-size: 1.125rem;
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+			}
+			.dongtai .dongtai-item .images{
+				margin-top: 1.5rem;
+				margin-bottom: 2.5rem;
+			}
+			.dongtai .dongtai-item .images img{
+				margin-top: 1.5rem;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav other">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">动态详情</h1>
+		</header>
+		<div class="mui-content dongtai" id="dongtai">
+
+		</div>
+
+		<script type="text/html" id="dongtaiTml">
+			{{if date }}
+			<div class="dongtai-item">
+				<div class="header">
+					<img src="../images/head/017.png"/>
+					<div class="username">{{date.username}}</div>
+					<div class="rank">{{date.name}}</div>
+					<div class="time">{{dateFormat(date.createdDate,'YYYY-MM-DD')}}</div>
+				</div>
+				<div class="content">
+					{{date.content}}
+				</div>
+				<div class="images">
+					{{each date.image item key}}
+						<img src="{{item}}" width="100%" style="border: solid 1px #f0f0f0;" />
+					{{/each}}
+				</div>
+			</div>
+			{{/if}}
+		</script>
+
+		<script type='text/javascript' src='../js/jquery-1.11.1.min.js'></script>
+		<script type='text/javascript' src="../js/mui.min.js"></script>
+		<script src="../js/moment.js"></script>
+		<script src="../js/artTemplate.js"></script>
+		<script type='text/javascript' src='../js/common/common.js'></script>
+		<script type='text/javascript' src='../js/reaName/ID.js'></script>
+		<!-- aliyun upload js -->
+		<link href="../js/common/mui.loading.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/common/mui.loading.js"></script>
+		<script>
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var backs = self.backs;
+				if(!backs){
+					$("#goBack").hide();
+				}
+				const adId = self.adId;
+				load(adId);
+				
+				setTimeout(function(){
+					log(adId);
+				},3000);
+			});
+			
+			function log(adId){
+				var url = "/app/user/ad/log";
+				Common.muipost(url, {
+					id: adId,
+				});
+			}
+
+			function load(adId){
+				var url = "/app/user/ad/detail";
+				Common.muipost(url, {
+					id: adId,
+				}, function (data) {
+					if (data.date) {
+						console.log(JSON.stringify(data.date));
+						template.defaults.imports.dateFormat = function(date, format){
+							return moment(date).format(format || 'YYYY-MM-DD HH:mm:ss');
+						};
+						var html = template('dongtaiTml', data);
+						$("#dongtai").html(html);
+					}
+				});
+			}
+		</script>
+
+	</body>
+
+</html>

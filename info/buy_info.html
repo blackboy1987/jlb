@@ -127,6 +127,13 @@
 				Common.muipost("/app/user/buy/info", {
 				    id:orderId,
 				}, function (data) {
+					if(data.date&&data.date.status!==0){
+						plus.nativeUI.alert('交易状态不正确');
+						mui.openWindow({
+							url: 'buy.html',
+							id: 'buy.html'
+						});
+					}
 					canUp = true;
 				    var html = template('tpl', data.date);
 					$("#mui_content").html(html);
@@ -203,6 +210,7 @@
 							$("#zheng").css("height", heightz)
 							image.zheng = result.date;
 						}
+						$("#submit").prop("disabled","");
 					} else {
 						if (index == 1) {
 							$("#zheng").attr("src", "../../images/hashbox/idcard_01.png");

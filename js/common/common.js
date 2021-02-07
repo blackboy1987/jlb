@@ -327,17 +327,17 @@ Common.resetBaseApi=function (url){
         baseApi = basePath1+url;
     }else if(url==='/app/user/receiptAccount/list'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/v2/relation/extend_v2'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/save'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/list'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/detail'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/log'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/page'){
         baseApi = basePath1+url;
     }else if(url==='/app/user/sell/record'){
         baseApi = basePath1+url;
@@ -564,6 +564,19 @@ Common.money = function (obj) {
         return false;
     }
 }
+
+Common.money = function (val,precis) {
+	if(!precis){
+		precis = 3;
+	}
+    var reg = "^[0-9]+[\.][0-9]{0,"+precis+"}$";
+    if (!reg.test(obj)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 //货币：格式定义为保留小数点后二位
 Common.moneyFormat = function (number) {
     // 默认2位小数

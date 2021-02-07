@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>动态列表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/mui.min.css">
+	<style type="text/css">
+		.dongtai{
+			background: #FFF;
+			padding: 1.25rem;
+		}
+		.dongtai .dongtai-item{
+			border-bottom: solid 1px #F0F0F0;
+			padding-bottom: 1.5rem;
+		}
+		.dongtai .dongtai-item .header{
+			display:flex;
+			align-items: center;
+			height: 5rem;
+			font-size: 1.125rem;
+		}
+		.dongtai .dongtai-item .header img{
+			height: 3.125rem;
+			width: 3.125rem;
+			border-radius: 3.125rem;
+			overflow: hidden;
+			margin-right: 1rem;
+		}
+		.dongtai .dongtai-item .header .username{
+			margin-right: 1rem;
+		}
+		.dongtai .dongtai-item .header .rank{
+			margin-right: 1rem;
+		}
+		.dongtai .dongtai-item .content{
+			font-size: 1.125rem;
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+		}
+	</style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav other">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title" style="font-size: 16px;" id="teamName">动态列表</h1>
+</header>
+<div class="mui-content" id="pullrefresh">
+	<ul class="mui-table-view dongtai" id="itemmobile"></ul>
+</div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/mui.js"></script>
+<script src="../js/moment.js"></script>
+<script src="../js/artTemplate.js"></script>
+<script src="../js/common/common.js"></script>
+<script type="text/html" id="tpl">
+	{{each date.content item key}}
+	<li class="dongtai-item">
+		<div class="header">
+			<img src="../images/head/017.png"/>
+			<div class="username">{{item.username}}</div>
+			<div class="rank">{{item.name}}</div>
+		</div>
+		<div class="content">
+			{{item.content}}
+			<a data-id="{{item.id}}" class="dongtai-detail">详情</a>
+		</div>
+	</li>
+	{{/each}}
+</script>
+<script>
+	mui.init({
+		swipeBack: true,
+		pullRefresh: {
+			container: '#pullrefresh',
+			up: {
+				height: 50,
+				auto: true,
+				contentrefresh: "正在加载...",
+				contentnomore: '没有更多数据了',
+				callback: pullupRefresh
+			},
+			down: {
+				style: 'circle',
+				callback: pulldownRefresh
+			}
+		}
+	});
+	var page =1;
+	function pullupRefresh() {
+		var _this = this;
+		var url = "/app/user/ad/page";
+		Common.muipost(url, {
+			limit: 10,
+			page: page,
+		}, function (data) {
+			if (data.date.content && data.date.content.length > 0) {
+				template.defaults.imports.dateFormat = function(date, format){
+					return moment(date).format(format || 'YYYY-MM-DD HH:mm:ss');
+				};
+				var html = template('tpl', data);
+				if ($(".mui-table-view-cell").length > 0) {
+					$("#itemmobile > li:last").after(html);
+				} else {
+					$("#itemmobile").prepend(html);
+				}
+				page++;
+				_this.endPullupToRefresh(data.date.totalPage <= data.date.pageNumber); //结束转雪花进度条的“正在加载...”过程
+				if (data.date.totalPage <= data.date.page) {
+					_this.endPullupToRefresh(true);
+				}
+				mui('#pullrefresh').pullRefresh().refresh(true);
+			}else {
+				_this.endPullupToRefresh(true);
+			}
+		}, function (data) {
+			_this.endPullupToRefresh(true);
+		});
+	}
+	function pulldownRefresh() {
+		page = 1;
+		var url = "/app/user/ad/page";
+		Common.muipost(url, {
+			limit: 10,
+			page: page,
+		}, function (data) {
+			if (data.date.content && data.date.content.length > 0) {
+				template.defaults.imports.dateFormat = function(date, format){
+					return moment(date).format(format || 'YYYY-MM-DD HH:mm:ss');
+				};
+				var html = template('tpl', data);
+				$("#itemmobile").html(html);
+				page++;
+			} else {
+				mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
+				mui('#pullrefresh').pullRefresh().refresh(true);
+			}
+		}, function (data) {
+			if (data.type == 500) {
+				_this.endPullupToRefresh(true);
+			}
+		});
+		mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
+		mui('#pullrefresh').pullRefresh().refresh(true);
+	}
+
+	mui("body").on("tap", ".dongtai-detail", function() {
+		pulldownRefresh();
+		const _this = $(this);
+		const id = _this.data("id");
+		mui.openWindow({
+			url: 'dongtai_detail.html',
+			id: 'dongtai_detail.html',
+			extras:{
+				adId:id,
+			}
+		});
+	});
+
+</script>
+
+</body>
+</html>
