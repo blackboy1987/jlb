@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>挂单记录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style type="text/css">
+			li.item{
+				padding:0.5rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 1rem;
+				height: 10rem;
+			}
+			.item .right{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-around;
+			}
+			.item .right button{
+				margin-bottom: 0.5rem;
+			}
+		</style>
+		<style>
+			html,body {margin: 0px;padding: 0px;background-color: white;}
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;z-index: 20;
+				background-color: #000;
+			}
+
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 14px;
+			}
+
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav other">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" style="font-size: 14px;" id="teamName">挂单记录</h1>
+		</header>
+		<div class="mui-content" id="pullrefresh">
+		    <ul class="mui-table-view" id="itemmobile"></ul>
+		</div>
+	</div>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.js"></script>
+		<script src="../js/mui.zoom.js"></script>
+		<script src="../js/mui.previewimage.js"></script>
+		<script src="../js/moment.js"></script>
+		<script src="../js/artTemplate.js"></script>
+		<script src="../js/common/common.js"></script>
+		<script type="text/html" id="tpl">
+			{{each date.content item key}}
+			<li class="item mui-table-view-cell">
+				<div class="left">
+					<div class="count">数量：{{item.jlbCount}}</div>
+					<div class="amount">金额：{{item.rmbAmount}}</div>
+					<div class="seller">卖家：{{item.sellerName}}</div>
+					<div class="time">挂单时间：{{dateFormat(item.createdDate)}}</div>
+					{{if item.buyerName}}
+					<div class="buyer">购买人：{{item.buyerName}}</div>
+					{{/if}}
+					{{if item.buyDate}}
+					<div class="buy-time">购买时间：{{dateFormat(item.createdDate)}}</div>
+					{{/if}}
+				</div>
+				<div class="right">
+					{{if item.status==0}}
+						<button>待确认</button>
+					{{/if}}
+					{{if item.status==1}}
+						<div>交易中</div>
+					{{/if}}
+					{{if item.status==2}}
+						<div>待确认</div>
+						<button class="preview" data-id="{{item.id}}">详情</button>
+					{{/if}}
+					{{if item.status==3}}
+						<div>已确认</div>
+					{{/if}}
+					{{if item.status==4}}
+						<div>已取消</div>
+					{{/if}}
+					{{if item.status==5}}
+						<div>已拒绝</div>
+					{{/if}}
+				</div>
+			</li>
+			{{/each}}
+		</script>
+		<script>
+			
+			mui('body').on('tap','.preview',function(){
+				const id=$(this).data("id");
+				alert(id);
+			});
+			
+			mui.init({
+			    swipeBack: true,
+			    pullRefresh: {
+			        container: '#pullrefresh',
+			        up: {
+			            height: 50,
+			            auto: true,
+			            contentrefresh: "正在加载...", 
+			            contentnomore: '没有更多数据了',
+			            callback: pullupRefresh
+			        },
+			        down: {
+			            style: 'circle',
+			            callback: pulldownRefresh
+			        }
+			    }
+			});
+			var page =1;
+			function pullupRefresh() {
+			    var _this = this;
+			    var url = "/app/user/sell/record";
+			    Common.muipost(url, {
+			        limit: 10,
+			        page: page,
+			    }, function (data) {
+			        if (data.date.content && data.date.content.length > 0) {
+						template.defaults.imports.dateFormat = function(date, format){
+							return moment(date).format(format || 'YYYY-MM-DD HH:mm:ss');
+						};
+						var html = template('tpl', data);
+			            if ($(".mui-table-view-cell").length > 0) {
+			                $("#itemmobile > li:last").after(html);
+			            } else {
+			                $("#itemmobile").prepend(html);
+			            }
+			            page++;
+			            _this.endPullupToRefresh(data.date.totalPage <= data.date.pageNumber); //结束转雪花进度条的“正在加载...”过程
+			            if (data.date.totalPage <= data.date.page) {
+			                _this.endPullupToRefresh(true);
+			            }
+			            mui('#pullrefresh').pullRefresh().refresh(true);
+			        }else {
+			            _this.endPullupToRefresh(true);
+			        }
+			    }, function (data) {
+			        _this.endPullupToRefresh(true);
+			    });
+			}
+			function pulldownRefresh() {
+			    page = 1;
+			    var url = "/app/user/sell/record";
+			    Common.muipost(url, {
+			        limit: 10,
+			        page: page,
+			    }, function (data) {
+			        if (data.date.content && data.date.content.length > 0) {
+						template.defaults.imports.dateFormat = function(date, format){
+							return moment(date).format(format || 'YYYY-MM-DD HH:mm:ss');
+						};
+			            var html = template('tpl', data);
+			            $("#itemmobile").html(html);
+			            page++;
+			        } else {
+			            mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
+			            mui('#pullrefresh').pullRefresh().refresh(true);
+			        }
+			    }, function (data) {
+			        if (data.type == 500) {
+			            _this.endPullupToRefresh(true);
+			        }
+			    });
+			    mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
+			    mui('#pullrefresh').pullRefresh().refresh(true);
+			}
+		</script>
+
+	</body>
+</html>

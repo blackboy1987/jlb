@@ -1,6 +1,6 @@
 /* 需要引入的css文件 */
 .verify-code {
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
 	cursor: pointer;
 	margin-bottom: 5px;
@@ -64,7 +64,7 @@
     height: 50px;
     line-height: 50px;
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     color: #45494c;
     border-bottom: 1px solid #e4e7eb;
     box-sizing: border-box;
@@ -195,7 +195,7 @@
 }
 
 .verify-img-panel .icon-refresh {
-	font-size: 20px;
+	font-size: 18px;
 	color: #fff;
 }
 
@@ -214,7 +214,7 @@
 }
 
 .verify-bar-area .verify-move-block .verify-icon {
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .verify-bar-area .verify-msg {

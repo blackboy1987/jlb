@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>发布动态</title>
+		<title>发布商机</title>
 		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link href="../css/style.css" rel="stylesheet" />
 		<link href="../css/hashbox.css" rel="stylesheet" />
@@ -37,7 +37,7 @@
 			label{color:#333333;}
 			.m-right{text-align: right;color:#C8C8C8;}
 			.mui-input-group:before{height: 0;}
-			#submit{border-radius: 5px;font-size: 16px;display: block;width: 100%;margin-bottom: 10px;padding: 15px 0;line-height: 0;background: #1F75DA;color:#fff;border:none;}
+			#submit{border-radius: 5px;font-size: 14px;display: block;width: 100%;margin-bottom: 10px;padding: 15px 0;line-height: 0;background: #1F75DA;color:#fff;border:none;}
 		</style>
 	</head>
 
@@ -100,8 +100,8 @@
 						<input type="number" class="mui-input-clear" placeholder="单次点击费用" name='price' id="price">
 					</div>
 					<div class="mui-input-row">
-						<label>最多允许点击次数</label>
-						<input type="number" class="mui-input-clear" placeholder="最多允许点击次数" name='times' id="times">
+						<label>最低允许点击次数</label>
+						<input type="number" class="mui-input-clear" placeholder="最低允许点击次数" name='times' id="times">
 					</div>
 				</form>
 			</div>
@@ -236,7 +236,7 @@
 			}
 
 			function upload(files, fileName, index) {
-				var task = plus.uploader.createUpload("http://v6.shengjing88.com/common/upload", {method: "POST"}, function(t, status) {
+				var task = plus.uploader.createUpload("http://jlb.i-gomall.com/common/upload", {method: "POST"}, function(t, status) {
 					const result = JSON.parse(t.responseText);
 					mui.hideLoading();
 					if (status == 200) {

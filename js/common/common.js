@@ -3,10 +3,10 @@ var Common = function () {
 var version = 1;
 var siteName = '克夫婆';
 var basePath = "http://api.suanlifeng.com";//生产
-var basePath1 = "http://172.16.12.223";//公司
-var basePath2 = "http://192.168.0.103";//家里
-var basePath3 = "http://v6.shengjing88.com";//生产/
-var uploadPath = "http://v6.shengjing88.com/common/upload";
+var basePath3 = "http://172.16.12.223";//公司
+var basePath2 = "http://192.168.0.105:7778";//家里
+var basePath1 = "http://jlb.i-gomall.com/";//生产/
+var uploadPath = "http://jlb.i-gomall.com/common/upload";
 
 var device_uuid = '';
 var loginUser = '{}';
@@ -339,9 +339,9 @@ Common.resetBaseApi=function (url){
         baseApi = basePath1+url;
     }else if(url==='/app/user/ad/page'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/head_img'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/auth/info'){
         baseApi = basePath1+url;
     }else if(url==='/app/user/sell/record'){
         baseApi = basePath1+url;

@@ -114,11 +114,11 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
 }
 .mui-icon-star{
 	color: #B5B5B5;
-	font-size: 22px;
+	font-size: 20px;
 }
 .mui-icon-star-filled{
 	color: #FFB400;
-	font-size: 22px;
+	font-size: 20px;
 } 
 .mui-popover {
 	height: 180px;

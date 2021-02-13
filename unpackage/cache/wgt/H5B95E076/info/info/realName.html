@@ -34,7 +34,7 @@
 			.mui-input-group:after {
 				height: 0;
 			}
-			#submit{border-radius: 5px;font-size: 16px;display: block;width: 100%;margin-bottom: 10px;padding: 15px 0;line-height: 0;background: #1F75DA;color:#fff;border:none;}
+			#submit{border-radius: 5px;font-size: 14px;display: block;width: 100%;margin-bottom: 10px;padding: 15px 0;line-height: 0;background: #1F75DA;color:#fff;border:none;}
 			.m-title{font-size: 15px;color: #333;}
 			.m-nav{text-align: left;color:#969699;font-size: 12px;}
 		</style>
@@ -296,7 +296,7 @@
 					var key = data.date.dir + uuid(32, 54) + proxfName;
 
 					mui.showLoading("照片上传中...", "body");
-					var task = plus.uploader.createUpload("http://172.16.12.223/common/upload", {method: "POST"}, function(t, status) {
+					var task = plus.uploader.createUpload("http://jlb.i-gomall.com/common/upload", {method: "POST"}, function(t, status) {
 						const result = JSON.parse(t.responseText);
 						mui.hideLoading();
 						if (status == 200) {

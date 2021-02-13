@@ -36,10 +36,10 @@
         .pro-title {font-size: 13px;}
         .mui-col-xs-12 {color: #282828;font-size: 12px}
         .mui-pull-left {padding-top: 8px}
-        .mui-control-item > span {font-size: 18px;}
-        .mui-control-item.mui-active > span {font-size: 18px;border-bottom: 2px solid #007aff;padding-bottom: 10px;}
+        .mui-control-item > span {font-size: 16px;}
+        .mui-control-item.mui-active > span {font-size: 16px;border-bottom: 2px solid #007aff;padding-bottom: 10px;}
         #bore{font-size: 15px;margin-top: 22px;margin-bottom: 12.5px}
-        #allBtc{font-size: 17px}
+        #allBtc{font-size: 15px}
         .mui-bar-nav~.mui-content {padding-top: 90px;}
         .mui-active .mui-table-view-cell{position:initial}
         .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{border: 0}
@@ -84,7 +84,7 @@
         <ul class="mui-table-view mui-table-view-chevron gmje box-border-top" id="detailed"
             style="height: 47px;background-color: #fbfbfb;box-shadow: 0px 2px 5px 1px #eeeff1;">
             <li class="mui-table-view-cell mui-collapse-content" style="margin: revert;top: 3px;"><p id="income" style="float: left">JLB总收益明细</p> <span
-                    class="mui-pull-right"><span class="mui-icon mui-icon-arrowright" style="font-size: 22px;margin-top: -6px;position: relative;right: -7px;"></span></span>
+                    class="mui-pull-right"><span class="mui-icon mui-icon-arrowright" style="font-size: 20px;margin-top: -6px;position: relative;right: -7px;"></span></span>
             </li>
         </ul>
     </div>
@@ -221,7 +221,7 @@
                     ul += '<li class="mui-table-view-cell detailed mui-collapse-content li-2" _allBtc="' + Common.moneyFormatByDecimals(
                         item.allBtc, 8) + '"  _allEth="' + Common.moneyFormatByDecimals( item.allEth, 8) + '" _allFil="' + Common.moneyFormatByDecimals( item.allFil, 8) + '" _allHpt="' + Common.moneyFormat(item.allHpt) + '" _title="' + item.productName +
                         '" _productId="' + item.productId + '" _type="' + item.type + '">';
-                    ul += '<span>' + item.lastTime + '</span><span class="mui-pull-right earnings-list" style="position: relative;right: -7px;">收益明细<span class="mui-icon mui-icon-arrowright" style="font-size: 22px;position: relative;bottom: -2px;"></span></span>';
+                    ul += '<span>' + item.lastTime + '</span><span class="mui-pull-right earnings-list" style="position: relative;right: -7px;">收益明细<span class="mui-icon mui-icon-arrowright" style="font-size: 20px;position: relative;bottom: -2px;"></span></span>';
                     ul += '</li>';
                     ul += '</ul>';
                     ul += '</div>';
@@ -241,7 +241,7 @@
 
                         }else {
                            t = `
-                             <li class="mui-table-view-cell detailed mui-collapse-content li-2" _allFil="${Common.moneyFormatByDecimals(item.allFil, 8)}" _allDelayFil="${Common.moneyFormatByDecimals( item.allDelayFil, 8)}" _alleth="${Common.moneyFormatByDecimals(item.allEth, 8)}" _alleth="${Common.moneyFormatByDecimals(item.allEth, 8)}" _allDelayFil="${Common.moneyFormatByDecimals( item.allDelayFil, 8)}" _allhpt="${Common.moneyFormatByDecimals(item.allHpt, 8)}" _title="${item.productName}" _productid="${item.productId}" _id="${item.investId}" _type="${item.type}"><span>${item.lastTime}</span><span class="mui-pull-right earnings-list" style="position: relative;right: -7px;">收益明细<span class="mui-icon mui-icon-arrowright" style="font-size: 22px;position: relative;bottom: -2px;">
+                             <li class="mui-table-view-cell detailed mui-collapse-content li-2" _allFil="${Common.moneyFormatByDecimals(item.allFil, 8)}" _allDelayFil="${Common.moneyFormatByDecimals( item.allDelayFil, 8)}" _alleth="${Common.moneyFormatByDecimals(item.allEth, 8)}" _alleth="${Common.moneyFormatByDecimals(item.allEth, 8)}" _allDelayFil="${Common.moneyFormatByDecimals( item.allDelayFil, 8)}" _allhpt="${Common.moneyFormatByDecimals(item.allHpt, 8)}" _title="${item.productName}" _productid="${item.productId}" _id="${item.investId}" _type="${item.type}"><span>${item.lastTime}</span><span class="mui-pull-right earnings-list" style="position: relative;right: -7px;">收益明细<span class="mui-icon mui-icon-arrowright" style="font-size: 20px;position: relative;bottom: -2px;">
 
                             </span></span></li>
                             `

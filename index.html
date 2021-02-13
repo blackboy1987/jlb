@@ -23,9 +23,9 @@
     .m-name {font-size: 1rem;color: #2E2E31;}
     .m-color {color: #969699;}
     .m-right {float: right;padding-right: 20px;}
-    .m-back {font-size: 16px;}
+    .m-back {font-size: 14px;}
     .m-btn {background: #FF7800;color: #FEFEFE;font-size: 0.625rem;width: 2.125rem;height: 1.25rem;padding: .2rem;border-radius: 4px;}
-    .m-wrap {font-size: 24px;color: #FF7D44;padding-right: 20px;}
+    .m-wrap {font-size: 22px;color: #FF7D44;padding-right: 20px;}
 
     /* 背景色去除 */
     .mui-table-view{padding-left:1rem;background-color: #F7F7F7;}
@@ -64,7 +64,7 @@
     .ptt {padding-top: 4px;}
 
     /* xpc修改首页头部样式 */
-    .mui-bar .mui-title{text-align: left;font-size: 20px;left: 0.3125rem;}
+    .mui-bar .mui-title{text-align: left;font-size: 18px;left: 0.3125rem;}
     /* 首页轮播图 */
     .mui-slider-item{width: 92% !important;display: flex;}
     /* 去除首页圆角问题 */
@@ -231,38 +231,29 @@
             </div>
 			<div class="m-item">
 			    <div class="ml1 m-wrap-title m-size18">
-					热门动态
+					热门商机
                     <a style="float: right;" id="dongtaiMore">更多</a>
 			    </div>
 			    <ul class="mui-table-view ml1 dongtai" id="dongtai"></ul>
 			</div>
-            <div class="m-item" id="m-index"></div>
-			
-            <div class="m-item" id="row-fil">
-                <div class="ml1 m-wrap-title m-size18"> <img height="25px" src="images/ipfs_.svg" style="margin-right: 0.125rem;padding-bottom: 0rem;vertical-align: bottom;" width="25px"/> FIL系列产品<span class="ml1" style="margin-left: 5px">超值优惠</span>
-                </div>
-                <ul class="mui-table-view ml1" id="item-fil"/>
-            </div>
-            <div class="m-item" id="row-btc">
-                <div class="ml1 m-wrap-title m-size18"> <img height="25px" src="images/slf_btc.svg" style="margin-right: 0.125rem;padding-bottom: 0rem;vertical-align: bottom;" width="25px"/> BTC系列产品<span class="ml1" style="margin-left: 5px">超值优惠</span>
-                </div>
-                <ul class="mui-table-view ml1" id="item-btc"/>
-            </div>
-            <div class="m-item" id="row-eth">
-                <div class="ml1 m-wrap-title m-size18"> <img height="25px" src="images/slf_eth.svg" style="margin-right: 0.125rem;padding-bottom: 0rem;vertical-align: bottom;" width="25px"/> ETH系列产品<span class="ml1" style="margin-left: 5px">超值优惠</span>
-                </div>
-                <ul class="mui-table-view ml1" id="item-eth"/>
-            </div>
-			<div class="m-item" id="row-jlb">
-			    <div class="ml1 m-wrap-title m-size18">
-					<img height="25px" src="images/slf_eth.svg" style="margin-right: 0.125rem;padding-bottom: 0rem;vertical-align: bottom;" width="25px"/>
-					平台力荐
-			    </div>
-			    <ul class="mui-table-view ml1" id="item-jlb"/>
-			</div>
         </div>
     </div>
 </div>
+<!-- 实名认证 -->
+<div class="meui-mask" style="display: none;" id="bank_info">
+    <div class="cons">
+        <div style="margin-top: 40px;">
+            <h3 style="font-weight: 400;color:#373737;margin-top:25px;margin-bottom:15px">您还未实名认证</h3>
+        </div>
+        <p style="color:#999999;font-size: 14px;margin: 18px 0;">去完善认证信息吧</p>
+        <div class="go_set" style="height: 45px; margin: 0 auto;border-radius: 7px;width: 155px;background-color:#1F75DA;color:#FFFFFF;margin-top:15px;text-align: center;"><span
+                style="line-height: 45px;">立即前往</span></div>
+        <img class="closes" src="../images/failes.png" style="margin-top: 55px;width: 35px;" />
+    </div>
+</div>
+
+
+
 
 <script type="text/html" id="dongtaiTml">
     {{each date item key}}
@@ -405,7 +396,8 @@
         plus.webview.currentWebview().setStyle({
             scrollIndicator: 'none'
         });
-        id = JSON.parse(plus.storage.getItem("loginUser")).id
+        id = JSON.parse(plus.storage.getItem("loginUser")).id;
+        auth();
         newsNum();
         loadProduct();
         notice();
@@ -454,6 +446,28 @@
             $('#m-backdrop-c').css('display', 'none');
         }
     });
+
+    function auth(){
+        const url = "/app/user/auth/info";
+        Common.muipost(url, {}, function(data) {
+            console.log(data.date);
+            if (!data.date){
+                $("#bank_info").show();
+            }else{
+                $("#bank_info").hide();
+            }
+        });
+    }
+
+    //去实名认证
+    $('.go_set').click(function() {
+        mui.openWindow({
+            url: './info/info/idCard.html',
+            id: './info/info/idCard.html',
+
+        });
+    });
+
     // 下拉刷新具体业务实现
     function pulldownRefresh() {
         plus.storage.removeItem("popover");
@@ -467,6 +481,7 @@
             load();
             loadProduct();
             ad();
+            auth();
             // getAdversite();
             mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
             mui('#pullrefresh').pullRefresh().refresh(true);
@@ -568,7 +583,7 @@
                 rmbPrice = item.price + ' USDT'
             }
             html = '<div class="ml1 m-wrap-title m-size18 tryBtn" style="height: 47px;padding: 17px 25px;">' +
-                '<img class="tryImg" src="images/hot.png"/> <span style="font-size: 18px;">初级必选</span><span class="ml1" style="margin-left: 5px">爆款产品</span>' +
+                '<img class="tryImg" src="images/hot.png"/> <span style="font-size: 16px;">初级必选</span><span class="ml1" style="margin-left: 5px">爆款产品</span>' +
                 ' <div style="float: right;font-size: 15px"> </div> ' +
                 '</div>' +
                 ' <div class="m-mui-li m-media m-btc-li" style="background-color:white;font-size:18px;padding: 0px 15px 10px;margin: 10px;position: relative;">' +

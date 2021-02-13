@@ -3,10 +3,10 @@ var Common = function () {
 var version = 1;
 var siteName = '克夫婆';
 var basePath = "http://api.suanlifeng.com";//生产
-var basePath2 = "http://172.16.12.223";//公司
-var basePath3 = "http://192.168.0.101";//家里
-var basePath1 = "http://v6.shengjing88.com";//生产/
-var uploadPath = "http://v6.shengjing88.com/common/upload";
+var basePath3 = "http://172.16.12.223";//公司
+var basePath2 = "http://192.168.0.105:7778";//家里
+var basePath1 = "http://jlb.i-gomall.com/";//生产/
+var uploadPath = "http://jlb.i-gomall.com/common/upload";
 
 var device_uuid = '';
 var loginUser = '{}';
@@ -327,21 +327,21 @@ Common.resetBaseApi=function (url){
         baseApi = basePath1+url;
     }else if(url==='/app/user/receiptAccount/list'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/v2/come/page'){
+    }else if(url==='/app/user/v2/relation/extend_v2'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/save'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/list'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/detail'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/log'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/ad/page'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/head_img'){
         baseApi = basePath1+url;
-    }else if(url==='/app/user/sell/record'){
+    }else if(url==='/app/user/auth/info'){
         baseApi = basePath1+url;
     }else if(url==='/app/user/sell/record'){
         baseApi = basePath1+url;
@@ -564,6 +564,19 @@ Common.money = function (obj) {
         return false;
     }
 }
+
+Common.money = function (val,precis) {
+	if(!precis){
+		precis = 3;
+	}
+    var reg = "^[0-9]+[\.][0-9]{0,"+precis+"}$";
+    if (!reg.test(obj)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 //货币：格式定义为保留小数点后二位
 Common.moneyFormat = function (number) {
     // 默认2位小数

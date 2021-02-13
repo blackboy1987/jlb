@@ -38,7 +38,16 @@ function adversite() {
 		mui.alert("加载失败")
 	});
 }
-
+// 会员发布的广告
+function ad() {
+	const url = '/app/user/ad/list';
+	Common.muipost(url, {}, function(data) {
+		var html = template('dongtaiTml', data);
+		$("#dongtai").html(html);
+	}, function(data) {
+		mui.alert("加载失败")
+	});
+}
 
 // 公告
 function notice() {

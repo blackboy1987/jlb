@@ -5,6 +5,9 @@
  * */
 /*common*/
 /** { touch-action: none; }*/
+*{
+    font-size: 14px;
+}
 .fl{ float:left;}
 .fr{ float:right;}
 .clearfix:after{ content:""; display:block; width:100%; height:0; clear:both;}
@@ -44,7 +47,7 @@
 #tabbar .mui-control-content .index-list-div .index-list-desc{ color: #999; font-size: 14px;margin-top: 10px;}
 #tabbar .mui-control-content .index-list-div .index-list-img{  height: 150px; overflow: hidden; width: 100%; text-align: center}
 
-#tabbar-with-chat .update{ font-size: 16px;}
+#tabbar-with-chat .update{ font-size: 14px;}
 #tabbar-with-chat header{background: #1f3d92; }
 #tabbar-with-chat header a,#tabbar-with-chat header h1{ color: #fff;}
 #tabbar-with-chat .mui-control-content{display: block;margin-top: 50px;}
@@ -86,7 +89,7 @@
 #login-form .yzm .mui-icon-clear{right: 30%}
 .reg .mui-checkbox label{font-size: 14px;}
 .reg .mui-checkbox a{color: #3063b0}
-.reg .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{font-size: 24px;}
+.reg .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{font-size: 22px;}
 .reg .mui-checkbox.mui-left label, .mui-radio.mui-left label{padding-left: 50px;}
 .reg .mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{ color: #3063b0}
 
@@ -103,7 +106,7 @@
 
  .alert{padding: 20px; background: #fff;border-radius: 5px;}
  .alert p{ text-align: center}
-.alert p:nth-of-type(1){font-size: 18px; color: #333;}
+.alert p:nth-of-type(1){font-size: 16px; color: #333;}
 .alert p.a-btn{margin: 0}
 .alert p .act-btn{ top: 0;}
 #tabbar .swiper-pagination{position: unset}
@@ -123,7 +126,7 @@ ul.c2c-list{margin: 0; padding: 0; background: #fff;}
 .c2c-list li .buy-icon input{ background: #3063b0; color: #fff; width: 80px; border: none; border-radius: 5px;}
 .c2c-list li .user-head{position: absolute; left: 10px;}
 .c2c-list li:last-child{margin-bottom: 60px;border-bottom: none}
-.jy-name .jy-account{font-weight: normal; color: #333;font-size: 18px;}
+.jy-name .jy-account{font-weight: normal; color: #333;font-size: 16px;}
 body .mui-bar{box-shadow: none;  background-color: #fff;}
 
 
@@ -137,19 +140,19 @@ h1.mui-title span{ color: #999;}
 
 .mui-icon-back{ color: #999;}
 header.other{ border-bottom: 1px solid #e5e5e5;}
-.content-pad .div1{font-size: 16px;margin-bottom: 0;}
+.content-pad .div1{font-size: 14px;margin-bottom: 0;}
 .content-pad .div1,.content-pad .div2{margin: 10px;border-bottom: 1px solid #e5e5e5;padding-bottom: 10px;}
 .content-pad .div1 img{float: left; width: 45px;margin-right: 10px;}
-.content-pad .div1 h2{font-size: 18px; font-weight: normal}
+.content-pad .div1 h2{font-size: 16px; font-weight: normal}
 .content-pad .div1 p{margin-bottom: 0}
-.content-pad .div2 p{font-size: 16px;}
+.content-pad .div2 p{font-size: 14px;}
 .content-pad .div2 p span{ color: #333;}
 .content-pad .div2 p img{width:17px;margin-left: 5px;}
 .how-buy{margin: 10px;padding-bottom: 10px;}
 .how-buy span{margin-top:5px; color: #3063b0;display: block}
 .mui-content .other-info{ background: #f2f2f2;}
 .other-info{padding: 10px;}
-.other-info button{width: 100%; background: #3063b0; color: #fff; height: 45px; border-radius: 10px;font-size: 18px;margin-top: 20px;}
+.other-info button{width: 100%; background: #3063b0; color: #fff; height: 45px; border-radius: 10px;font-size: 16px;margin-top: 20px;}
 .other-info p{margin-bottom: 0px;}
 .other-info p:nth-of-type(1){margin-top: 20px;}
 .buy-input{margin-top: 10px;}
@@ -157,7 +160,7 @@ header.other{ border-bottom: 1px solid #e5e5e5;}
 .buy-input img{width: 20px}
 .buy-input .jt-input{position: relative;display: inline-block;width: 45%;}
 .buy-input .jt-input span{position: absolute;top:4px; color: #333;}
-.aa p{text-align: left; color: #333;font-size: 16px;}
+.aa p{text-align: left; color: #333;font-size: 14px;}
 
 
 .div1 .time{margin-left: 20px;}
@@ -171,14 +174,14 @@ header.other{ border-bottom: 1px solid #e5e5e5;}
 ul.c2c-list.order-list{background: unset}
 .order-list li{margin-bottom: 10px; background: #fff;}
 .order-list li p{margin-top: 5px;font-size: 14px;}
-.order-list li p span{font-size: 16px; color: #3063b0}
+.order-list li p span{font-size: 14px; color: #3063b0}
 .order-list li .jy-name .dfk{ color: #1daa34}
 .order-list li .jy-name .red{ color: #ff0000;}
 .c2c-list.order-list li{ padding: 20px 10px; padding-left: 60px;}
 .c2c-list.order-list li .user-head{    top: 35px;}
 
-.cancel p{ color: #333;margin-top: 20px; padding: 0 20px; text-align: left;font-size: 16px;}
-.cancel label{ color: red; font-size: 16px;}
+.cancel p{ color: #333;margin-top: 20px; padding: 0 20px; text-align: left;font-size: 14px;}
+.cancel label{ color: red; font-size: 14px;}
 .mui-input-group.cancel{background: unset}
 .cancel.mui-input-group .mui-input-row:after{ height: 0}
 .cancel .mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{ color: #2cc25d}
@@ -191,8 +194,8 @@ ul.c2c-list.order-list{background: unset}
 
 
 .my-header{ height: 150px;background-color: #00cdb9!important;}
-.my-header h2{ font-size: 18px; color: #fff; font-weight: normal; text-align: center; padding: 0 0 30px}
-.my-header .my-info{height: 50px; line-height: 50px; color: #fff; font-size: 16px; text-align: center}
+.my-header h2{ font-size: 16px; color: #fff; font-weight: normal; text-align: center; padding: 0 0 30px}
+.my-header .my-info{height: 50px; line-height: 50px; color: #fff; font-size: 14px; text-align: center}
 .my-header .my-info img{ width: 50px; height: 50px; border-radius: 50%; }
 .my-header .my-info span{display: inline-block; height: 50px; line-height: 50px; position: relative; top: -20px;}
 .my-header .my-info div{ line-height: 0}
@@ -200,7 +203,7 @@ ul.c2c-list.order-list{background: unset}
 
 .my .mui-table-view-cell a img{float: left;margin-right: 10px; width: 22px}
 .my .mui-table-view-cell a span{position: absolute; right: 35px;font-size: 14px; color: #999;}
-.my .my-title{ background: #f2f2f2; height: 40px; line-height: 40px;font-size: 16px; padding-left: 10px; color: #999;}
+.my .my-title{ background: #f2f2f2; height: 40px; line-height: 40px;font-size: 14px; padding-left: 10px; color: #999;}
 .my .mui-table-view:after{height: 0}
 .my .mui-table-view:before{height: 0}
 .my .mui-table-view-cell a span.mui-badge{ background: #f00; color: #fff;}
@@ -210,7 +213,7 @@ ul.c2c-list.order-list{background: unset}
 .tg01 .mui-row .mui-col-xs-6{ text-align: center}
 .tg01 .mui-row .mui-col-xs-6 .tg-xx{ color: #f67373}
 .tg01 .mui-row .mui-col-xs-6 .tg-xx img{margin-right: 5px;}
-.tg01 .mui-row .mui-col-xs-6 p{ text-align: center; font-size: 22px; font-weight: bold; color: #f67373;margin-top: 10px;margin-bottom: 0}
+.tg01 .mui-row .mui-col-xs-6 p{ text-align: center; font-size: 20px; font-weight: bold; color: #f67373;margin-top: 10px;margin-bottom: 0}
 
 .tg02{margin: 10px; overflow: hidden;margin-top: 30px;display:-webkit-flex; display: flex; }
 .tg02 .tg-02{-webkit-flex:1; flex:1;overflow: hidden; text-align: center}
@@ -234,7 +237,7 @@ ul.c2c-list.order-list{background: unset}
 .team-info .team-date{ color: #999;font-size: 14px;}
 .team.mui-content>.mui-table-view:first-child{margin-top: 10px}
 .team ul{margin-bottom: 10px;margin-top: 0}
-.team .mui-navigate-right:after, .mui-push-right:after{font-size: 24px;}
+.team .mui-navigate-right:after, .mui-push-right:after{font-size: 22px;}
 .team .mui-table-view:before,.team .mui-table-view:after{height: 0}
 .team-name .wd{ color: #fe615a; font-size: 14px;}
 .team-name .yd{ color: #666; font-size: 14px;margin-left: 10px;}
@@ -248,7 +251,7 @@ ul.c2c-list.order-list{background: unset}
 .zc-list ul li .zc-qk{float: left}
 .zc-list ul li .zc-qk p{margin-bottom: 0}
 .zc-list ul li .zc-dj{float: right;color: #8f8f94;margin-top: 8px;font-size: 14px;}
-.zc-list ul li .zc-dj span{ font-size: 20px;}
+.zc-list ul li .zc-dj span{ font-size: 18px;}
 
 .mx-status{position: absolute; right: 40px;top: 37%;font-size: 14px;}
 .mx-status.wwc{ color: #f00}
@@ -284,7 +287,7 @@ ul.c2c-list.order-list{background: unset}
     line-height: 45px;
 }
 body .account-assets{ background-color: #3063b0;}
-.account-assets .mui-icon-back{ color: #fff;font-size: 18px;}
+.account-assets .mui-icon-back{ color: #fff;font-size: 16px;}
 .account-assets .mx{ margin-top: 12px; color: #fff;font-size: 14px;}
 .account-assets h1{ color: #fff;}
 .a-assets .assets-all{ padding: 10px 0; background: #3063b0}
@@ -331,7 +334,7 @@ body .account-assets{ background-color: #3063b0;}
 .tb-addr-img a{display: inline-block;font-size: 14px;margin-right: 5px; color: #3063b0}
 .exchange{background: #fff; padding: 10px;}
 .exchange p{margin-bottom: 0}
-.exchange .how-buy{color: #333; font-size: 16px}
+.exchange .how-buy{color: #333; font-size: 14px}
 .exchange .how-buy > span{color: #3063b0;font-size: 14px;margin-top: 0}
 .exchange .buy-input .jt-input span{font-size: 14px; top: 4px;}
 .exchange .buy-input div input{font-size: 14px;margin-bottom: 10px;}
@@ -356,7 +359,7 @@ img.exchange-img{position: relative; top: 7px;}
 .pay-details .mui-row span{ color: #333;}
 .pay-details .mui-row span img,.pay-details .mui-row img{margin-left: 10px;}
 .pay-details .mui-row .ywc{color: #2ac845}
-.pay-jindu h3{ text-align: center; margin-top: 10%;font-size: 16px; font-weight: normal}
+.pay-jindu h3{ text-align: center; margin-top: 10%;font-size: 14px; font-weight: normal}
 .pay-jindu ul{position: relative}
 .pay-jindu .time-line li { margin-bottom: 10px; list-style: none;}
 .pay-jindu ul li:before { content: ""; /* width: 1px; */ height: 90%; background: #ccc; left: 6%; top: 20px; position: absolute; border-right: 1px dashed #eee;}
@@ -430,12 +433,12 @@ img.exchange-img{position: relative; top: 7px;}
 
 .ad-mng{background: #fff;}
 .ad-mng.content-pad .div1{padding-top: 10px;}
-.ad-mng.content-pad .div1 h2{ float: left;font-size: 16px;}
+.ad-mng.content-pad .div1 h2{ float: left;font-size: 14px;}
 .ad-mng.content-pad .div1.btn {text-align: right;padding-top: 0}
 .ad-mng.content-pad .div1.btn a{border-color: #3063b0;margin-left: 10px; color: #3063b0;}
 .ad-mng.content-pad .div2 p{margin-bottom: 5px}
-.ing{color: #2ac845;font-size: 16px;margin-top: 5px;}
-.over{color: #999;font-size: 16px;margin-top: 5px;}
+.ing{color: #2ac845;font-size: 14px;margin-top: 5px;}
+.over{color: #999;font-size: 14px;margin-top: 5px;}
 .other-info.ad-mng{text-align: center}
 .other-info.ad-mng button{ width: 35%;margin:20px;border-radius: 5px;}
 .other-info.ad-mng button:nth-of-type(1){ background: #f2f2f2;color: #999}
@@ -444,7 +447,7 @@ img.exchange-img{position: relative; top: 7px;}
 .licai.a-assets .assets-al{background: #3063b0;padding: 10px 0 20px }
 .licai{ height: 100%}
 .licai .licai-info{background: #fff;padding:10px;}
-.licai .licai-info .mui-row{font-size: 16px; border-bottom: 1px solid #e6e6e6;}
+.licai .licai-info .mui-row{font-size: 14px; border-bottom: 1px solid #e6e6e6;}
 .licai .licai-info .li-div1{padding:5px 0 10px;}
 .licai .licai-info .mui-row .stop-sy{color: #f00;font-size: 14px;margin-left: 6px;}
 .licai .licai-info .mui-row a{font-size: 14px; color: #3063b0;}
@@ -463,11 +466,11 @@ img.exchange-img{position: relative; top: 7px;}
 .shouyi .shouyi-name div{ text-align: center; }
 .shouyi .shouyi-name div:nth-of-type(1){border-right: 1px solid #d1fff1}
 .shouyi .shouyi-name div p{color: #fff; line-height: 1rem;}
-.shouyi .shouyi-name div p:nth-of-type(2){ font-size: 18px;}
+.shouyi .shouyi-name div p:nth-of-type(2){ font-size: 16px;}
 .shouyi .shouyi-name div p:nth-of-type(1){ color: #d1fff1;}
 .shouyi .mui-table-view-chevron .mui-table-view-cell{padding-right: 15px}
 .shouyi .shouyi-money{padding: 10px; background: #f2f2f2}
-.shouyi .shouyi-money span{font-size: 20px; color: #999;}
+.shouyi .shouyi-money span{font-size: 18px; color: #999;}
 .shouyi .shouyi-money .gmje.mui-table-view:before{height: 0}
 .shouyi .shouyi-money .gmje.mui-table-view:after{height: 0}
 .shouyi .shouyi-money .gmje{position: relative;top: -30px; border-radius: 5px;}
@@ -497,7 +500,7 @@ img.exchange-img{position: relative; top: 7px;}
 
 .reg .mui-input-row label{display: inline-block;width: auto}
 .terms .terms-inner{margin: 10px}
-.terms .terms-inner h2{font-size: 16px; font-weight: normal; text-align: center;margin-top: 20px;}
+.terms .terms-inner h2{font-size: 14px; font-weight: normal; text-align: center;margin-top: 20px;}
 .terms .terms-inner p{color: #333; font-size: 14px;line-height: 1.3rem;text-indent: 2em;margin-bottom: 5px;}
 .terms .terms-inner p:nth-of-type(1){padding-top: 10px;}
 
@@ -527,7 +530,7 @@ img.exchange-img{position: relative; top: 7px;}
 .cloud-index-buy .cib-title{font-size: 14px; color: #00cdb9;}
 .cloud-index-buy .cib-buy .mui-col-xs-4{ box-shadow: 0 1px 7px rgba(0,0,0,0.2); text-align: center;margin: 10px 0; padding: 10px 0; border-radius: 5px;}
 .cloud-index-buy .cib-buy .mui-col-xs-8{padding-left: 10px;}
-.cloud-index-buy .cib-buy .mui-col-xs-8 h2{font-weight: normal; font-size: 16px;margin-top: 15px;}
+.cloud-index-buy .cib-buy .mui-col-xs-8 h2{font-weight: normal; font-size: 14px;margin-top: 15px;}
 .cloud-index-buy .cib-buy .mui-col-xs-8 div{ color: #999; font-size: 14px;margin-top: 8px;}
 .cloud-index-buy .cib-buy .mui-col-xs-8 div span{ color: #f26e24;}
 .cloud-index-buy button{ width: 100%; background-color: #00cdb9; color: #fff;border: none; font-size: 14px; height: 40px;border-radius: 5px; margin-top: 5px;}
@@ -542,23 +545,23 @@ img.exchange-img{position: relative; top: 7px;}
 .sy-row .mui-col-xs-4 div{ color:#999 }
 .sy-row .mui-col-xs-4:nth-of-type(1){ height: 50px; line-height: 50px;}
 .sy-row .mui-col-xs-4:nth-of-type(2),.sy-row .mui-col-xs-4:nth-of-type(3){ text-align: center}
-.sy-row .mui-col-xs-4 .f69{ font-size: 18px;margin-top: 3px;}
+.sy-row .mui-col-xs-4 .f69{ font-size: 16px;margin-top: 3px;}
 .arr-date{ color: #999!important; margin-left: 10px; font-size: 13px;}
 .mui-bar a{}
 
 .mining-img{ text-align: center; padding: 10px 0}
 .mining .mining-title .mui-row{font-size: 15px; color: #333;}
 .mining .mining-title .mui-row p{margin-bottom: 0}
-.mining .mining-title .mui-row p:nth-of-type(2){font-size: 25px; color: #f96c02;}
+.mining .mining-title .mui-row p:nth-of-type(2){font-size: 23px; color: #f96c02;}
 .mining .mining-title .mui-row{ height: 45px; }
 .mining .mining-title .mui-row .name{ height: 45px; line-height: 45px;}
 .mining .mining-title .mui-row p:nth-of-type(1){ color: #999;font-size: 13px;margin-bottom: 5px;}
-.mining .mining-title .mui-row p:nth-of-type(1) span{ color: #00cdb9; font-size: 20px;margin-left: 5px;}
-.mining .mining-date .mui-row  span.mui-icon{ color: #00cdb9; font-size: 20px;margin-left: 5px;}
+.mining .mining-title .mui-row p:nth-of-type(1) span{ color: #00cdb9; font-size: 18px;margin-left: 5px;}
+.mining .mining-date .mui-row  span.mui-icon{ color: #00cdb9; font-size: 18px;margin-left: 5px;}
 .mining .mining-date .mui-row span{color: #666;}
 .mining .pay-details.mining-title{margin-top: 3px;;}
 .mining .pay-details .mui-row{font-size: 15px; color: #999;}
-.mining .pay-details .mui-pull-right{ color:#f96c02; font-size: 16px;;}
+.mining .pay-details .mui-pull-right{ color:#f96c02; font-size: 14px;;}
 .mining .mining-content .mui-row{padding: 5px 0}
 .pay-details.mining-content{ padding-bottom: 0; border-bottom: 0}
 .mining .mui-table-view:before,.mining .mui-table-view:after{ height: 0}
@@ -583,7 +586,7 @@ font-size: 14px; font-family: SourceHanSansCN-Normal; color: #4d4d4d!important;}
 .bm1p{border-bottom: 1px solid #f2f2f2;}
 .mining .mining-order{ margin: 0 10px;}
 .mining .mining-order .mui-row{ color: #999; font-size: 15px; padding: 10px 0}
-.mining .mining-order .mui-row span{ color: #999; font-size: 16px;}
+.mining .mining-order .mui-row span{ color: #999; font-size: 14px;}
 .footer-buy .order-footer-info{ display: inline-block; height: 50px; line-height: 50px; font-size: 12px; color: #4c4c4c; text-align: right; padding-right: 10px; float: right}
 .footer-buy .order-footer-info span{ color: #f20b0b; font-size: 15px;}
 .order-info button{width: 125px;background-color: #f96c02; height: 50px;border: none; border-radius: 0; color: #fff;font-size: 15px; float: right}

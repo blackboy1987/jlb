@@ -22,8 +22,8 @@
 				background-size: 95px 35px; height: 35px; width: 95px; color: #fff; font-size: 13px; text-align: right;
 			padding-right: 5px; line-height: 35px;}
 			.m-title{border-radius:5px;}
-			.my-head .m-title #userName{font-size:18px;margin-left:4rem; margin-top: 0.625rem; line-height: normal;color: #000;}
-			.my-head .m-title .phone{margin-left:4rem; font-size: 12px; color:gray;}
+			.my-head .m-title #userName{font-size:18px;margin-left:5rem; margin-top: 0.625rem; line-height: normal;color: #000;}
+			.my-head .m-title .phone{margin-left:5rem; font-size: 12px; color:gray;}
 			/* border-right: solid 1px #ccc; */
 			.my-head .m-title .inventCode{ color:gray;font-size: 12px;}
 			/* 中间竖线 */
@@ -39,10 +39,24 @@
 			.mui-navigate-right:after, .mui-push-left:after, .mui-push-right:after{font-size:30px;}
 			#outlog{color:#FFA067;}
 			#outlog:after{display: none;}
-			.mt1 {font-size: 20px;}
+			.mt1 {font-size: 18px;}
 			#app-version {right: 46px;line-height: 30px;font-size: 15px;}
 			li{height: 61px}
 			.my-info.mui-clearfix.m-title.p1{top: 15px; padding-left: calc(100vw -105%) !important;}
+		</style>
+		<style>
+			#div {
+				width: 0px;
+				height: 0px;
+				background: red;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+			}
+			/*移除底部或顶部三角,需要在删除此代码*/
+			.mui-popover .mui-popover-arrow:after {
+				width: 0px;
+			}
 		</style>
 	</head>
 	<body style="background: #f5f5f5" id="pullrefresh">
@@ -60,7 +74,7 @@
 		<div class="mui-content my" style="background: #f5f5f5" id="pullrefresh">
 			<div class="my-head m0 py-sm-1 m-whit"style="padding-left: 1.25rem;" id="toAssets">
 				<div id="m-author-content">
-					<img id="author_img" width="18px" height="17px" style="margin-right: 0.375rem;margin-left: 0.375rem;"/> 
+					<img id="author_img" width="18px" height="17px" style="margin-right: 0.375rem;margin-left: 0.375rem;"/>
 					 <p id="author_title" style="font-size: 12px; color: white; height: 1.625rem; line-height: 1.625rem; padding: 0;margin: 0;"></p>  
 					 </div>
 				<div class="my-info mui-clearfix m-title p1">
@@ -68,10 +82,14 @@
 					<div style="display: inline-flex;position: relative;">
 						<div class="phone">会员账号：<span id="phone" style="padding-left: 0">########</span></div>
 						<div class="line"></div>
-						<div class="inventCode" >邀请码：<span id="inventCode">########</span></div>
+						<div class="inventCode" >邀请码：<span id="inventCode" style="-webkit-user-select: auto;">########</span></div>
+						<div class="line"></div>
+						<div class="qrcode" >二维码：<span id="qrcode" style="-webkit-user-select: auto;"><img src="images/qrcode.png" /></span></div>
 					</div>
 					
-					<div class="m-header-title"><img src="images/logo_head.png" width="56px" height="56px" /></div>
+					<div class="m-header-title">
+						<img src="images/logo_head.png" class="picture" style="border-radius: 56px;" _index="1" width="56px" height="56px" />
+					</div>
 					
 					<!-- <div class="myAssets" id="toAssets">
 						我的资产
@@ -127,7 +145,7 @@
 				</div>
 				<div id="dongtai" href="#" style="padding: 0.375rem 0rem;">
 					<img src="images/mine/slf_tb-power.svg" width="45px;" height="auto"/>
-					<div style=" color: rgba(46,46,49,1); font-size:  14px;" PingFang-SC-Regular";">动态</div>
+					<div style=" color: rgba(46,46,49,1); font-size:  14px;" PingFang-SC-Regular";">发布商机</div>
 				</div>
 			</div>
 			<div class="mui-row m-white" id="m-main">
@@ -151,14 +169,22 @@
 					</li>
 				</ul>
 			</div>
-
 		</div>
+		<div id="div"></div>
+		<div id="popover" class="mui-popover" style="height: 340px;width:50%;padding:16px;">
+			<div class="title" style="text-align: center;font-weight: 800;font-size: 22px;margin-top: 16px;">打开扫一扫工具</div>
+			<div id="qrcode1" style="padding:20px;margin-top: 4px;">
+
+			</div>
+		</div>
+
 	</body>
 	<script src="js/mui.min.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script type='text/javascript' src='js/common/common.js'></script>
 	<link rel="stylesheet" href="js/common/mui.loading.css"/>
 	<script type="text/javascript" src="js/common/mui.loading.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 	<script>
 		var phone = ''
 		///标记当前是否实名
@@ -372,6 +398,9 @@
 					$("#inventCode").text(data.date.extendCode);
 					$("#phone").text(data.date.phone);
 					isAuthed = data.date.isAuth;
+					if(data.date.headImg){
+						$(".picture").attr("src",data.date.headImg);
+					}
 					if (isAuthed) {
 						$("#author_title").text(authorMap[0].title);
 						// $("#author_img").img(authorMap[0].img);
@@ -498,5 +527,151 @@
 				})
 			}
 		}
+	</script>
+	<script>
+		var canUp = true;
+		var currentImageDom;
+		mui.plusReady(function() {
+			loadAuth();
+			generatePoster();
+			mui("body").on("tap", ".picture", function() {
+				if (!canUp) {
+					return false;
+				}
+				currentImageDom = $(this);
+				var indexs = $(this).attr("_index");
+				if (mui.os.plus) {
+					var buttonTit = [{
+						title: "拍照"
+					}, {
+						title: "从手机相册选择"
+					}];
+					plus.nativeUI.actionSheet({
+						cancel: "取消",
+						buttons: buttonTit
+					}, function(b) { /*actionSheet 按钮点击事件*/
+						switch (b.index) {
+							case 0:
+								break;
+							case 1:
+								getImage(indexs); /*拍照*/
+								break;
+							case 2:
+								galleryImg(indexs); /*打开相册*/
+								break;
+							default:
+								break;
+						}
+					})
+				}
+			}, false);
+		});
+
+		function generatePoster() {
+			var url = '/app/user/v2/relation/extend_v2';
+			Common.muipost(url, {}, function(data) {
+				var investUrl =data.date.invite;
+				var qrcode = new QRCode(document.getElementById("qrcode1"), {
+					width : 240,
+					height : 240
+				});
+				console.log(investUrl);
+				qrcode.makeCode(investUrl);
+			}, function(data) {
+				mui.toast(data.content);
+			});
+		}
+
+		// 加载数据
+		function loadAuth() {
+			var canUp = true;
+			Common.muipost("/app/user/v2/auth/info", {}, function(data) {
+
+			}, function(data) {
+				mui.alert(' ', data.content, '确定', function (e) {
+				}, 'body');
+			});
+		}
+		// 拍照获取图片
+		function getImage(index) {
+			var c = plus.camera.getCamera();
+			c.captureImage(function(file) {
+				plus.io.resolveLocalFileSystemURL(file, function(entry) {
+					plus.io.resolveLocalFileSystemURL(file, function(entry) {
+						upload(file, entry.name, index);
+					}, function(e) {
+						plus.nativeUI.toast("相册文件错误：" + e.message);
+					});
+				}, function(e) {
+					plus.nativeUI.alert('读取拍照文件错误');
+				});
+			}, function(s) {
+				plus.nativeUI.alert('拍照文件错误');
+			}, {
+				filename: "_doc/camera/"
+			})
+		}
+
+		// 从相册中选择图片
+		function galleryImg(index) {
+			// 从相册中选择图片
+			plus.gallery.pick(function(path) {
+				var files = path.files[0];
+				plus.io.resolveLocalFileSystemURL(files, function(entry) {
+					var filePath = entry.name.lastIndexOf(".")
+					var ext = entry.name.substr(filePath + 1).toUpperCase()
+					if (ext == 'PNG' || ext == 'JPEG' || ext == 'JPG') {
+						upload(files, entry.name, index);
+					} else {
+						plus.nativeUI.alert('暂时只支持png/jpeg/jpg格式');
+					}
+				}, function(e) {
+					plus.nativeUI.toast("相册文件错误：" + e.message);
+				});
+			}, function(e) {
+				plus.nativeUI.alert('取消选择图片');
+			}, {
+				filter: "image",
+				multiple: true,
+				maximum: 1,
+				system: false,
+				onmaxed: function() {
+					plus.nativeUI.alert('最多只能选择1张图片');
+				}
+			});
+		}
+
+		function upload(files, fileName, index) {
+			var task = plus.uploader.createUpload("http://jlb.i-gomall.com/common/upload", {method: "POST"}, function(t, status) {
+				const result = JSON.parse(t.responseText);
+				mui.hideLoading();
+				if (status == 200) {
+					mui.toast("上传成功");
+					$(currentImageDom).attr("src",result.date);
+					headImg(result.date);
+				} else {
+					mui.toast("上传失败");
+				}
+			});
+			task.addFile(files, {key: "file"});
+			task.start();
+		}
+		function headImg(imgUrl) {
+			Common.muipost("/app/user/head_img", {
+				headImg: imgUrl
+			}, function(data) {
+
+			}, function(data) {
+				mui.alert(' ', data.content, '确定', function (e) {
+				}, 'body');
+			});
+		}
+	</script>
+	<script>
+		mui("body").on("tap", "#qrcode", function() {
+			mui("#popover").popover('toggle', document.getElementById("div"));
+		});
+
+
 	</script>
 </html>

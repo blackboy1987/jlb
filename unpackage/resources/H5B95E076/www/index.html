@@ -23,9 +23,9 @@
     .m-name {font-size: 1rem;color: #2E2E31;}
     .m-color {color: #969699;}
     .m-right {float: right;padding-right: 20px;}
-    .m-back {font-size: 16px;}
+    .m-back {font-size: 14px;}
     .m-btn {background: #FF7800;color: #FEFEFE;font-size: 0.625rem;width: 2.125rem;height: 1.25rem;padding: .2rem;border-radius: 4px;}
-    .m-wrap {font-size: 24px;color: #FF7D44;padding-right: 20px;}
+    .m-wrap {font-size: 22px;color: #FF7D44;padding-right: 20px;}
 
     /* 背景色去除 */
     .mui-table-view{padding-left:1rem;background-color: #F7F7F7;}
@@ -64,7 +64,7 @@
     .ptt {padding-top: 4px;}
 
     /* xpc修改首页头部样式 */
-    .mui-bar .mui-title{text-align: left;font-size: 20px;left: 0.3125rem;}
+    .mui-bar .mui-title{text-align: left;font-size: 18px;left: 0.3125rem;}
     /* 首页轮播图 */
     .mui-slider-item{width: 92% !important;display: flex;}
     /* 去除首页圆角问题 */
@@ -128,6 +128,36 @@
     #pop-message>.pop-content{position: absolute;top: 50%;transform:translateY(-50%)}
     #pop-message #pop-activity{width: 100%;}
     #pop-message .pop-close{display: inline-block;width: 30px;height: 30px;line-height: 30px;text-align: center;color: #fff;border: 1px solid; border-radius:50%;position: absolute;left: 50%;bottom: -2%;transform: translateX(-50%);z-index: 99999;}
+    .dongtai{
+        background: #FFF;
+		height: 7.5rem;
+		padding: 1.25rem;
+    }
+    .dongtai .dongtai-item .header{
+        display:flex;
+        align-items: center;
+		height: 4rem;
+		font-size: 1.125rem;
+    }
+    .dongtai .dongtai-item .header img{
+        height: 3.125rem;
+        width: 3.125rem;
+        border-radius: 3.125rem;
+        overflow: hidden;
+        margin-right: 1rem;
+    }
+    .dongtai .dongtai-item .header .username{
+        margin-right: 1rem;
+    }
+    .dongtai .dongtai-item .header .rank{
+        margin-right: 1rem;
+    }
+    .dongtai .dongtai-item .content{
+		font-size: 1.125rem;
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+    }
 </style>
 <body id="pullrefresh" style="background: #fff">
 <header class="mui-bar mui-bar-nav other" style="border:0rem;padding-right: 0">
@@ -190,7 +220,7 @@
                     <img height="auto" src="images/slf_rewards.svg" width="45px;"/>
                     <div style=" color: rgba(46,46,49,1); font-size:  0.75rem;font-family: 'PingFang-SC-Regular';">幸运抽奖</div>
                 </div>
-                <div id="extensions" style="padding: 0.375rem;position: relative;display: none;">
+                <div id="extensions" style="padding: 0.375rem;position: relative;">
                     <div class="product-showreword">奖励</div>
                     <img height="auto" src="images/slf-invites.svg" width="45px;"/>
                     <div style=" color: rgba(46,46,49,1); font-size:  0.75rem;font-family: 'PingFang-SC-Regular';">邀请奖励</div>
@@ -199,7 +229,15 @@
             <div class="mui-row" id="extension1" style="width: auto; margin: 0.625rem;margin-bottom: 0rem;height: 90px;">
                 <img height="90px" src="images/fx1.png" width="100%"/>
             </div>
+			<div class="m-item">
+			    <div class="ml1 m-wrap-title m-size18">
+					热门商机
+                    <a style="float: right;" id="dongtaiMore">更多</a>
+			    </div>
+			    <ul class="mui-table-view ml1 dongtai" id="dongtai"></ul>
+			</div>
             <div class="m-item" id="m-index"></div>
+			
             <div class="m-item" id="row-fil">
                 <div class="ml1 m-wrap-title m-size18"> <img height="25px" src="images/ipfs_.svg" style="margin-right: 0.125rem;padding-bottom: 0rem;vertical-align: bottom;" width="25px"/> FIL系列产品<span class="ml1" style="margin-left: 5px">超值优惠</span>
                 </div>
@@ -225,11 +263,29 @@
         </div>
     </div>
 </div>
+
+<script type="text/html" id="dongtaiTml">
+    {{each date item key}}
+    <li class="dongtai-item">
+        <div class="header">
+            <img src="./images/head/017.png"/>
+            <div class="username">{{item.username}}</div>
+            <div class="rank">{{item.name}}</div>
+        </div>
+        <div class="content">
+            {{item.content}}
+            <a data-id="{{item.id}}" class="dongtai-detail">详情</a>
+        </div>
+    </li>
+    {{/each}}
+</script>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/mui.min.js"></script>
 <script src="js/mui.lazyload.js"></script>
 <script src="js/mui.lazyload.img.js"></script>
 <script src="js/moment.js"></script>
+<script src="js/artTemplate.js"></script>
 <script src="js/common/common.js"></script>
 <script src="js/index/index.js"></script>
 <link href="js/common/mui.loading.css" rel="stylesheet"/>
@@ -354,6 +410,7 @@
         loadProduct();
         notice();
         adversite();
+        ad();
         // getAdversite();
         if (plus.storage.getItem("popover")) {
             $('#m-backdrop').css('display', 'block');
@@ -409,6 +466,7 @@
             newsNum();
             load();
             loadProduct();
+            ad();
             // getAdversite();
             mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
             mui('#pullrefresh').pullRefresh().refresh(true);
@@ -510,7 +568,7 @@
                 rmbPrice = item.price + ' USDT'
             }
             html = '<div class="ml1 m-wrap-title m-size18 tryBtn" style="height: 47px;padding: 17px 25px;">' +
-                '<img class="tryImg" src="images/hot.png"/> <span style="font-size: 18px;">初级必选</span><span class="ml1" style="margin-left: 5px">爆款产品</span>' +
+                '<img class="tryImg" src="images/hot.png"/> <span style="font-size: 16px;">初级必选</span><span class="ml1" style="margin-left: 5px">爆款产品</span>' +
                 ' <div style="float: right;font-size: 15px"> </div> ' +
                 '</div>' +
                 ' <div class="m-mui-li m-media m-btc-li" style="background-color:white;font-size:18px;padding: 0px 15px 10px;margin: 10px;position: relative;">' +
@@ -759,6 +817,14 @@
             id: 'index/news.html'
         });
     });
+    // 更多动态
+    $("#dongtaiMore").click(function (){
+        mui.openWindow({
+            url: 'info/dongtai_list.html',
+            id: 'info/dongtai_list.html'
+        });
+    })
+
     // //我的算力跳转页面 toMyHash
     // $("#toMyHash").click(function () {
     //     mui.openWindow({
@@ -795,6 +861,18 @@
         mui.openWindow({
             url: 'info/team.html',
             id: '/info/team.html'
+        });
+    });
+
+    mui("body").on("tap", ".dongtai-detail", function() {
+        const _this = $(this);
+        const id = _this.data("id");
+        mui.openWindow({
+            url: 'info/dongtai_detail.html',
+            id: 'info/dongtai_detail.html',
+            extras:{
+                adId:id,
+            }
         });
     });
 

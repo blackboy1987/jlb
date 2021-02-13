@@ -1,11 +1,287 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="308d1d21-b1c0-4725-8314-2917c292d856" name="Default Changelist" comment="">
+    <list default="true" id="308d1d21-b1c0-4725-8314-2917c292d856" name="Default Changelist" comment="init">
+      <change afterPath="$PROJECT_DIR$/images/qrcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/qrcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/images/register_login/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/dongtai.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/dongtai_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/dongtai_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210213203342.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210213223347.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/qrcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/images/register_login/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/buy_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/buy_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/dongtai.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/dongtai_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/dongtai_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/sell.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/sell_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/sell_detail_record.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/sell_record.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/artTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/upload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/agreement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/forget1.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/forget1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/feedback.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/feedback.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/hashbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/hashbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/iconfont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/icons-extra.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/icons-extra.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mui.imageviewer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mui.imageviewer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mui.indexedlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mui.indexedlist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mui.picker.all.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mui.picker.all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mui.picker.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mui.picker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/poster.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/poster.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/share.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/share.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/verify.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/verify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electricity/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/electricity/pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electricity/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/electricity/record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electricity/settle.html" beforeDir="false" afterPath="$PROJECT_DIR$/electricity/settle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/ETHDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/ETHDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/incomeCompute.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/incomeCompute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/myHashDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/myHashDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/myHashbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/myHashbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/profit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/profitDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/profitDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/profitDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/profitDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/status.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/assets/detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets/detailed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/assets/invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets/invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/assets/jlb_invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets/jlb_invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/assets/lease.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/assets/lease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/buy_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/buy_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/buy_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/buy_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/coin.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/coin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/info/dongtai.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/dongtai.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/dongtai_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/dongtai_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/dongtai_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/dongtai_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/favorable.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/favorable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/hbt_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/hbt_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/info/idCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/idCard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/info/personalProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/personalProfile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/info/info/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/realName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/info/updatePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/updatePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/info/updatePhone.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/info/updatePhone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/invest_money.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/invest_money.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/invite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/invite_share.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/invite_share.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/ipfs/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/ipfs/activity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/jiaoyi_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/jiaoyi_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/problem.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/problem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/records.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/records.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/rmb/investRmb.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/rmb/investRmb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/sell.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/sell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/sell_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/sell_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/sell_detail_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/sell_detail_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/sell_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/sell_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/shengji.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/shengji.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/team.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/tixian.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/tixian.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/tixian1.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/tixian1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/tixian_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/tixian_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/tixian_over.html" beforeDir="false" afterPath="$PROJECT_DIR$/info/tixian_over.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/order/orderDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/order/orderDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/order/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/order/productDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/order/reel.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/order/reel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/order/zuli_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/order/zuli_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/productDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest/productDetails2.html" beforeDir="false" afterPath="$PROJECT_DIR$/invest/productDetails2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lease.html" beforeDir="false" afterPath="$PROJECT_DIR$/lease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/link/my/withdrawal.html" beforeDir="false" afterPath="$PROJECT_DIR$/link/my/withdrawal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/link/product/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/link/product/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login2.html" beforeDir="false" afterPath="$PROJECT_DIR$/login2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery/lottery.html" beforeDir="false" afterPath="$PROJECT_DIR$/lottery/lottery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/lottery/record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottery/rule.html" beforeDir="false" afterPath="$PROJECT_DIR$/lottery/rule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/my.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my1.html" beforeDir="false" afterPath="$PROJECT_DIR$/my1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product1.html" beforeDir="false" afterPath="$PROJECT_DIR$/product1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/apk/H5B95E076_cm.apk" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/apk/H5B95E076_cm.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/apk/apkurl" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/apk/apkurl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/apk/cmManifestCache.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/apk/cmManifestCache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/agreement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/forget1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/forget1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/feedback.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/feedback.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/hashbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/hashbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/iconfont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/icons-extra.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/icons-extra.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.imageviewer.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.imageviewer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.indexedlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.indexedlist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.picker.all.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.picker.all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.picker.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/mui.picker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/poster.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/poster.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/share.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/share.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/verify.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/css/verify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/settle.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/electricity/settle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/ETHDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/ETHDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/incomeCompute.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/incomeCompute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/myHashDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/myHashDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/myHashbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/myHashbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profitDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profitDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profitDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/profitDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/status.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/index/status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/detailed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/jlb_invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/jlb_invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/lease.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/assets/lease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/buy_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/coin.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/coin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/favorable.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/favorable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/hbt_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/hbt_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/idCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/idCard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/personalProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/personalProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/realName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/updatePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/updatePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/updatePhone.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/info/updatePhone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invest_money.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invest_money.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invite_share.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/invite_share.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/ipfs/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/ipfs/activity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/jiaoyi_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/jiaoyi_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/problem.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/problem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/records.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/records.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/rmb/investRmb.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/rmb/investRmb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_detail_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_detail_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/sell_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/shengji.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/shengji.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/team.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian_over.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/info/tixian_over.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/orderDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/orderDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/productDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/reel.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/reel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/zuli_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/order/zuli_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/productDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/productDetails2.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/invest/productDetails2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/common/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/js/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lease.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/my/withdrawal.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/my/withdrawal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/product/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/link/product/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/login2.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/login2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/lottery.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/lottery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/rule.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/lottery/rule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/my.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/my1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/my1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/product1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/cache/wgt/H5B95E076/product1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210118005227.apk" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210213204412.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210131164708.apk" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/release/apk/H5B95E076_20210208232528.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/agreement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/forget1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/forget1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/feedback.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/feedback.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/hashbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/hashbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/iconfont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/icons-extra.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/icons-extra.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/mui.imageviewer.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/mui.imageviewer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/mui.indexedlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/mui.indexedlist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/mui.picker.all.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/mui.picker.all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/mui.picker.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/mui.picker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/poster.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/poster.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/share.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/share.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/verify.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/css/verify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/electricity/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/electricity/pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/electricity/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/electricity/record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/electricity/settle.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/electricity/settle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/ETHDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/ETHDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/incomeCompute.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/incomeCompute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/myHashDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/myHashDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/myHashbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/myHashbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDetailsSy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/profitDetailsSy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/status.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/index/status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/detailed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/jlb_invest.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/jlb_invest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/lease.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/assets/lease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/coin.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/coin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/favorable.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/favorable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/hbt_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/hbt_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/idCard.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/idCard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/personalProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/personalProfile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/realName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/updatePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/updatePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/updatePhone.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/info/updatePhone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invest_money.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invest_money.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invite_share.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/invite_share.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/ipfs/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/ipfs/activity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/jiaoyi_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/jiaoyi_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/problem.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/problem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/records.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/records.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/rmb/investRmb.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/rmb/investRmb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/shengji.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/shengji.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/team.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian_over.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/info/tixian_over.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/orderDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/orderDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/productDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/reel.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/reel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/zuli_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/order/zuli_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/productDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/productDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/productDetails2.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/invest/productDetails2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/common/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/js/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/link/my/withdrawal.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/link/my/withdrawal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/link/product/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/link/product/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/login2.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/login2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/lottery/lottery.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/lottery/lottery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/lottery/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/lottery/record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/lottery/rule.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/lottery/rule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/my1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/product1.html" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/resources/H5B95E076/www/product1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +393,12 @@
       <workItem from="1612143491785" duration="8000" />
       <workItem from="1612577361490" duration="4730000" />
       <workItem from="1612614832873" duration="1328000" />
-      <workItem from="1612659446634" duration="10034000" />
+      <workItem from="1612659446634" duration="11349000" />
+      <workItem from="1612796231846" duration="1668000" />
+      <workItem from="1612832149563" duration="1188000" />
+      <workItem from="1612849799648" duration="5000" />
+      <workItem from="1613209776683" duration="6521000" />
+      <workItem from="1613222337548" duration="3662000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1607340636248</created>
@@ -259,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612675052013</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="init">
+      <created>1612675618261</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1612675618261</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

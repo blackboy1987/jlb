@@ -27,7 +27,7 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	font-size: 17px;
+	font-size: 15px;
 	text-align: center;
 	line-height: 44px;
 	background: #D74B28;
@@ -104,7 +104,7 @@ header {
 	text-align: center;
 }
 .button {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: normal;
 	text-decoration: none;
 	display: block;

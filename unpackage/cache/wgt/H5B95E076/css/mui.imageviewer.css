@@ -46,14 +46,14 @@
 	line-height: 100%;
 	color: #eee;
 	text-align: center;
-	font-size: 16px;
+	font-size: 14px;
 	padding: 15px;
 }
 .mui-imageviewer .mui-imageviewer-header .mui-imageviewer-close {
 	position: absolute;
 	top: 5px;
 	right: 5px;
-	font-size: 32px;
+	font-size: 30px;
 	color: #aaa;
 }
 .mui-imageviewer .mui-imageviewer-header .mui-imageviewer-close:active {
@@ -109,7 +109,7 @@
 	color: #aaa;
 	top: 50%;
 	margin-top: -18px;
-	font-size: 36px;
+	font-size: 34px;
 }
 .mui-imageviewer-left {
 	left: 5px;

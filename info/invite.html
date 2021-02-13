@@ -282,7 +282,6 @@
 					index: i,
 					invite: investUrl
 				}
-				console.log(posters[i].qrcodeY)
 			}
 			optionArr.forEach(function(itme){
 				compoundImg(itme, function(url, index) {
@@ -294,8 +293,10 @@
 							} else {
 								muiText += '<div class="mui-indicator" data-index="' + index + '"></div>';
 							}
-					})
-				})
+					});
+					
+				});
+				
 				setTimeout(function() {
 					mui.hideLoading();
 					$("#generatePoster").html(text);
@@ -347,8 +348,8 @@
 				// 创建二维码
 				var el_qrcode = document.createElement('div');
 				$(el_qrcode).qrcode({
-					width: option.qrcodeSize,
-					height: option.qrcodeSize,
+					width: option.qrcodeSize*0.9,
+					height: option.qrcodeSize*0.9,
 					text: option.invite
 				})
 				el_qrcode_img = ($(el_qrcode).children('canvas'))[0];

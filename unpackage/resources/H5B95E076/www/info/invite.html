@@ -269,7 +269,7 @@
 			var posters = data.date.posters;
 			var investUrl =data.date.invite;
 			var optionArr = [];
-			// basePath = 'http://api.suanlifeng.com';
+			var basePath = 'https://bootx-jlb.oss-cn-hangzhou.aliyuncs.com/tuiguang';
 			for (var i = 0; i < posters.length; i++) {
 				var imageUrl = basePath + posters[i].backUrl;
 				optionArr[i] = {
@@ -282,7 +282,6 @@
 					index: i,
 					invite: investUrl
 				}
-				console.log(posters[i].qrcodeY)
 			}
 			optionArr.forEach(function(itme){
 				compoundImg(itme, function(url, index) {
